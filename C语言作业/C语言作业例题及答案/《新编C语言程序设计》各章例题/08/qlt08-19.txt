@@ -1,0 +1,14 @@
+#include <stdio.h>
+// file1.c 文件1
+main()
+{  extern A,B;
+   int max(int x,int y);
+   printf("%d\n",max(A,B));
+}
+// file2.c 文件2
+int max(int x,int y)
+{  int z;
+   z=x>y?x:y;
+   return(z);
+}
+static int A=13,B=-8;

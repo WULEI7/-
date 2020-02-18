@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include<stdlib.h> 
+#include<time.h> 
+void main() 
+{  int num1,num2,answer,result,i,j,k,score=0;long ltstart,ltend; float timeuse;
+   srand((unsigned)time(NULL)); //初始化随机数
+   ltstart=clock();//返回当前进程创建到现在时刻经过的时钟周期数(毫秒数)
+   for(i=1;i<=10;i++){
+     num1=rand()%51,num2=rand()%51; //产生两随机数
+     result=num1+num2;
+     for(j=0,k=1;k<=3;k++)   // 注意j=0不可少，请思考少的话会有怎样的后果
+     {  printf("[%d]->Please input %d + %d =",i,num1,num2);
+        scanf("%d",&answer); //输入你的回答
+        if(answer<0) break;  //若输入负值，表示你要中间退出
+        else if(answer==result) //回答正确，j记录回答次数k而退出循环
+        {  printf("  You are a clever boy/girl.\n"); j=k;break;}
+        else printf("  Don't give up.\n"); 
+     }
+     switch(j) //按哪次正确回答来记分
+     {  case 1: score=score+10;break;
+        case 2: score=score+7;break;
+        case 3: score=score+5;break;
+     }
+     printf("  Your score is %d.\n",score);
+     if (answer<0) {printf("  You has given up.\n");break;} //负数提前退出
+   }
+   ltend=clock();  //返回当前进程创建到现在时刻经过的时钟周期数(毫秒数)
+   timeuse=((float)(ltend-ltstart))/CLOCKS_PER_SEC; //计算游戏间隔秒数
+   printf("The total time you used is %ld millsecond(%f second).%5.2f分/秒.\n",ltend-ltstart,timeuse,score/timeuse);
+}  // 本程序因clock单位不同，要求在VC++6.0中运行

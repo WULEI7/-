@@ -1,0 +1,16 @@
+#include <stdio.h>
+void main()
+{  long fib(int n);            /* 自定义函数声明 */
+   long s;                     /* 第 i 项斐波那契数列的值 */
+   int i=0;                    /* 斐波那契数列某项的序号 */
+   do
+   {   s=fib(i);               /* 求斐波那契数列第 i 项 */
+       printf("Fib(%d)=%ld\n",i,s);/* 显示斐波那契数列第 i 项的值 */
+       printf("Input Fibonacci Number:");
+       scanf("%d",&i);         /* 输入要求的某一项的序号 */
+   }while(i>0);                /* 循环输入序号，直到i值小于等于0 */
+}
+long fib(int n)                /* 定义求第n项斐波那契数列值的函数*/
+{  if(n==0||n==1) return n;    /* 判断是否为结束条件 */
+   else return fib(n-2)+fib(n-1); /* 求斐波那契数列的递归方式 */
+}

@@ -1,0 +1,8 @@
+#include <stdio.h>
+// file1.c нд╪Ч1
+main()
+{  extern A,B;
+   int max(int x,int y);
+   printf("%d\n",max(A,B));
+}
+

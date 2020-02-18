@@ -1,0 +1,26 @@
+#include <stdio.h>
+void main()
+{   int add(int,int);
+   int minus(int,int);
+   int callfun(int,int,int(*p)());
+   int a,b,x;
+   printf("Enter a and b: ");
+   scanf("%d %d",&a,&b);
+   x=callfun(a,b,add);
+   printf("%d +% d= %d\n",a,b,x);	
+   x=callfun(a,b,minus);
+   printf("%d -% d= %d\n",a,b,x);
+}
+int add(int c,int d)
+{  int z;
+   z=c+d;
+   return z;
+}
+int minus(int c,int d)
+{
+   return (c-d);
+}
+int callfun(int x,int y,int(*p)())
+{
+   return (*p)(x,y);  // Ò²¿ÉÒÔ£ºreturn p(x,y);
+}

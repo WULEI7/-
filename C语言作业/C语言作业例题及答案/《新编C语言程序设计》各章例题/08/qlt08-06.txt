@@ -1,0 +1,16 @@
+#include <stdio.h>
+move(int n,int x,int y,int z)
+{  if(n==1)
+      printf(" %c->%c",x,z);
+   else
+   {  move(n-1,x,z,y);
+      printf(" %c->%c",x,z);
+      move(n-1,y,x,z);
+   }
+}
+main()
+{  int h; printf("input number:");
+   scanf("%d",&h); //h一般小于等于64
+   printf("the step to moving %2d diskes:\n",h);
+   move(h,'a','b','c');printf("\n");
+}

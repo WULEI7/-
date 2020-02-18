@@ -1,0 +1,20 @@
+/* Win-TC 中利用clock函数来计时*/
+#include <time.h>
+#include <stdlib.h>
+void main()
+{  time_t timep;long ltstart,ltend; int i;float timeuse;
+   time(&timep);               /*取当前时间*/
+   printf("%s",ctime(&timep)); /* 显示当前日期与时间 */
+   printf("clock %ld=%lf seconds\n",clock(),clock()/CLK_TCK);/*CLK_TCK宏常量=18.2*/
+   sleep(2); /* Win-TC中暂停2秒*/
+   printf("clock %ld=%lf seconds\n",clock(),clock()/CLK_TCK);
+   sleep(3); /* Win-TC中暂停3秒*/
+   printf("clock %ld=%lf seconds\n",clock(),clock()/CLK_TCK);
+   srand(time(NULL));printf("生成 32000 个 rand number：\n");
+   ltstart=clock();/*clock返回当前进程创建到现在经过的时钟周期数(周期为1000/CLK_TCK毫秒)*/
+   for (i=0; i<32000; i++) printf("%d ", rand()%100);/*随机生成32000个100以内整数*/
+   ltend=clock();  /*clock返回当前进程创建到现在经过的时钟周期数*/
+   timeuse=((float)(ltend-ltstart))/CLK_TCK; /* 计算运算间隔秒数 */
+   printf("\n生成并显示 32000 个随机数共耗时: %ld clock 单位(或毫秒) ，约 %f 秒\n",ltend-ltstart,timeuse); getch();
+}
+

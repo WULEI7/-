@@ -1,0 +1,11 @@
+#include <stdio.h>
+void main()
+{  int k,n=0;
+   printf("k=?"); scanf("%d",&k);
+   while(k>0) 
+   {  printf("%d",k%10);/* 输出各位数字*/
+      k/=10;            /* 除法赋值运算*/
+      n++;              /* 计算位数*/
+   }
+   printf("\n n=%d\n",n);/* 输出位数*/
+}

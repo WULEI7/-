@@ -1,0 +1,14 @@
+#include <stdio.h>
+void main()
+{  int n;
+int fun(int n);
+   printf("input number:"); scanf("%d",&n);
+   printf("n=%d\n",n); // 输出函数调用前的n
+   fun(n);             // 函数调用，将输出1+2+…+n 的累加值
+   printf("n=%d\n",n); // 输出函数调用后的n
+} 
+int fun(int n)
+{  int i;
+   for(i=n-1;i>=1;i--) n=n+i; //关注形参n的变化
+   printf("n=%d\n",n);return 0;
+}

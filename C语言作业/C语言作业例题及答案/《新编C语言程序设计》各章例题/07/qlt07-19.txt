@@ -1,0 +1,17 @@
+#include <stdio.h>
+main()
+{  int i,j,p,q,s,n,a[11]={127,3,6,28,54,68,87,105,162,18};
+   for(i=0;i<10;i++) /*二重循环排序*/↑
+   {  p=i;q=a[i];
+      for(j=i+1;j<10;j++)
+         if(q<a[j]) {p=j;q=a[j];}
+      if(p!=i) {s=a[i];a[i]=a[p];a[p]=s;} /* p不等于i需要交换*/
+      printf("%d ",a[i]);
+   }
+   printf("\ninput number:\n");scanf("%d",&n); /* 输入插入数n*/
+   for(i=0;i<10;i++)
+     if(n>a[i])
+       {for(s=9;s>=i;s--)a[s+1]=a[s];break;}//break用得好，插入后就要结束循环
+   a[i]=n;
+   for(i=0;i<=10;i++) printf("%d ",a[i]); printf("\n"); //输出
+}

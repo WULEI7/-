@@ -1,0 +1,15 @@
+#include <stdio.h>
+//解法一：矩形法。 
+void main()
+{  int n,i; double a,b,x,h,f,sum=0; printf("Input the Number of interval:");
+   scanf(“%d”,&n);   /*输入小区间个数n，一般n越大积分值越精确*/
+   printf(“Input the integral interval：”);
+   scanf(“%lf,%lf”,&a,&b); /* 输入积分的上下限区间[a,b]，必须用%lf*/
+   h=(b-a)/n;          /* 矩形宽度 */
+   for(i=0;i<n;i++)
+   {  x=a+i*h;
+      f=x*x*x+2*x*x-x; /* 矩形高度 */
+      sum=sum+f*h;
+   }
+   printf("The value is:%lf\n",sum);
+}

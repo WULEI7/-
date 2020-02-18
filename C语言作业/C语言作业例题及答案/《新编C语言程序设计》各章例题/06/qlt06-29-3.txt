@@ -1,0 +1,19 @@
+// VC++6.0 中利用clock函数来计时
+#include <time.h>
+void main()
+{  time_t timep; long ltstart,ltend; int i;float timeuse;
+   time (&timep);  // 取当前时间
+   printf("%s", ctime(&timep));  // 显示当前日期与时间
+   printf("clock %ld = %f 秒\n",clock(),((float)clock())/CLOCKS_PER_SEC);
+   //CLOCKS_PER_SEC=1000，宏定义常量
+   _sleep(2000);  // VC++6.0中暂停2000毫秒，即2秒
+   printf("clock %ld = %f 秒\n",clock(),((float)clock())/CLOCKS_PER_SEC);
+   _sleep(3000);  // VC++6.0中暂停3000毫秒，即3秒
+   printf("clock %ld = %f 秒\n",clock(),((float)clock())/CLOCKS_PER_SEC);
+   srand(time(NULL));printf("生成 32000 个 rand number：\n");
+   ltstart=clock();//clock返回当前进程创建到现在时刻经过的时钟周期数(即毫秒数)
+   for (i=0;i<32000;i++) printf("%d ",rand()%100);//随机生成32000个100以内整数
+   ltend=clock();  //clock返回当前进程创建到现在时刻经过的时钟周期数(即毫秒数)
+   timeuse=((float)(ltend-ltstart))/CLOCKS_PER_SEC; // 计算运算间隔秒数
+   printf("\n生成并显示 32000 个随机数共耗时: %ld clock 单位(或毫秒) ，约 %f 秒\n",ltend-ltstart,timeuse);
+}

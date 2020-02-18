@@ -1,0 +1,19 @@
+#include <stdio.h>
+void nzp(int a[],int n)
+{  int i;
+   printf("\nvalues of array a are:\n");
+   for(i=0;i<n;i++)
+   {  if(a[i]<0) a[i]=0;
+      printf("%d ",a[i]);
+   }
+}
+main()
+{  int b[5],i,n=5;
+   printf("\ninput 5 numbers:\n");
+   for(i=0;i<n;i++) scanf("%d",&b[i]);
+   printf("initial values of array b are:\n");
+   for(i=0;i<n;i++) printf("%d ",b[i]);
+   nzp(b,n);
+   printf("\nlast values of array b are:\n");
+   for(i=0;i<n;i++) printf("%d ",b[i]);
+}

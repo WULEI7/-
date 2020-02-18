@@ -1,0 +1,10 @@
+#include <stdio.h>
+main()
+{  char *name[]={"Follow me","BASIC","Great Wall","FORTRAN","Computer desighn"};
+   char **p; int i;
+   for(i=0;i<5;i++)
+   {  p=name+i;
+      printf("%s\n",*p);   //可加个“printf("%o\n",*p);”看看输出的地址
+      printf("%c\n",**p);  /* (*p)代表name[i]元素内容，即name[i]数组元素存放的字符串首地址，则**p==*(*p)表示name[i]数组元素字符串首字符。*/
+   }
+}

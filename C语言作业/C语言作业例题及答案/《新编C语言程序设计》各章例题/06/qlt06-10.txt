@@ -1,0 +1,10 @@
+#include <stdio.h>
+#define PI 3.14159
+void main()
+{  int r,area;
+   for (r=1;r<10;r++)      // 思考：可以利用其他循环来改写
+   {   area=PI*r*r;
+       print("area=%f",area);
+       if(area>100) break; // 满足条件时，break退出循环
+   }
+}

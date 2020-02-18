@@ -1,0 +1,25 @@
+#include <stdio.h>
+main(){
+   enum body {one,two,three,four,five,six,seven} month[31],j; //定义month星期数组
+   int i; printf("Please input the first day's day of week(1-mon,..7-sun):");
+   scanf("%d",&i);         //输入该月第一天是星期几，1-周一，…7-周日
+   j=(enum body)(i-1)%7;   //对枚举变量j赋值
+   for(i=1;i<=30;i++){
+      month[i]=j++;        // j++ 枚举变量加1，表示后一个枚举值
+      if (j>seven) j=one;  // j超出最后一个枚举值，则设置为第一个枚举值
+   }
+   for(i=1;i<=30;i++)      // 赋值结束，以下对month星期数组输出
+   {  switch(month[i])
+      {  case one:printf("%2d %s\t",i,"一"); break;  // 对应输出星期几
+         case two:printf("%2d %s\t",i,"二"); break;
+         case three:printf("%2d %s\t",i,"三"); break;
+         case four:printf("%2d %s\t",i,"四"); break;
+         case five:printf("%2d %s\t",i,"五"); break;
+         case six:printf("%2d %s\t",i,"六"); break;
+         case seven:printf("%2d %s\t",i,"日"); break;
+         default:break;
+      }
+      if (i%7==0) printf("\n");   // 7天换一行
+   }
+   printf("\n");
+}

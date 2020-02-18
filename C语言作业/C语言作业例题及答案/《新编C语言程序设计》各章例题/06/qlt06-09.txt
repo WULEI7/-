@@ -1,0 +1,11 @@
+#include <stdio.h>
+main()
+{  char c; int i=0;
+   while(c!=13)    /*不是回车符则循环*/
+   {  c=getch();
+      if(c==0X1B)  // 0X1B=27
+         continue; /*若按Esc键，不计数也不输出该键，并进入下次循环*/
+      i++; printf("%c\n", c);
+   }
+   printf("i=%d\n",i);
+}

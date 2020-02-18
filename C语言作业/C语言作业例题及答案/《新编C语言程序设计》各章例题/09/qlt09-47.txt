@@ -1,0 +1,29 @@
+#include <stdio.h>
+#define  N 25
+void main()
+{  int bins(int a[],int n,int x); /* 自定义函数声明 */
+   int a[N],i=1,x,pos;
+   scanf("%d",&a[0]);       /* 输入第0号元素 */
+   while(i<N)
+   {  scanf("%d",&a[i]);    /* 输入第i号元素 */
+      if(a[i]>=a[i-1]) i++; /*如果输入数据为升序，则输入下一个元素，否则重新输入*/
+   }
+   scanf("%d",&x);          /* 输入要查找的数据 */
+   pos=bins(a,N,x);         /* 调用折半法查找数据的函数 */
+   if(pos!=-1)
+       printf("%d,%d",pos,x);/* 如果找到，输出位置及该数 */
+   else printf("Not found");
+}
+/*升序折半法查找函数。int a[]－升序数组 int n－数组个数 int x－要查找的数*/
+int bins(int a[],int n,int x)  //或 int bins(int *a,int n,int x)
+{  int low,high,mid;
+   low=0;                 /* low—左端点 */ 
+   high=n-1;              /* high—右端点 */
+   while(low<=high)
+   {   mid=(low+high)/2;  /* mid—中间点 */
+       if(x>a[mid]) low=mid+1;       /* 重新分区间段 */
+       else if(x<a[mid]) high=mid-1; /* 重新分区间段 */
+       else return(mid);             /* 返回要找数所在位置 */
+   }
+   return(-1);            /* 未找到返回-1 */
+}

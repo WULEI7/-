@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+#define FORMAT "%d\t%s\t%f\t%f\t%f\n"
+struct student
+{  int num;        /* 学号 */
+   char name[20];  /* 姓名 */
+   float score[3]; /* 3门成绩 */
+};
+void print(struct student);
+void main()
+{  struct student stu;
+   stu.num=12345;
+   strcpy(stu.name, "Li Lin");
+   stu.score[0]=67.5;
+   stu.score[1]=89;
+   stu.score[2]=78.6;
+   print(stu);
+}
+void print(struct student stu)     /* 输出学生信息 */
+{   printf(FORMAT,stu.num,stu.name,stu.score[0],    \
+                  stu.score[1],stu.score[2]);
+}

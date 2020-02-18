@@ -1,0 +1,7 @@
+#include <stdio.h>
+main()
+{  char st[15];
+   printf("input string:");
+   scanf("%s",st);
+   printf("%s\n",st);
+}

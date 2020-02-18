@@ -1,0 +1,38 @@
+#include <stdio.h>
+struct student
+{  int num;
+   char name[20];
+   char sex;
+   float score;
+}stu[]={ {101,"Li ping",'M',45}, {102,"Zhang ping",'M',62.5}, {103,"He fang",'F',92.5},
+ {104,"Cheng ling",'F',87}, {105,"Wang ming",'M',58} };
+void main()
+{  struct student *ps;
+   void aver(struct student *ps);
+   ps=stu;
+   aver(ps);
+}
+void aver(struct student *ps)  //或 void aver(struct student ps[])
+{  int c=0,i;
+   float avers,total=0;
+   for(i=0;i<5;i++,ps++)       //或 for(;ps<stu+5;ps++)
+   {
+      total +=ps->score;
+      if(ps->score<60) c+=1;
+   }
+   avers= total /5;
+   printf("average=%f\ncount=%d\n",avers,c);
+}
+
+/* stu 结构体数组定义与初始化同上，略*/
+main() //本程序效率相对低，只为说明以整个结构体数据为参数虚实传递的情况
+{  float total=0; int c=0,i;
+   void aver(struct student,float *,int *);    //函数声明
+   for(i=0;i<5;i++)  avers(stu[i],&total,&c);  //循环调用函数5次
+   printf("average=%f\ncount=%d\n",total/5,c); //总分与次数指针变量方式返回
+}
+void aver(struct student ps,float *total,int *c)   //ps为student结构体变量
+{
+   *total +=ps.score;
+   if(ps.score<60) *c+=1;
+}

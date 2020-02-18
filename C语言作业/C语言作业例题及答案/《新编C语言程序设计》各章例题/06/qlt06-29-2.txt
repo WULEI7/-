@@ -1,0 +1,14 @@
+// Win-TC中程序如下：
+#include <stdlib.h>
+#include <sys/timeb.h>
+int main()
+{  struct timeb tpstart,tpend; long timeuse;int i;
+   srand(time(NULL));
+   printf("Get 32000 rand number：\n");
+   ftime(&tpstart);  //获得初始时间，以下是测试程序段（可替换）
+   for (i=0; i<32000; i++) printf("%d ", rand()%100); /*随机生成32000个100以内整数*/
+   ftime(&tpend);  //获取结束时间，以上是测试程序段（可替换）
+   timeuse=(tpend.time-tpstart.time)*1000+tpend.millitm-tpstart.millitm; //计算耗时
+   printf( "\n生成并显示 32000 个随机数共耗时: %ld 毫秒\n",timeuse); getch();
+}
+

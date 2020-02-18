@@ -1,0 +1,13 @@
+#include <stdio.h>
+void main()
+{  int a[2][3],b[3][2],i,j;
+   printf("输入原数组：\n");
+   for(i=0;i<2;i++)
+     for(j=0;j<3;j++) scanf("%d",&a[i][j]);
+   printf("转置后的数组：\n");
+   for(j=0;j<3;j++)
+     for(i=0;i<2;i++)
+         b[j][i]=a[i][j]; //转置的关键语句，其他矩阵旋转或变换主要修改本语句
+   for(j=0;j<3;j++)
+   { for(i=0;i<2;i++) printf (" %4d ",b[j][i]); printf ("\n");}
+}

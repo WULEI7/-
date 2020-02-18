@@ -1,0 +1,14 @@
+#include <stdio.h>
+struct student
+{  int num;
+   char name[20];
+   char sex;
+   float score;
+}stu[]={{101,"Zhou ping",'M',45}, {102,"Zhang ping",'M',62.5}, {103,"Liou fang",'F',92.5},
+ {104,"Cheng ling",'F',87}, {105,"Wang ming",'M',58}};
+void main()
+{  struct student *ps;
+   printf("No\tName\t\t\tSex\tScore\t\n");
+   for(ps=stu;ps<stu+5;ps++)  //¡°5¡±¿É¸ÄÎª£ºsizeof(stu)/sizeof(struct student)
+   printf("%d\t%s\t\t%c\t%f\t\n",ps->num,ps->name,ps->sex,ps->score);
+}

@@ -1,0 +1,15 @@
+#include <stdio.h>
+long func(int n)
+{  long f=-1;
+   if(n<0) printf("n<0,input error"); /* 提示n输入错误 */
+   else if(n==0||n==1) f=1;      /* 判断是否为结束条件 */
+   else f= func(n-1)*n;          /* 求n!的递归方式，返回n!值 */
+   return(f);                    /* 返回func的函数值 */
+}
+main()
+{  int n;  long y;     /* 定义长整型变量存放n的阶乘的值 */
+   printf("\ninput a inteager number:\n");
+   scanf("%d",&n);
+   y= func(n);         /* 调用求n的阶乘函数*/
+   printf("%d!=%ld",n,y);
+}

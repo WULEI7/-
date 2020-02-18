@@ -1,0 +1,16 @@
+#include <Windows.h>
+#include <time.h>
+void main()
+{  LARGE_INTEGER start;     /*开始时间变量*/
+   LARGE_INTEGER end ;      /*结束时间变量*/
+   LARGE_INTEGER frequency; /*计时器频率变量*/
+   int i = 0;
+   // QueryPerformanceFrequency函数返回硬件支持的高精度计数器的频率
+   if (!QueryPerformanceFrequency(&frequency)) return -1;/*获取计时器频率*/
+   srand(time(NULL)); 
+   QueryPerformanceCounter(&start);//获取开始时间（即获取的前计数）
+   for (i=0;i<32000;i++) printf("%d ",rand()%100);//可换成你要测试时间的程序语句
+   QueryPerformanceCounter(&end);  //获取结束时间（即获取的后计数）
+   printf("\nexecution time about:%f 秒（精度达微秒）\n",(double)(end.QuadPart- start.QuadPart)/(double)frequency.QuadPart); //计算并打印for循环执行时间，精度达毫秒级。
+}
+

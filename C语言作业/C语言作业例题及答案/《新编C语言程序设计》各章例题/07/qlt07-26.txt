@@ -1,0 +1,13 @@
+#include <stdio.h>
+void main()
+{  int i; char a[20],b[20];
+   printf("Input a string: "); scanf("%s",a); /* 输入字符串a */
+   /* 用循环方式复制字符串 */
+   for(i=0;a[i]!='\0';i++)
+      b[i]=a[i]; /*完成了库函数strcpy(b, a);直接复制功能*/
+   b[i]='\0';      /* b字符数组最后一个字符应为\0 */
+   printf("a string: %s\n",a);  /* 输出字符串a和b */
+   printf("b string: %s\n",b);
+}
+
+

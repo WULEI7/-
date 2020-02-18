@@ -1,0 +1,17 @@
+#include <stdio.h>
+main(){
+   static char *name[]={ "Illegal day", "Monday","Tuesday","Wednesday",
+                     "Thursday","Friday","Saturday","Sunday"};
+   char *ps; int i;
+   char *day_name(char *name[],int n); //函数声明
+   printf("input Day No:"); scanf("%d",&i);
+   if(i<0||i>100) exit(1);  //i在错误范围而退出
+   ps=day_name(name,i);
+   printf("Day No:%2d-->%s\n",i,ps);
+}
+char *day_name(char *name[],int n)
+{  char *pp1,*pp2;
+   pp1=*name;
+   pp2=*(name+n);
+   return((n<1||n>7)? pp1:pp2);
+}

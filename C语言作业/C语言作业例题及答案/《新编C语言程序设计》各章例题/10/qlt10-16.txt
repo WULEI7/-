@@ -1,0 +1,27 @@
+#include <stdio.h>
+struct yyyymmdd
+{  int year;   /* 年 */
+   int month;  /* 月 */
+   int day;    /* 日 */
+};
+typedef struct yyyymmdd YMD;
+int countdays(YMD date);
+void main()
+{  YMD date; int days;
+   printf("Input year,month,day:");
+   scanf("%d-%d-%d",&date.year,&date.month,&date.day); /* 输入年月日*/
+   /* 注意这里没对年、月、日输入值加以合法性检验的 */
+   days=countdays(date);      /* 计算天数 */
+   printf("%d-%d-%d is the %dth day in %d.\n",date.year,date.month,
+date.day,days,date.year);
+}
+int countdays(YMD date)
+{  int days=0,i;
+   int day_tab[13]={0,31,28,31,30,31,30,31,31,30,31,30,31};
+   for(i=1;i<date.month;i++)
+       days+=day_tab[i];   /* 累计前面月数的天数 */
+   days+=date.day;         /* 加上当月天数 */
+   if((date.year%4==0&&date.year%100!=0||date.year%400==0)&&date.month>2)
+       days++;             /* 闰年且在2月份之后要加1 */
+   return(days);
+}

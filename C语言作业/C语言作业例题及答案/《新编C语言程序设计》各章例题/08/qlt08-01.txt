@@ -1,0 +1,13 @@
+#include <stdio.h>
+int max(int a,int b) //注意：每个形参都要独立类型说明，int max(int a,b)是错的
+{
+   if(a>b)return a; else return b;
+}
+main()
+{  int max(int a,int b); //函数声明，函数定义在函数使用前面，这里声明可省
+   int x,y,z;
+   printf("input two numbers:\n");
+   scanf("%d%d",&x,&y);
+   z=max(x,y);
+   printf("maxmum=%d",z);
+}

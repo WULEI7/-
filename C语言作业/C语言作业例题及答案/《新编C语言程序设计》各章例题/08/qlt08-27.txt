@@ -1,0 +1,31 @@
+#include <stdio.h>
+int leap(int year)  //定义函数leap，判断是否为闰年
+{  int lp; lp=(year%4==0&&year%100!=0||year%400==0)?1:0;
+   return lp;
+}
+int month_days(int year,int month) //定义函数month_days，返回各月份的天数
+{  int d;
+   switch(month)
+   {  case 1:
+      case 3:
+      case 5:case 7:case 8:case 10:
+      case 12:d=31;break;         //多个月份并列
+      case 2:d=leap(year)?29:28;break; //调用函数leap
+      default:d=30;
+   }
+   return d;
+}
+int days(int year,int month,int day) //定义函数days，累加所输入月份之前的天数
+{  int i,ds=0;
+   for(i=1;i<month;i++)
+      ds=ds+month_days(year,i); //调用函数month_days ，累加天数
+   ds=ds+day;
+   return ds;
+}
+void main()
+{  int year,month,day,t_day;
+   printf("Input year-month-day:\n");
+   scanf("%d-%d-%d",&year,&month,&day);
+   t_day=days(year,month,day);   //调用函数days
+   printf("%d-%d-%d is %dth day of the year!\n",year,month,day,t_day); 
+}

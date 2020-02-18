@@ -1,0 +1,14 @@
+#include <stdio.h>
+main()
+{  int i,j,k;
+   for(i=1;i<=9;i++)      //外循环控制行数
+   {
+      for(j=0;j<=9-i;j++) //内循环用空格光标定位
+         printf(" ");
+      for(k=1;k<=i;k++)   //内循环输出每行前半部分数字1到i
+         printf("%d",k);
+      for(k=i-1;k>=1;k--) //内循环输出每行后半部分数字（i-1）到1
+         printf("%d",k);
+      printf("\n");       //每输完一行光标换行
+   }
+}

@@ -1,0 +1,15 @@
+#include <stdio.h>
+float aver(float *pa); //函数声明
+main(){
+   float sco[5],av,*sp; int i; sp=sco;
+   printf("\ninput 5 scores:\n");
+   for(i=0;i<5;i++) scanf("%f",&sco[i]);
+   av=aver(sp);
+   printf("average score is %5.2f",av);
+}
+float aver(float *pa)  //函数aver计算pa指向数组的5个元素的平均值
+{  int i; float av,s=0;
+   for(i=0;i<5;i++) s=s+*pa++;
+   av=s/5;
+   return av;
+}

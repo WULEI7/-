@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+int cmpasc(const void*a,const void*b) //代表升序排序指示函数
+{
+    return *(int*)a-*(int*)b; 
+}
+int cmpdesc(const void*a,const void*b) //代表降序排序指示函数
+{
+    return *(int*)b-*(int*)a; 
+}
+main()
+{
+    int i,a[10]={3,7,9,11,0,6,7,5,4,2},*p,key=6;
+    printf("The original array:");
+    for(i=0;i<10;i++) printf("%d,",a[i]); printf("\n"); //输出原数组
+
+    qsort(a,10,sizeof(a[0]),cmpdesc); //调用库排序函数qsort取代sort(p,10);降序排序
+    printf("descending order  :");
+    for(p=a,i=0;i<10;i++) {printf("%d ",*p);p++;} //降序输出
+
+    //下面再次调用qsort函数按升序排序，为调用bsearch二分查找元素做好准备
+    qsort(a,10,sizeof(a[0]),cmpasc);  // 调用库排序函数qsort升序排序
+
+    printf("\nascending order  :");
+    for(p=a,i=0;i<10;i++){printf("%d ",*p);p++;}//升序输出
+
+    p=(int *)bsearch(&key,a,10,sizeof(a[0]),cmpasc); //二分法a中查找key元素的库函数
+    if(p) printf("\n%d is in the array[%d].\n",key,p-&a[0]);/*找到，p指向找到的元素*/
+    else printf("\n%d isn't in the array.\n",key);          /* 没找到，p为0*/
+}

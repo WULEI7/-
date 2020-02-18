@@ -1,0 +1,10 @@
+#include <stdio.h>
+int fac(int n)
+{  register int i,f=1;  //指定register，i,f的运算可以快些
+   for(i=1;i<=n;i++) f=f*i;
+   return(f);
+}
+main()
+{  int i;
+   for(i=0;i<=5;i++) printf("%d!=%d\n",i,fac(i));
+}

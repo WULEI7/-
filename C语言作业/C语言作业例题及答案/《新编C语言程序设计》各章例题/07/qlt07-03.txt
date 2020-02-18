@@ -1,0 +1,15 @@
+#include <stdio.h>
+main()
+{
+   int i,j,p,q,s,a[10];
+   printf("\n input 10 numbers:\n");
+   for(i=0;i<10;i++) scanf("%d",&a[i]);  //数组元素如变量，不忘加上&
+   for(i=0;i<10;i++){   //选择排定a[i]元素
+      p=i;q=a[i];
+      for(j=i+1;j<10;j++) if(q<a[j]){p=j;q=a[j];}
+      if(i!=p) {         // i!=p时需要交换a[i]与a[p]两元素
+         s=a[i]; a[i]=a[p]; a[p]=s; 
+      }
+      printf("%d ",a[i]);//a[i]元素排定后马上输出，省得最后再安排循环输出
+   }
+}

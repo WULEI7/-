@@ -1,0 +1,17 @@
+#include <stdio.h>
+main()
+{
+   struct student
+   {  int num;
+       char name[20];
+       char sex;
+       float score;
+   } stu1,stu2;
+   stu1.num=102;                        //成员赋值
+   stu1.name="Zhang ping";              //成员赋值
+   printf("input sex and score\n");
+   scanf("%c %f",&stu1.sex,&stu1.score);//成员输入
+   stu2=stu1;  // stu1的所有成员的值整体赋予stu2
+   printf("Number=%d\nName=%s\n",stu2.num,stu2.name); //成员要逐个输出
+   printf("Sex=%c\nScore=%f\n",stu2.sex,stu2.score);  //成员不能整体输出
+}

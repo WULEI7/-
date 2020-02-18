@@ -1,0 +1,13 @@
+#include <stdio.h>
+//（1）是试除法
+void main()
+{  int n1,n2,small,gcd=1;
+   printf("请输入两个数，求这两个数的最大公约数和最小公倍数！\n");
+   scanf("%d%d",&n1,&n2);
+   if(n1<n2) small=n1;
+   else small=n2;
+   for(;small>1;small--)
+     if(n1%small==0 && n2%small==0) { gcd=small; break; }
+   printf("%d和%d的最大公约数是%d\n",n1,n2,gcd);
+   printf("%d和%d的最小公倍数是%d\n",n1,n2, n1*n2/gcd);
+}

@@ -1,0 +1,11 @@
+#include <stdio.h>
+void main()
+{
+  int i,j; char a[]="abcdefg",b[]="123456789",*s=a,*t=b;
+   printf("%s\n%s\n",s,t);
+   while(*t=*s){t++;s++;} 
+   //或for(i=0;t[i]=s[i];i++);
+   //或for(i=0,j=0;t[i++]=s[j++];);
+   //do{*t++=*s++;}while(*s);因'\0'未能复制，为此不对
+   printf("%s\n%s\n",a,b);
+}

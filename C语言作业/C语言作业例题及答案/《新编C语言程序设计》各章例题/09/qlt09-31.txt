@@ -1,0 +1,13 @@
+#include <stdio.h>
+void main()
+{  char *cp="I love China!",cstr[]="I love China!!! "; //cp指向字符串常量的首字符
+   cp[7]= 'c';  //cp指向字符串常量，本赋值不合法
+   cp=cp+7;     //cp指向第8个字符C，这是可以的。但cstr=cstr+7;是不可以的
+   printf("%s\n",cp);  //输出cp指向字符到字符串结束标志’\0’间的字符串
+   cp=cp-7;     //cp又指向字符串首字符，为下面语句做好准备
+   printf("%c %c\n",cp[7],*(cp+7));//赋值不可以，但下标法与地址法读取引用是可以的
+   cp=cstr;     //cp指向字符数组了。
+   cp[7]='c';cstr[7]='C';  //此时，cp[7]与cstr[7]都代表数组第8个元素，可赋值
+   *(cp+7)='c'; *(cstr+7)='C';//cp指向数组时，也可以用地址法引用数组元素
+   printf("%s\n",cstr);    //输出字符数组
+}

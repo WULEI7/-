@@ -1,0 +1,10 @@
+#include <stdio.h>
+main(){
+   int a=10,b=20,s,t,*pa,*pb; /*说明pa,pb为整型指针变量*/
+   pa=&a;                     /*给指针变量pa赋值，pa指向变量a*/
+   pb=&b;                     /*给指针变量pb赋值，pb指向变量b*/
+   s=*pa+*pb;                 /*求a+b之和,(*pa就是a,*pb就是b)*/
+   t=*pa**pb;                 /*本行是求a*b之积*/
+   printf("a=%d\nb=%d\na+b=%d\na*b=%d\n",a,b,a+b,a*b);
+   printf("s=%d\nt=%d\n",s,t);
+}

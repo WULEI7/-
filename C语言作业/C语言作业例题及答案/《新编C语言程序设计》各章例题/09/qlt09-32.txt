@@ -1,0 +1,13 @@
+#include <stdio.h>
+int max(int a,int b){
+   if(a>b)return a;
+   else return b;
+}
+void main(){
+   int (*pmax)(int,int); //pmax这里为类型定义，pmax是函数指针变量
+   int x,y,z;
+   pmax=max;       //把函数名赋值给函数指针变量
+   printf("input two numbers:\n"); scanf("%d%d",&x,&y);
+   z=(*pmax)(x,y); //调用函数指针变量指向的函数，注意：“z=pmax(x,y);”也可以
+   printf("maxmum=%d",z);
+}

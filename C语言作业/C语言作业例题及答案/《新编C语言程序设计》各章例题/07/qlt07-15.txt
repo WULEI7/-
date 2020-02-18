@@ -1,0 +1,8 @@
+#include <stdio.h>
+#include "string.h"
+main()
+{  int k;
+   static char st[]="C language"; //st分配到静态存储区，详见下章8.9节
+   k=strlen(st);
+   printf("The length of the string is %d\n",k);
+}

@@ -1,0 +1,15 @@
+#include <stdio.h>
+union data
+{  int i;
+   char c[2];
+};
+typedef union data DATA;
+void main()
+{ DATA r,*s=&r; // r为共用体变量，s为指向r的指针，下面赋值后数据存放r中
+  s->c[0]='b'; s->c[1]='a'; // 给共用体成员c字符数组赋值
+  printf("c[0]=%c,c[1]=%c,ih=%xH,id=%d\n",r.c[0],s->c[1],(*s).i,s->i);//两个成员角度引用
+  printf("c[0]=%d,c[1]=%d\n",r.c[0],s->c[1]);  //两种引用方式
+  s->i=0x3833;  // 给共用体成员i整数赋值，覆盖前成员c的赋值了
+  printf("c[0]=%c,c[1]=%c,ih=%xH,id=%d\n",r.c[0],s->c[1],(*s).i,s->i);
+  printf("c[0]=%d,c[1]=%d\n",r.c[0],s->c[1]);
+}

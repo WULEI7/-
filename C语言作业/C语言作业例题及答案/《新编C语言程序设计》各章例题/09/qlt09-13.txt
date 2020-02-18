@@ -1,0 +1,6 @@
+#include <stdio.h>
+main(){
+   int *p,i,a[10]; p=a;
+   for(i=0;i<10;i++) *p++=i;
+   for(i=0;i<10;i++) printf("a[%d]=%d\n",i,*p++);
+}

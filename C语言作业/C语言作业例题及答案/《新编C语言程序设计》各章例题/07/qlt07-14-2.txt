@@ -1,0 +1,8 @@
+#include <stdio.h>
+main()
+{  char st[15],*sp;  //指针内容见后续章节
+   printf("input string:\n");
+   sp=gets(st); //gets读取字符串到st，同时返回字符指针到字符指针变量。
+   puts(st);
+   puts(sp);    //效果同上语句
+}

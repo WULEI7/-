@@ -1,0 +1,14 @@
+#define N 30
+#include <stdio.h>
+void main()
+{   int a[N],i,j,t; printf("Input %d score:\n",N);
+    for(i=0;i<=N-1;i++) scanf("%d",&a[i]); printf("\n"); /* 输入成绩 */
+    for(j=0;j<=N-2;j++)            /* 冒泡法排序 */
+      for(i=0;i<=N-j-2;i++)
+        if(a[i]>a[i+1]){ t=a[i]; a[i]=a[i+1]; a[i+1]=t; } /*按条件交换两数*/
+    printf("The sorted score:\n"); /* 开始输出数据 */
+    for(i=0;i<=N-1;i++)
+    {  if(i%6==0) printf("\n");    /*每6个数换行*/
+       printf("%4d ",a[i]);        /*排序后输出成绩*/
+    }
+}

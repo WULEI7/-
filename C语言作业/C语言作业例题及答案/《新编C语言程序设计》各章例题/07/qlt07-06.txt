@@ -1,0 +1,17 @@
+#include <stdio.h>
+main()
+{  int i,j,s=0,average,v[3],a[5][3];
+   printf("input score\n");
+   for(i=0;i<3;i++)      // 3门课分别处理
+   {
+      for(j=0;j<5;j++)   // 输入1门课5人的成绩并累加
+      {  scanf("%d",&a[j][i]);
+         s=s+a[j][i];}
+      }
+      v[i]=s / 5;   //计算课程平均成绩
+      s=0;          //累计和变量初始化，也可放内for循环前
+   }
+   average =(v[0]+v[1]+v[2])/3;
+   printf("math:%d\nc languag:%d\nfoxpro:%d\n",v[0],v[1],v[2]);
+   printf("total:%d\n", average );
+}

@@ -1,0 +1,13 @@
+#include <stdio.h>
+main()
+{  extern A,B;             // 全局变量作用域从此声明处开始
+   int max(int x,int y);
+   printf("%d\n",max(A,B));
+}
+/* 拆分成两个文件的话，这里是分界线 */
+int max(int x,int y)
+{  int z;
+   z=x>y?x:y;
+   return(z);
+}
+int A=13,B=-8;

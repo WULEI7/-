@@ -1,0 +1,18 @@
+为此，希望集成VC++6.0方便的开发平台和TC简单的绘图功能，VC++6.0里安装个EasyX 库能达到这个效果。EasyX 在使用上，基本和TC/BC里面的graphics.h没太大区别。先看个简单的画圆的例子：
+#include <graphics.h>    // 这样引用 EasyX 图形库，程序以.cpp为扩展名
+#include <conio.h>
+void main()
+{   initgraph(640, 480);   // 这里和TC 略有区别
+    circle(100, 100, 60);   // 画圆，圆心(100,100)，半径60。可换成其他画图函数
+    getch();             // 按任意键继续
+    closegraph();        // 关闭图形界面
+}
+
+下载并安装 EasyX，请参考：http://www.easyx.cn/news/View.aspx?id=5
+
+EasyX 的使用范例，请参考：// http://www.easyx.cn/samples/
+
+
+VC++运行本程序前，需要先安装EasyX
+VC++运行本程序前，需要先安装EasyX
+VC++运行本程序前，需要先安装EasyX

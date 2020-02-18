@@ -1,0 +1,13 @@
+#include <stdio.h>
+void main()
+{  int i,p=-1; char s[30],ch;
+   clrscr();       /* 清屏函数，VC++6.0中不能用，可用system("cls")替代*/
+   scanf("%s",s);    /* 输入字符串赋给字符数组变量s */
+   fflush(stdin);    /* 清除scanf()函数最后的非接收字符 */
+   ch=getchar();     /* 输入要查找的字符赋给字符变量ch */
+   for(i=0;s[i]!='\0';i++)
+      if(s[i]==ch){p=i;break;}/*找到该字符后就退出循环，否则到字符串结束*/
+   if(p!=-1) printf("字符 %c 在字符串 %s 中的位置为：%d 。\n",ch,s,p+1);
+   else printf("字符 %c 在字符串 %s 中没有找到。\n",ch,s);
+}
+

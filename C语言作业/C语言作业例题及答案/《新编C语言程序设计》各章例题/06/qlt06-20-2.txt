@@ -1,0 +1,12 @@
+#include <stdio.h>
+//（2）是辗转相除法
+void main()
+{  int n1,n2,ibcs,ics,iys; //分别存放两个数，被除数，除数，余数
+   printf("请输入两个数，求这两个数的最大公约数和最小公倍数！\n");
+   scanf("%d,%d",&n1,&n2);
+   if(n1>n2) { iys=n1; n1=n2; n2=iys; }
+   ibcs=n2; ics=n1;
+   while(ics!=0){ iys=ibcs%ics; ibcs=ics; ics=iys; }
+   printf("%d和%d的最大公约数是%d\n",n1,n2, ibcs);
+   printf("%d和%d的最小公倍数是%d\n",n1,n2, n1*n2/ ibcs);
+}

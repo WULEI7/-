@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <math.h>
+void root(int a,int b,int c);  /* 以下连续4个是自定义函数的声明 */
+float root1(int a,int b,int c);
+void root2(int a,int b,int c);
+void root3(int a,int b,int c);
+void main()       /* 主函数 */
+{  int a,b,c; printf("Input a,b,c: "); scanf("%d,%d,%d",&a,&b,&c);
+   root(a,b,c);   /* 调用求方程根函数 */
+}
+void root(int a,int b,int c)   /* 求方程根函数 */
+{  float disc,r;
+   disc=b*b-4*a*c;       /* 求判别式的值 */
+   if(disc==0)
+   {   r=root1(a,b,c);   /* 调用求两个相等实根函数 */
+       printf("x1=%7.2f\tx2=%7.2f\n",r,r);
+   }
+   else if(disc>0) root2(a,b,c);/* 调用求两个不相等实根函数 */
+        else root3(a,b,c);      /* 调用求两个虚根函数 */
+}
+float root1(int a,int b,int c)  /* 求方程两个相等实根函数 */
+{  float r;
+   r=(-b)/(2.0*a);              /* 计算相等的实根 */
+   return(r); 
+}
+void root2(int a,int b,int c)   /* 求方程两个不相等实根函数 */
+{  float disc,x1,x2; disc=b*b-4*a*c;
+   x1=(-b+sqrt(disc))/(2.0*a);  /* 计算实根x1 */
+   x2=(-b-sqrt(disc))/(2.0*a);  /* 计算实根x2 */
+   printf("x1=%7.2f\tx2=%7.2f\n",x1,x2);
+}
+void root3(int a,int b,int c)   /* 求方程两个虚根函数 */
+{  float disc,p,q; disc=b*b-4*a*c;
+   p=-b/(2.0*a);                /* 计算虚根实部p */
+   q=sqrt(-disc)/(2.0*a);       /* 计算虚根虚部q */
+   printf("x1=%7.2f+%7.2fi\tx2=%7.2f-%7.2fi\n",p,q,p,q);
+} 
