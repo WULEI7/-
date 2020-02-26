@@ -1,9 +1,0 @@
-#include <stdio.h>
-cpystr(char *pds,char *pss){
-   while(*pds++=*pss++);
-}
-main(){
-   char *pa="CHINA",b[10],*pb=b;
-   cpystr(pb,pa);
-   printf("string a=%s\nstring b=%s\n",pa,pb);
-}

@@ -1,9 +1,0 @@
-#include <stdio.h>
-void main()
-{  float sum=13.7,rate; int year=0;
-   printf("Input rate="); scanf("%f",&rate);
-   do{
-       sum=sum*(1+rate); year++;
-   } while(sum<15);
-   printf("year=%d\n",year);
-}

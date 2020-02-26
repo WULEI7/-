@@ -1,7 +1,0 @@
-// file2.c ÎÄ¼ş2
-int max(int x,int y)
-{  int z;
-   z=x>y?x:y;
-   return(z);
-}
-static int A=13,B=-8;

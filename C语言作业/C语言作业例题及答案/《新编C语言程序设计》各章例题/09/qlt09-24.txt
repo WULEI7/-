@@ -1,5 +1,0 @@
-#include <stdio.h>
-main(){
-   char string[]="I love China! ";
-   printf("%s\n",string);
-}

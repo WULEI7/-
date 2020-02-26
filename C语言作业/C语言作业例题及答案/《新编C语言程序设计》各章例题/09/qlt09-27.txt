@@ -1,9 +1,0 @@
-#include <stdio.h>
-main(){
-   char st[20],*ps=st; int i;
-   printf("input a string:\n");
-   scanf("%s",ps); //不用字符指针的话为：scanf("%s",st);
-   for(i=0;ps[i]!='\0';i++)
-     if(ps[i]=='k'){printf("There is a 'k' in the string.\n"); break; }
-   if(ps[i]=='\0') printf("There is no 'k' in the string.\n");
-}

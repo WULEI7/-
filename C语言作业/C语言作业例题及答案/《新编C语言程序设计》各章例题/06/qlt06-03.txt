@@ -1,6 +1,0 @@
-#include <stdio.h>
-main(){
-   int n=0;printf("input a string:\n");
-   while(getchar()!='\n') n++; // Ñ­»·ÌåÎªn++
-   printf("%d",n);
-}

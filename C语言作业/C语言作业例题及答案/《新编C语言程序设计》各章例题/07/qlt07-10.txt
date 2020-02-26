@@ -1,6 +1,0 @@
-#include <stdio.h>
-main()
-{
-   char c[]="BASIC\ndBASE";
-   printf("%s\n",c);   //c为数组名，字符数组输出时可以整体处理的
-}

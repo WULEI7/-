@@ -1,9 +1,0 @@
-#include <stdio.h>
-#include <stdlib.h>
-void main()
-{  char a[10],*p=a;
-   p = (char * )malloc(10);  //p指向申请分配区域
-   p = "Hello"; //应该改为strcpy(p,"Hello"); 否则程序会运行出错
-   printf("%s\n", p);
-   free(p);     //p应指向malloc所分配的区域，再释放，否则错误
-}
