@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-int a[4],b[3],flag=0;
+int n,a[10],b[3],flag=0;
 void dfs(int cur,int pla)//cur表示目前b数组已填数字的个数，pla表示前一个填的数在a数组中的位置 
 {
 	if(cur==3)
@@ -12,7 +12,7 @@ void dfs(int cur,int pla)//cur表示目前b数组已填数字的个数，pla表示前一个填的数在
 	}//当b数组中填满3个数字时判断状态 
 	else
 	{
-		for(int i=pla;i<4;i++)
+		for(int i=pla;i<n;i++)
 		{
 			b[cur]=a[i];
 			dfs(cur+1,i+1);
@@ -23,10 +23,10 @@ void dfs(int cur,int pla)//cur表示目前b数组已填数字的个数，pla表示前一个填的数在
 
 int main()
 {
-	int i;
-	for(i=0;i<4;i++)
+	cin>>n;
+	for(int i=0;i<n;i++)
 		cin>>a[i];//a数组输入各木棍长度 
-	sort(a,a+4);//将a数组从小到大排序，以便后续操作 
+	sort(a,a+n);//将a数组从小到大排序，以便后续操作 
 	dfs(0,0);
 	if(flag==0) cout<<"IMPOSSIBLE";
 	if(flag==1) cout<<"SEGMENT";
