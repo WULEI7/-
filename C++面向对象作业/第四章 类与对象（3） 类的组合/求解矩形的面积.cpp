@@ -30,30 +30,28 @@ class CRectangle
 		CRectangle(CPoint xp1,CPoint xp2);
 		CRectangle(int a,int b,int c,int d);
 		CRectangle(CRectangle &r);
-		int GetArea() {return area;}
+		int GetArea()
+		{
+			return abs((p1.getX()-p2.getX())*(p1.getY()-p2.getY()));
+		}
 	private:
 		CPoint p1,p2;
-		int area;
 };
 
-CRectangle::CRectangle():p1(),p2() 
+CRectangle::CRectangle():p1(),p2()
 {
-	area=abs((p1.getX()-p2.getX())*(p1.getY()-p2.getY()));
 	cout<<"CRectangle default contstructor is called."<<endl;
 }
 CRectangle::CRectangle(CPoint xp1,CPoint xp2):p1(xp1),p2(xp2)
 {
-	area=abs((p1.getX()-p2.getX())*(p1.getY()-p2.getY()));
 	cout<<"CRectangle contstructor with (CPoint,CPoint) is called."<<endl;
 }
 CRectangle::CRectangle(int a,int b,int c,int d):p1(a,b),p2(c,d)
 {
-	area=abs((p1.getX()-p2.getX())*(p1.getY()-p2.getY()));
 	cout<<"CRectangle contstructor with (int,int,int,int) is called."<<endl;
 }
 CRectangle::CRectangle(CRectangle &r):p1(r.p1),p2(r.p2)
 {
-	area=r.area;
 	cout<<"CRectangle copy contstructor is called."<<endl;
 }
 
