@@ -54,7 +54,7 @@ class Store
 		Book findbyID(int ID);
 		Book findbyName(string name);
 		void printList();
-		int GetCount() {return m_Count;}
+		unsigned int GetCount() {return m_Count;}
 		void SetCount(int count) {m_Count=count;}
 	private:
 		Book *m_pBook;
@@ -85,6 +85,7 @@ Store::Store(const Store &other)
 	m_pBook=new Book[m_Count];
 	for(unsigned int i=0;i<m_Count;i++)
 		m_pBook[i]=other.m_pBook[i];
+	cout<<"Store copy constructor called!"<<endl;
 }
 void Store::in(Book &b)
 {
