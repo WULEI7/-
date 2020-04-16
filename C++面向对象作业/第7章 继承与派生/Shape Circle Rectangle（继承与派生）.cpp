@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-const int pi=3.14159;
+const float pi=3.14159;
 
 class Shape
 {
@@ -49,7 +49,7 @@ class Circle:public Shape
 		{
 			return R;
 		}
-		int getArea()
+		float getArea()
 		{
 			return pi*R*R;
 		}

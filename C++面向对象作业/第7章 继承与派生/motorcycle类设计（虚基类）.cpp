@@ -46,11 +46,11 @@ class motorcar:virtual public vehicle
 		motorcar(int s,int m,int w):vehicle(m,w)
 		{
 			seatnum=s;
-			cout<<"motorcar constructor called. setnum:"<<seatnum<<endl;
+			cout<<"motorcar constructor called. seatnum:"<<seatnum<<endl;
 		}
 		~motorcar()
 		{
-			cout<<"motorcar destructor called. setnum:"<<seatnum<<endl;
+			cout<<"motorcar destructor called. seatnum:"<<seatnum<<endl;
 		}
 	private:
 		int seatnum;
