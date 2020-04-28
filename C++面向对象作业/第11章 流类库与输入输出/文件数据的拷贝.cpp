@@ -15,7 +15,7 @@ int main()
 	}
 	else
 	{
-		cout<<"EPPOR: Cannot open file 'a.txt'."<<endl;
+		cout<<"ERROR: Cannot open file 'a.txt'."<<endl;
 	}
 	is.close();
 	sort(v.begin(),v.end());
