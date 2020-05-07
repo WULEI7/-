@@ -131,6 +131,10 @@ class CombinLoan:virtual public AcfundLoan,virtual public CommerLoan//组合贷�
         {
             return getAcfundTotal()+getCommerTotal();//组合贷款 总额 万元
         }
+        double getCombinMonth()
+        {
+            return getCommerMonth();//组合贷款 月数（商业贷款和公积金贷款月数相同）
+        }
         double getCombinInterestX()
         {
             return getAcfundInterestX()+getCommerInterestX();//组合贷款 利息 等额本息，万元

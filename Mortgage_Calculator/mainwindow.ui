@@ -19,7 +19,7 @@
      <rect>
       <x>290</x>
       <y>200</y>
-      <width>151</width>
+      <width>171</width>
       <height>20</height>
      </rect>
     </property>
@@ -32,7 +32,7 @@
      <rect>
       <x>290</x>
       <y>230</y>
-      <width>151</width>
+      <width>171</width>
       <height>20</height>
      </rect>
     </property>
@@ -45,7 +45,7 @@
      <rect>
       <x>290</x>
       <y>260</y>
-      <width>151</width>
+      <width>171</width>
       <height>20</height>
      </rect>
     </property>
@@ -56,7 +56,7 @@
    <widget class="QPushButton" name="pushButton_1">
     <property name="geometry">
      <rect>
-      <x>320</x>
+      <x>330</x>
       <y>320</y>
       <width>91</width>
       <height>23</height>
@@ -69,7 +69,7 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>320</x>
+      <x>330</x>
       <y>350</y>
       <width>91</width>
       <height>23</height>
@@ -88,6 +88,12 @@
       <height>291</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
     <property name="lineWidth">
      <number>1</number>
     </property>
@@ -103,9 +109,12 @@
      <rect>
       <x>290</x>
       <y>80</y>
-      <width>151</width>
+      <width>171</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
     </property>
     <item>
      <property name="text">
@@ -128,7 +137,7 @@
      <rect>
       <x>290</x>
       <y>110</y>
-      <width>151</width>
+      <width>171</width>
       <height>22</height>
      </rect>
     </property>
@@ -148,7 +157,7 @@
      <rect>
       <x>290</x>
       <y>140</y>
-      <width>151</width>
+      <width>171</width>
       <height>20</height>
      </rect>
     </property>
@@ -161,7 +170,7 @@
      <rect>
       <x>290</x>
       <y>170</y>
-      <width>151</width>
+      <width>171</width>
       <height>20</height>
      </rect>
     </property>
@@ -174,7 +183,7 @@
      <rect>
       <x>290</x>
       <y>200</y>
-      <width>151</width>
+      <width>171</width>
       <height>20</height>
      </rect>
     </property>
@@ -187,7 +196,7 @@
      <rect>
       <x>290</x>
       <y>290</y>
-      <width>151</width>
+      <width>171</width>
       <height>22</height>
      </rect>
     </property>
@@ -210,6 +219,12 @@
       <width>671</width>
       <height>61</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -234,8 +249,14 @@ p, li { white-space: pre-wrap; }
       <height>20</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="text">
      <string>请选择贷款方式：</string>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -250,8 +271,14 @@ p, li { white-space: pre-wrap; }
       <height>20</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="text">
      <string>请选择计算方式：</string>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -266,8 +293,14 @@ p, li { white-space: pre-wrap; }
       <height>20</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="text">
      <string>请输入房屋单价：（元/m²）</string>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -282,8 +315,14 @@ p, li { white-space: pre-wrap; }
       <height>20</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="text">
      <string>请输入贷款总额：（万元）</string>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -298,8 +337,14 @@ p, li { white-space: pre-wrap; }
       <height>20</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="text">
      <string>请输入贷款年数：（年）</string>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -314,8 +359,14 @@ p, li { white-space: pre-wrap; }
       <height>20</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="text">
      <string>请输入贷款利率：（%）</string>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -330,8 +381,14 @@ p, li { white-space: pre-wrap; }
       <height>20</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="text">
      <string>请输入房屋面积：（m²）</string>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -346,8 +403,14 @@ p, li { white-space: pre-wrap; }
       <height>20</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="text">
      <string>请选择还款方式：</string>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -361,6 +424,12 @@ p, li { white-space: pre-wrap; }
       <width>661</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
     </property>
     <property name="readOnly">
      <bool>true</bool>
@@ -382,8 +451,192 @@ p, li { white-space: pre-wrap; }
       <height>20</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="text">
      <string>请输入贷款成数：（成）</string>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_Q1C">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>140</y>
+      <width>191</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="text">
+     <string>请输入商业贷款总额：（万元）</string>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_Q2C">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>170</y>
+      <width>191</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="text">
+     <string>请输入商业贷款利率：（%）</string>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_Q5C">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>260</y>
+      <width>191</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="text">
+     <string>请输入贷款年数：（年）</string>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_Q4C">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>230</y>
+      <width>191</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="text">
+     <string>请输入公积金贷款利率：（%）</string>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_Q3C">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>200</y>
+      <width>191</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="text">
+     <string>请输入公积金贷款总额：（万元）</string>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_1C">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>140</y>
+      <width>171</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>请输入商业贷款额（万元）</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_2C">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>170</y>
+      <width>171</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>请输入商业贷款利率（%）</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_3C">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>200</y>
+      <width>171</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>请输入公积金贷款额（万元）</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_4C">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>230</y>
+      <width>171</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>请输入公积金贷款利率（%）</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_5C">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>260</y>
+      <width>171</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>请输入贷款年数（年）</string>
     </property>
    </widget>
   </widget>
