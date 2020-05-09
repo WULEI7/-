@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>784</width>
-    <height>469</height>
+    <width>780</width>
+    <height>475</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <widget class="QLineEdit" name="lineEdit_3B">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>260</x>
       <y>200</y>
       <width>171</width>
       <height>20</height>
@@ -30,7 +30,7 @@
    <widget class="QLineEdit" name="lineEdit_4AB">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>260</x>
       <y>230</y>
       <width>171</width>
       <height>20</height>
@@ -43,7 +43,7 @@
    <widget class="QLineEdit" name="lineEdit_5AB">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>260</x>
       <y>260</y>
       <width>171</width>
       <height>20</height>
@@ -56,7 +56,7 @@
    <widget class="QPushButton" name="pushButton_1">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>300</x>
       <y>320</y>
       <width>91</width>
       <height>23</height>
@@ -69,7 +69,7 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>300</x>
       <y>350</y>
       <width>91</width>
       <height>23</height>
@@ -82,7 +82,7 @@
    <widget class="QTextEdit" name="textEdit_result">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>440</x>
       <y>80</y>
       <width>281</width>
       <height>291</height>
@@ -107,7 +107,7 @@
    <widget class="QComboBox" name="comboBox_1">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>260</x>
       <y>80</y>
       <width>171</width>
       <height>22</height>
@@ -135,7 +135,7 @@
    <widget class="QComboBox" name="comboBox_2">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>260</x>
       <y>110</y>
       <width>171</width>
       <height>22</height>
@@ -155,7 +155,7 @@
    <widget class="QLineEdit" name="lineEdit_1A">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>260</x>
       <y>140</y>
       <width>171</width>
       <height>20</height>
@@ -168,7 +168,7 @@
    <widget class="QLineEdit" name="lineEdit_2A">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>260</x>
       <y>170</y>
       <width>171</width>
       <height>20</height>
@@ -181,7 +181,7 @@
    <widget class="QLineEdit" name="lineEdit_3A">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>260</x>
       <y>200</y>
       <width>171</width>
       <height>20</height>
@@ -194,7 +194,7 @@
    <widget class="QComboBox" name="comboBox_3">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>260</x>
       <y>290</y>
       <width>171</width>
       <height>22</height>
@@ -214,10 +214,10 @@
    <widget class="QTextEdit" name="textEdit_tip">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>60</x>
       <y>380</y>
-      <width>671</width>
-      <height>61</height>
+      <width>661</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="focusPolicy">
@@ -243,7 +243,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="lineEdit_Q0">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>60</x>
       <y>80</y>
       <width>191</width>
       <height>20</height>
@@ -265,7 +265,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="lineEdit_Q00">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>60</x>
       <y>110</y>
       <width>191</width>
       <height>20</height>
@@ -287,7 +287,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="lineEdit_Q1A">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>60</x>
       <y>140</y>
       <width>191</width>
       <height>20</height>
@@ -309,7 +309,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="lineEdit_Q3B">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>60</x>
       <y>200</y>
       <width>191</width>
       <height>20</height>
@@ -331,7 +331,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="lineEdit_Q4AB">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>60</x>
       <y>230</y>
       <width>191</width>
       <height>20</height>
@@ -353,7 +353,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="lineEdit_Q5AB">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>60</x>
       <y>260</y>
       <width>191</width>
       <height>20</height>
@@ -375,7 +375,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="lineEdit_Q2A">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>60</x>
       <y>170</y>
       <width>191</width>
       <height>20</height>
@@ -397,7 +397,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="lineEdit_Q000">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>60</x>
       <y>290</y>
       <width>191</width>
       <height>20</height>
@@ -419,7 +419,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QTextEdit" name="textEdit_wel">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>60</x>
       <y>40</y>
       <width>661</width>
       <height>31</height>
@@ -445,7 +445,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="lineEdit_Q3A">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>60</x>
       <y>200</y>
       <width>191</width>
       <height>20</height>
@@ -467,7 +467,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="lineEdit_Q1C">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>60</x>
       <y>140</y>
       <width>191</width>
       <height>20</height>
@@ -489,7 +489,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="lineEdit_Q2C">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>60</x>
       <y>170</y>
       <width>191</width>
       <height>20</height>
@@ -511,7 +511,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="lineEdit_Q5C">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>60</x>
       <y>260</y>
       <width>191</width>
       <height>20</height>
@@ -533,7 +533,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="lineEdit_Q4C">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>60</x>
       <y>230</y>
       <width>191</width>
       <height>20</height>
@@ -555,7 +555,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="lineEdit_Q3C">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>60</x>
       <y>200</y>
       <width>191</width>
       <height>20</height>
@@ -577,7 +577,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="lineEdit_1C">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>260</x>
       <y>140</y>
       <width>171</width>
       <height>20</height>
@@ -590,7 +590,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="lineEdit_2C">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>260</x>
       <y>170</y>
       <width>171</width>
       <height>20</height>
@@ -603,7 +603,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="lineEdit_3C">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>260</x>
       <y>200</y>
       <width>171</width>
       <height>20</height>
@@ -616,7 +616,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="lineEdit_4C">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>260</x>
       <y>230</y>
       <width>171</width>
       <height>20</height>
@@ -629,7 +629,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="lineEdit_5C">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>260</x>
       <y>260</y>
       <width>171</width>
       <height>20</height>

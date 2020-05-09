@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "QMessageBox"
-#include "QString"
+#include "qmessagebox.h"
+#include "qstring.h"
 #include "loan.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     this->setWindowTitle("房贷计算器");//设置窗口标题和图标
 
-    //此处初始化界面布局（下拉框均未改动时）
+    //此处初始化界面布局（下拉框均未改动时的初始界面）
     ui->lineEdit_Q0->setVisible(1);
     ui->lineEdit_Q00->setVisible(1);
     ui->lineEdit_Q000->setVisible(1);
@@ -39,7 +39,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->lineEdit_3C->setVisible(0);
     ui->lineEdit_4C->setVisible(0);
     ui->lineEdit_5C->setVisible(0);
-
     ui->comboBox_1->setFocus();//作用是取消默认光标闪烁
 }
 
@@ -47,8 +46,6 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
-
 
 
 void MainWindow::on_comboBox_1_activated(int index)//三种贷款方式选择
@@ -174,7 +171,6 @@ void MainWindow::on_comboBox_1_activated(int index)//三种贷款方式选择
             ui->lineEdit_4C->setVisible(0);
             ui->lineEdit_5C->setVisible(0);
         }
-
     }
     else if(index==2)//选择组合贷款
     {
@@ -224,7 +220,6 @@ void MainWindow::on_comboBox_2_activated(int index)//选择根据面积单价或
         ui->lineEdit_3B->setVisible(0);
         ui->lineEdit_4AB->setVisible(1);
         ui->lineEdit_5AB->setVisible(1);
-
     }
     if(index==1)//选择根据贷款总额计算
     {
@@ -240,7 +235,6 @@ void MainWindow::on_comboBox_2_activated(int index)//选择根据面积单价或
         ui->lineEdit_3B->setVisible(1);
         ui->lineEdit_4AB->setVisible(1);
         ui->lineEdit_5AB->setVisible(1);
-
     }
 }
 
@@ -248,7 +242,7 @@ void MainWindow::on_comboBox_2_activated(int index)//选择根据面积单价或
 void MainWindow::on_pushButton_1_clicked()//清空重填，弹窗提示用户是否清空
 {
     QMessageBox::StandardButton reply;
-    reply=QMessageBox::information(this,"清空数据提示","您确定要清空重填吗？",QMessageBox::No,QMessageBox::Yes);
+    reply=QMessageBox::information(this,"清空数据提示","您确定要清空重填吗？",QMessageBox::No,QMessageBox::Yes);//默认选择No
     if(reply==QMessageBox::Yes)
     {
         ui->lineEdit_1A->clear();
@@ -257,12 +251,15 @@ void MainWindow::on_pushButton_1_clicked()//清空重填，弹窗提示用户是
         ui->lineEdit_3B->clear();
         ui->lineEdit_4AB->clear();
         ui->lineEdit_5AB->clear();
-        //全部clear
-
-
+        ui->lineEdit_1C->clear();
+        ui->lineEdit_2C->clear();
+        ui->lineEdit_3C->clear();
+        ui->lineEdit_4C->clear();
+        ui->lineEdit_5C->clear();
         ui->textEdit_result->clear();
     }
 }
+
 
 void MainWindow::on_pushButton_2_clicked()//开始计算
 {
@@ -345,7 +342,6 @@ void MainWindow::on_pushButton_2_clicked()//开始计算
                 }
             }
         }
-
         else if(ui->comboBox_2->currentIndex()==1)//选择根据贷款总额计算
         {
             double input1;//贷款总额
@@ -374,7 +370,6 @@ void MainWindow::on_pushButton_2_clicked()//开始计算
                 a.setCommerTotal(input1);
                 a.setCommerMonth(input2);
                 a.setCommerRate(input3);
-
                 if(ui->comboBox_3->currentIndex()==0)//商业贷款，根据贷款总额计算，等额本息
                 {
                     QString result="";
@@ -450,12 +445,10 @@ void MainWindow::on_pushButton_2_clicked()//开始计算
             else
             {
                 ui->textEdit_result->clear();
-
                 AcfundLoan a;//公积金贷款
                 a.setAcfundTotal(input1*input2/100000*input3);
-                a.setAcfundMonth(input2);
-                a.setAcfundRate(input3);
-
+                a.setAcfundMonth(input4);
+                a.setAcfundRate(input5);
                 if(ui->comboBox_3->currentIndex()==0)//公积金贷款，根据单价面积计算，等额本息
                 {
                     QString result="";
@@ -514,12 +507,10 @@ void MainWindow::on_pushButton_2_clicked()//开始计算
             else
             {
                 ui->textEdit_result->clear();
-
                 AcfundLoan a;//公积金贷款
                 a.setAcfundTotal(input1);
                 a.setAcfundMonth(input2);
                 a.setAcfundRate(input3);
-
                 if(ui->comboBox_3->currentIndex()==0)//公积金贷款，根据贷款总额计算，等额本息
                 {
                     QString result="";
@@ -556,7 +547,7 @@ void MainWindow::on_pushButton_2_clicked()//开始计算
         }
     }
 
-//--------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------
     else if(ui->comboBox_1->currentIndex()==2)//选择组合贷款
     {
         double input1;//商贷总额
@@ -578,7 +569,7 @@ void MainWindow::on_pushButton_2_clicked()//开始计算
         {
             QMessageBox::warning(this,"非法输入提示：","商业贷款利率只能是0-100之间正数哦，请重新输入！");
         }
-        else if(isOK_3==0||input1<=0||input1>1000)
+        else if(isOK_3==0||input3<=0||input3>1000)
         {
             QMessageBox::warning(this,"非法输入提示：","公积金贷款总额只能是0-1000之间的正数哦，请重新输入！");
         }
@@ -600,7 +591,6 @@ void MainWindow::on_pushButton_2_clicked()//开始计算
             a.setAcfundTotal(input3);
             a.setAcfundMonth(input5);
             a.setAcfundRate(input4);
-
             if(ui->comboBox_3->currentIndex()==0)//组合贷款，等额本息
             {
                 QString result="";
