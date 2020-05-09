@@ -221,7 +221,7 @@ void MainWindow::on_comboBox_2_activated(int index)//选择根据面积单价或
         ui->lineEdit_4AB->setVisible(1);
         ui->lineEdit_5AB->setVisible(1);
     }
-    if(index==1)//选择根据贷款总额计算
+    else if(index==1)//选择根据贷款总额计算
     {
         ui->lineEdit_Q1A->setVisible(0);
         ui->lineEdit_Q2A->setVisible(0);

@@ -103,6 +103,9 @@
     <property name="readOnly">
      <bool>true</bool>
     </property>
+    <property name="placeholderText">
+     <string>计算结果在这里显示</string>
+    </property>
    </widget>
    <widget class="QComboBox" name="comboBox_1">
     <property name="geometry">

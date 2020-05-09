@@ -245,6 +245,7 @@ public:
         pushButton_1->setText(QCoreApplication::translate("MainWindow", "\346\270\205\347\251\272\351\207\215\345\241\253", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "\345\274\200\345\247\213\350\256\241\347\256\227", nullptr));
         textEdit_result->setDocumentTitle(QString());
+        textEdit_result->setPlaceholderText(QCoreApplication::translate("MainWindow", "\350\256\241\347\256\227\347\273\223\346\236\234\345\234\250\350\277\231\351\207\214\346\230\276\347\244\272", nullptr));
         comboBox_1->setItemText(0, QCoreApplication::translate("MainWindow", "\345\225\206\344\270\232\350\264\267\346\254\276", nullptr));
         comboBox_1->setItemText(1, QCoreApplication::translate("MainWindow", "\345\205\254\347\247\257\351\207\221\350\264\267\346\254\276", nullptr));
         comboBox_1->setItemText(2, QCoreApplication::translate("MainWindow", "\347\273\204\345\220\210\350\264\267\346\254\276", nullptr));
