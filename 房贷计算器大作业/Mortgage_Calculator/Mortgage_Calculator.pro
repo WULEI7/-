@@ -32,5 +32,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    Icon.ico \
-    Icon.png
+    Icon.png \
+    background.png \
+    icon.ico
