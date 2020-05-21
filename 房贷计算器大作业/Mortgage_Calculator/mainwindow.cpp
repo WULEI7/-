@@ -10,8 +10,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-
-    this->setWindowTitle("房贷计算器");//设置窗口标题和图标
+    this->setWindowIcon(QIcon(":/icon.ico"));//设置窗口图标
+    this->setWindowTitle("房贷计算器");//设置窗口标题
+    this->setObjectName("mainWindow");
+    this->setStyleSheet("#mainWindow{border-image:url(:/background.jpg);}");//设置背景图片
 
     //此处初始化界面布局（下拉框均未改动时的初始界面）
     ui->lineEdit_Q0->setVisible(1);
