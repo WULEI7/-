@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "qmessagebox.h"
+#include "qvalidator.h"
 #include "qstring.h"
 #include "loan.h"
 
@@ -9,7 +10,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
     this->setWindowIcon(QIcon(":/icon.ico"));//设置窗口图标
     this->setWindowTitle("房贷计算器");//设置窗口标题
     this->setObjectName("mainWindow");
@@ -41,14 +41,39 @@ MainWindow::MainWindow(QWidget *parent)
     ui->lineEdit_3C->setVisible(0);
     ui->lineEdit_4C->setVisible(0);
     ui->lineEdit_5C->setVisible(0);
-    ui->comboBox_1->setFocus();//作用是取消默认光标闪烁
+    ui->comboBox_1->setFocus();//此句作用是取消默认光标闪烁
+
+    //此处限制输入框只能输入数字，并限制小数位数
+    QValidator *v1A=new QDoubleValidator(0.01,1000000.00,2,this);
+    ui->lineEdit_1A->setValidator(v1A);//根据面积单价计算：房屋单价
+    QValidator *v2A=new QDoubleValidator(0.01,1000.00,2,this);
+    ui->lineEdit_2A->setValidator(v2A);//根据面积单价计算：房屋面积
+    QValidator *v3A=new QDoubleValidator(0.1,10.0,1,this);
+    ui->lineEdit_3A->setValidator(v3A);//根据面积单价计算：贷款成数
+    QValidator *v3B=new QDoubleValidator(0.01,10000.00,2,this);
+    ui->lineEdit_3B->setValidator(v3B);//根据贷款总额计算：贷款总额
+    QValidator *v4AB=new QIntValidator(1,30,this);
+    ui->lineEdit_4AB->setValidator(v4AB);//根据面积单价计算、根据贷款总额计算：贷款年数
+    QValidator *v5AB=new QDoubleValidator(0.01,100.00,2,this);
+    ui->lineEdit_5AB->setValidator(v5AB);//根据面积单价计算、根据贷款总额计算：贷款利率
+    QValidator *v1C=new QDoubleValidator(0.01,10000.00,2,this);
+    ui->lineEdit_1C->setValidator(v1C);//组合贷款：商业贷款总额
+    QValidator *v2C=new QDoubleValidator(0.01,100.00,2,this);
+    ui->lineEdit_2C->setValidator(v2C);//组合贷款：商业贷款利率
+    QValidator *v3C=new QDoubleValidator(0.01,10000.00,2,this);
+    ui->lineEdit_3C->setValidator(v3C);//组合贷款：公积金贷款总额
+    QValidator *v4C=new QDoubleValidator(0.01,100.00,2,this);
+    ui->lineEdit_4C->setValidator(v4C);//组合贷款：公积金贷款利率
+    QValidator *v5C=new QIntValidator(1,30,this);
+    ui->lineEdit_5C->setValidator(v5C);//组合贷款：贷款年数
+    //本程序因只需实现较简单的限制输入功能，没有使用正则表达式，使用的是QValidator
+    //后面开始计算前还会对用户输入数字大小是否合理进行判断并给出提示，为程序正常运行增加保险
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-
 
 void MainWindow::on_comboBox_1_activated(int index)//三种贷款方式选择
 {
@@ -176,7 +201,6 @@ void MainWindow::on_comboBox_1_activated(int index)//三种贷款方式选择
     }
     else if(index==2)//选择组合贷款
     {
-
         ui->comboBox_2->setVisible(0);
         ui->lineEdit_Q0->setVisible(1);
         ui->lineEdit_Q00->setVisible(0);
@@ -240,11 +264,10 @@ void MainWindow::on_comboBox_2_activated(int index)//选择根据面积单价或
     }
 }
 
-
 void MainWindow::on_pushButton_1_clicked()//清空重填，弹窗提示用户是否清空
 {
     QMessageBox::StandardButton reply;
-    reply=QMessageBox::information(this,"清空数据提示","您确定要清空重填吗？",QMessageBox::No,QMessageBox::Yes);//默认选择No
+    reply=QMessageBox::information(this,"清空数据提示","您确定要清空重填吗？",QMessageBox::No,QMessageBox::Yes);//光标默认选择No
     if(reply==QMessageBox::Yes)
     {
         ui->lineEdit_1A->clear();
@@ -262,11 +285,9 @@ void MainWindow::on_pushButton_1_clicked()//清空重填，弹窗提示用户是
     }
 }
 
-
 void MainWindow::on_pushButton_2_clicked()//开始计算
 {
     ui->textEdit_result->clear();//清空上次计算结果
-
 //----------------------------------------------------------------------------------------------------------------------------------------
     if(ui->comboBox_1->currentIndex()==0)//选择商业贷款
     {
@@ -303,6 +324,7 @@ void MainWindow::on_pushButton_2_clicked()//开始计算
             {
                 QMessageBox::warning(this,"非法输入提示","贷款利率只能是不超过100的正数哦，请重新输入！");
             }
+            //开始计算前，判断用户输入数字大小合理性并给出提示，给程序正常运行增加保险
             else
             {
                 ui->textEdit_result->clear();
@@ -355,15 +377,15 @@ void MainWindow::on_pushButton_2_clicked()//开始计算
             input3=ui->lineEdit_5AB->text().toDouble(&isOK_3);
             if(isOK_1==0||input1<=0||input1>1000)
             {
-                QMessageBox::warning(this,"非法输入提示","贷款总额只能是不超过1000正数哦，请重新输入！");
+                QMessageBox::warning(this,"非法输入提示","贷款总额只能是不超过10000的正数哦，请重新输入！");
             }
             else if(isOK_2==0||input2<=0||input2>30)
             {
-                QMessageBox::warning(this,"非法输入提示：","贷款年数只能是1-30之间正整数哦，请重新输入！");
+                QMessageBox::warning(this,"非法输入提示","贷款年数只能是1-30之间的正整数哦，请重新输入！");
             }
             else if(isOK_3==0||input1<=0||input1>100)
             {
-                QMessageBox::warning(this,"非法输入提示：","贷款利率只能是0-100之间的正整数哦，请重新输入！");
+                QMessageBox::warning(this,"非法输入提示","贷款利率只能是不超过100的正数哦，请重新输入！");
             }
             else
             {
@@ -407,7 +429,6 @@ void MainWindow::on_pushButton_2_clicked()//开始计算
             }
         }
     }
-
 //----------------------------------------------------------------------------------------------------------------------------------------
     else if(ui->comboBox_1->currentIndex()==1)//选择公积金贷款
     {
@@ -496,15 +517,15 @@ void MainWindow::on_pushButton_2_clicked()//开始计算
             input3=ui->lineEdit_5AB->text().toDouble(&isOK_3);
             if(isOK_1==0||input1<=0||input1>1000)
             {
-                QMessageBox::warning(this,"非法输入提示","贷款总额只能是不超过1000正数哦，请重新输入！");
+                QMessageBox::warning(this,"非法输入提示","贷款总额只能是不超过10000的正数哦，请重新输入！");
             }
             else if(isOK_2==0||input2<=0||input2>30)
             {
-                QMessageBox::warning(this,"非法输入提示：","贷款年数只能是1-30之间正整数哦，请重新输入！");
+                QMessageBox::warning(this,"非法输入提示","贷款年数只能是1-30之间的正整数哦，请重新输入！");
             }
             else if(isOK_3==0||input1<=0||input1>100)
             {
-                QMessageBox::warning(this,"非法输入提示：","贷款利率只能是0-100之间的正整数哦，请重新输入！");
+                QMessageBox::warning(this,"非法输入提示","贷款利率只能是不超过100的正数哦，请重新输入！");
             }
             else
             {
@@ -548,7 +569,6 @@ void MainWindow::on_pushButton_2_clicked()//开始计算
             }
         }
     }
-
 //----------------------------------------------------------------------------------------------------------------------------------------
     else if(ui->comboBox_1->currentIndex()==2)//选择组合贷款
     {
@@ -565,23 +585,23 @@ void MainWindow::on_pushButton_2_clicked()//开始计算
         input5=ui->lineEdit_5C->text().toInt(&isOK_5);
         if(isOK_1==0||input1<=0||input1>1000)
         {
-            QMessageBox::warning(this,"非法输入提示","商业贷款总额只能是不超过1000正数哦，请重新输入！");
+            QMessageBox::warning(this,"非法输入提示","商业贷款总额只能是不超过10000的正数哦，请重新输入！");
         }
         else if(isOK_2==0||input2<=0||input2>100)
         {
-            QMessageBox::warning(this,"非法输入提示：","商业贷款利率只能是0-100之间正数哦，请重新输入！");
+            QMessageBox::warning(this,"非法输入提示","商业贷款利率只能是不超过100的正数哦，请重新输入！");
         }
         else if(isOK_3==0||input3<=0||input3>1000)
         {
-            QMessageBox::warning(this,"非法输入提示：","公积金贷款总额只能是0-1000之间的正数哦，请重新输入！");
+            QMessageBox::warning(this,"非法输入提示","公积金贷款总额只能是不超过10000的正数哦，请重新输入！");
         }
         else if(isOK_4==0||input4<=0||input4>100)
         {
-            QMessageBox::warning(this,"非法输入提示：","公积金贷款利率只能是0-100之间正数哦，请重新输入！");
+            QMessageBox::warning(this,"非法输入提示","公积金贷款利率只能是不超过100的正数哦，请重新输入！");
         }
         else if(isOK_5==0||input5<=0||input5>30)
         {
-            QMessageBox::warning(this,"非法输入提示：","贷款年数只能是1-30之间正整数哦，请重新输入！");
+            QMessageBox::warning(this,"非法输入提示","贷款年数只能是1-30之间的正整数哦，请重新输入！");
         }
         else
         {
