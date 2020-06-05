@@ -375,7 +375,7 @@ void MainWindow::on_pushButton_2_clicked()//开始计算
             input1=ui->lineEdit_3B->text().toDouble(&isOK_1);
             input2=ui->lineEdit_4AB->text().toInt(&isOK_2);
             input3=ui->lineEdit_5AB->text().toDouble(&isOK_3);
-            if(isOK_1==0||input1<=0||input1>1000)
+            if(isOK_1==0||input1<=0||input1>10000)
             {
                 QMessageBox::warning(this,"非法输入提示","贷款总额只能是不超过10000的正数哦，请重新输入！");
             }
@@ -383,7 +383,7 @@ void MainWindow::on_pushButton_2_clicked()//开始计算
             {
                 QMessageBox::warning(this,"非法输入提示","贷款年数只能是1-30之间的正整数哦，请重新输入！");
             }
-            else if(isOK_3==0||input1<=0||input1>100)
+            else if(isOK_3==0||input3<=0||input3>100)
             {
                 QMessageBox::warning(this,"非法输入提示","贷款利率只能是不超过100的正数哦，请重新输入！");
             }
@@ -515,7 +515,7 @@ void MainWindow::on_pushButton_2_clicked()//开始计算
             input1=ui->lineEdit_3B->text().toDouble(&isOK_1);
             input2=ui->lineEdit_4AB->text().toInt(&isOK_2);
             input3=ui->lineEdit_5AB->text().toDouble(&isOK_3);
-            if(isOK_1==0||input1<=0||input1>1000)
+            if(isOK_1==0||input1<=0||input1>10000)
             {
                 QMessageBox::warning(this,"非法输入提示","贷款总额只能是不超过10000的正数哦，请重新输入！");
             }
@@ -523,7 +523,7 @@ void MainWindow::on_pushButton_2_clicked()//开始计算
             {
                 QMessageBox::warning(this,"非法输入提示","贷款年数只能是1-30之间的正整数哦，请重新输入！");
             }
-            else if(isOK_3==0||input1<=0||input1>100)
+            else if(isOK_3==0||input3<=0||input3>100)
             {
                 QMessageBox::warning(this,"非法输入提示","贷款利率只能是不超过100的正数哦，请重新输入！");
             }
@@ -583,7 +583,7 @@ void MainWindow::on_pushButton_2_clicked()//开始计算
         input3=ui->lineEdit_3C->text().toDouble(&isOK_3);
         input4=ui->lineEdit_4C->text().toDouble(&isOK_4);
         input5=ui->lineEdit_5C->text().toInt(&isOK_5);
-        if(isOK_1==0||input1<=0||input1>1000)
+        if(isOK_1==0||input1<=0||input1>10000)
         {
             QMessageBox::warning(this,"非法输入提示","商业贷款总额只能是不超过10000的正数哦，请重新输入！");
         }
@@ -591,7 +591,7 @@ void MainWindow::on_pushButton_2_clicked()//开始计算
         {
             QMessageBox::warning(this,"非法输入提示","商业贷款利率只能是不超过100的正数哦，请重新输入！");
         }
-        else if(isOK_3==0||input3<=0||input3>1000)
+        else if(isOK_3==0||input3<=0||input3>10000)
         {
             QMessageBox::warning(this,"非法输入提示","公积金贷款总额只能是不超过10000的正数哦，请重新输入！");
         }
