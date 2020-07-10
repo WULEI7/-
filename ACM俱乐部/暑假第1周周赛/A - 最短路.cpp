@@ -3,7 +3,7 @@
 #include <cmath>
 #include <cstring>
 using namespace std;
-int vis[1005],dis[1005],map[1005][1005];
+int vis[105],dis[105],map[105][105];
 int dijkstra(int n)
 {
 	memset(vis,0,sizeof(vis));
@@ -11,38 +11,39 @@ int dijkstra(int n)
 		dis[i]=map[1][i];
 	for(int i=1;i<n;i++)
 	{
-		int k=0,maxmin=0;
+		int k=0,minn=99999999;
 		for(int j=1;j<=n;j++)
-			if(vis[j]==0&&dis[j]>maxmin)
+			if(vis[j]==0&&dis[j]<minn)
 			{
-				maxmin=dis[j];
+				minn=dis[j];
 				k=j;
 			}
 		vis[k]=1;
 		for(int j=1;j<=n;j++)
-			if(vis[j]==0&&dis[j]<min(dis[k],map[k][j]))
-				dis[j]=min(dis[k],map[k][j]);
-	}//注意这道题是找最大的最小值 
+			if(vis[j]==0&&dis[j]>dis[k]+map[k][j])
+				dis[j]=dis[k]+map[k][j];
+	}
 	return dis[n];
 }
 int main()
 {
 	ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
-	int t,s=1;
-	cin>>t;
-	while(t--)
+	int n,m;
+	while(cin>>n>>m)
 	{
-		int n,m;
-		cin>>n>>m;
+		if(n==0) break;
 		memset(dis,0,sizeof(dis));
-		memset(map,0,sizeof(map));//这道题map初始化为0，和一般题不同 
+		for(int i=1;i<=n;i++)
+			for(int j=1;j<=n;j++)
+				if(i==j) map[i][j]=0;
+				else map[i][j]=99999999;
 		for(int i=0;i<m;i++)
 		{
 			int a,b,c;
 			cin>>a>>b>>c;
 			map[a][b]=map[b][a]=c;
 		}
-		printf("Scenario #%d:\n%d\n\n",s++,dijkstra(n));
+		cout<<dijkstra(n)<<endl;
 	}
 	return 0;
 }
