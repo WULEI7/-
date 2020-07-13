@@ -30,10 +30,10 @@ int main()
 				c++;
 			else if(i%4==0)
 				d++;
-		}
-		i++;
+		}//a、b、c、d分别记录四人各自跳过的数字个数 
+		i++;//i是当前的数字 
 		if(flag==0)
-			j++;
+			j++;//j是当前已经报出数字的总个数 
 	}
 	cout<<a<<endl;
 	cout<<b<<endl;
