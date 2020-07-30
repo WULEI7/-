@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdio> 
 #include <string>
 using namespace std;
 int ql,qr,x,d,temp[50005],a[50005*4];
@@ -42,16 +43,15 @@ void update(int o, int l, int r)
 		if(x<=m)
 			update(ls,l,m);
 		else
-		update(rs,m+1,r);
+			update(rs,m+1,r);
 		a[o]=a[ls]+a[rs];
 	}
 }//ÐÞ¸Ä 
 int main()
 {
-	ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
 	int t;
 	cin>>t;
-	while(t--)
+	for(int T=1;T<=t;T++)
 	{
 		int n;
 		cin>>n;
@@ -63,6 +63,7 @@ int main()
 			x=i,d=temp[i];
 			update(1,1,n);
 		}*/
+		printf("Case %d:\n",T);
 		string s;
 		int a,b;
 		while(cin>>s)
@@ -71,7 +72,7 @@ int main()
 			{
 				cin>>a>>b;
 				ql=a,qr=b;
-				cout<<query(1,1,n)<<endl;
+				printf("%d\n",query(1,1,n));
 			}
 			else if(s=="Add")
 			{
