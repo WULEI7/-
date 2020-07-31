@@ -34,7 +34,7 @@ long long query(int o,int l,int r,long long d)
 }//查询 
 void update(int o,int l,int r)
 {
-	if(ql<=l&&r<=qr)//[x,y]区间内的都要加上d 
+	if(ql<=l&&r<=qr)//[ql,qr]区间内的都要加上x 
 	{
 		a[o]+=x*(r-l+1);
 		ad[o]+=x;
@@ -58,7 +58,7 @@ int main()
 	build(1,1,n);
 	/*for(int i=1;i<=n;i++)
 	{
-		x=i,d=temp[i];
+		ql=qr=i,x=temp[i];
 		update(1,1,n);
 	}*/
 	while(t--)

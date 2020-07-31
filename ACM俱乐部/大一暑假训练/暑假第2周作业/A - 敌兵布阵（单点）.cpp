@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdio> 
 #include <string>
+#include <cstring>
 using namespace std;
 int ql,qr,x,d,temp[50005],a[50005*4];
 void build(int o,int l,int r)
@@ -32,7 +33,7 @@ int query(int o,int l,int r)
 		return sum;
 	}
 }//≤È—Ø 
-void update(int o, int l, int r)
+void update(int o,int l,int r)
 {
 	if(l==r)
 		a[o]+=d;
@@ -58,7 +59,8 @@ int main()
 		for(int i=1;i<=n;i++)
 			cin>>temp[i];
 		build(1,1,n);
-		/*for(int i=1;i<=n;i++)
+		/*memset(a,0,sizeof(a)); 
+		for(int i=1;i<=n;i++)
 		{
 			x=i,d=temp[i];
 			update(1,1,n);
