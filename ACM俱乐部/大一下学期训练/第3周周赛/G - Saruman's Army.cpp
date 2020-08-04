@@ -20,12 +20,12 @@ int main()
 			for(;i<n;i++)
 				if(x[i]>temp+r)
 					break;
-			temp=x[i-1];//temp记录当前放置的圆心 
+			temp=x[i-1];
 		//	while(x[i]<=temp2+r&&i<n)
 			for(;i<n;i++)
 				if(x[i]>temp+r)
 					break;
-			ans++;
+			ans++;//temp记录当前放置的圆心 
 		}
 		cout<<ans<<endl;
 	}
