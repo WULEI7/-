@@ -7,12 +7,9 @@ int main()
 	{
 		if(a==-1) break;
 		num++;
-		while(a>=23)
-			a-=23;
-		while(b>=28)
-			b-=28;
-		while(c>=33)
-			c-=33;
+		a%=23;
+		b%=28;
+		c%=33;
 		int t=0;
 		for(int i=1;i<=21252;i++)
 			if((d+i)%23==a&&(d+i)%28==b&&(d+i)%33==c)
