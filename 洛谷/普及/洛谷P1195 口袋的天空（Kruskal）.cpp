@@ -39,7 +39,7 @@ int main()
 		{
 			printf("%d\n",ans);
 			flag=0;
-			break;//当s和t连通时结束 
+			break;
 		}
 	}
 	if(flag==1)
