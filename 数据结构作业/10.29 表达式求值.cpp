@@ -58,6 +58,7 @@ int main()
 	stack<int> num;
 	opt.push('#');
 	string s;
+	cout<<"请输入表达式（以“#”结束）："<<endl;
 	cin>>s;
 	int len=s.length();
 	for(int i=0;i<len;i++)
@@ -87,6 +88,7 @@ int main()
 			}
 		}
 	}
+	cout<<"计算结果："<<endl; 
 	cout<<num.top()<<endl;
 	return 0;
 }
