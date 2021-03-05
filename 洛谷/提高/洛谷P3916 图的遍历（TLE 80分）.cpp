@@ -35,14 +35,14 @@ int dfs(int x,int &a)
 		{
 			vis[edge[i].to]=1;
 			dfs(edge[i].to,a);
-			vis[edge[i].to]=0;
+			//vis[edge[i].to]=0;
 		}
 }
 int main()
 {
 	ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
 	int a,b,ans[100005];
-	freopen("P3916_1.in","r",stdin);
+	//freopen("P3916_1.in","r",stdin);
 	cin>>n>>m;
 	init();
 	for(int i=0;i<=n;i++)
