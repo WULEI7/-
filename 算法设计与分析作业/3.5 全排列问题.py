@@ -5,13 +5,9 @@ def Permutation(a,k,m):
         print("")
     else:
         for i in range(k,m+1):
-            t=a[i]
-            a[i]=a[k]
-            a[k]=t
+            a[i],a[k]=a[k],a[i]
             Permutation(a,k+1,m)
-            t=a[i]
-            a[i]=a[k]
-            a[k]=t
+            a[i],a[k]=a[k],a[i]
 
 a=[int(i) for i in input().split(" ")]
 n=len(a)

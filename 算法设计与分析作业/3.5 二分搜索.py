@@ -8,11 +8,11 @@ def BiSearch(num,x,n):
         if x<num[left] or x>num[right]:
             return -1
         mid=(left+right)//2
-        if(x==num[mid]):
+        if x==num[mid]:
             return mid
-        if(x>num[mid]):
+        if x>num[mid]:
             left=mid+1
-        if(x<num[mid]):
+        if x<num[mid]:
             right=mid-1
     return -1
 
