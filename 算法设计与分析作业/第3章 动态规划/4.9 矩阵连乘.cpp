@@ -7,7 +7,6 @@ int p[100],m[100][100],s[100][100];
 int Left[100],Right[100];//记录答案中输出的左右括号数 
 
 /*
-string ans;
 int pow(int x,int n)//快速幂 
 {
 	int base=x,res=1;
@@ -56,17 +55,25 @@ void MatrixChain(int p[],int n,int m[][100],int s[][100])
 					m[i][j]=t;
 					s[i][j]=k;
 				}
-			}
+			}//找到最优断开位置 
 		}
 	}
 }
 
 void Traceback(int i,int j,int s[][100])
 {
-	if(i==j) return;
+	//if(i==j) return;
+	if(i==j)
+	{
+		cout<<"A"<<i;
+		return;
+	}
+	cout<<"(";
 	Traceback(i,s[i][j],s);
 	Traceback(s[i][j]+1,j,s);
+	cout<<")";
 	//cout<<"Multiply A"<<i<<", "<<s[i][j]<<" and A"<<s[i][j]+1<<", "<<j<<endl;
+	/*
 	if(i<s[i][j])
 	{
 		Left[i]++;
@@ -77,6 +84,7 @@ void Traceback(int i,int j,int s[][100])
 		Left[s[i][j]+1]++;
 		Right[j]++;
 	}//加上计算当中的括号 
+	*/
 }
 
 int main()
@@ -92,6 +100,7 @@ int main()
 	MatrixChain(p,num,m,s);
 	cout<<m[1][num]<<endl;//输出最优值答案 
 	Traceback(1,num,s);
+	/*
 	cout<<"(";
 	for(int i=1;i<=num;i++)
 	{
@@ -101,6 +110,7 @@ int main()
 		for(int j=0;j<Right[i];j++)
 			cout<<")";
 	}
-	cout<<")"<<endl;//输出最有计算次序 
+	cout<<")"<<endl;//输出最优计算次序 
+	*/
 	return 0;
 }
