@@ -1,8 +1,9 @@
 def Maxsum(left, right, ansl, ansr):
+    global ansleft, ansright
     l1, r1, l2, r2, l3, r3 = 1, 1, 1, 1, 1, 1
     if left == right:
         if a[left] > 0:
-            ansl, ansr = left
+            ansl, ansr= left, left
             return a[left]
         else:
             return 0
@@ -22,19 +23,21 @@ def Maxsum(left, right, ansl, ansr):
                 s2 = temp2
                 r3 = i
         sum3 = s1 + s2
-        ansl = l3
-        ansr = r3
+        ansleft = l3
+        ansright = r3
         if sum3 <= sum1:
             sum3 = sum1
-            ansl = l1
-            ansr = r1
+            ansleft = l1
+            ansright = r1
         if sum3 <= sum2:  # 细节：这里要用<=
             sum3 = sum2
-            ansl = l2
-            ansr = r2
+            ansleft = l2
+            ansright = r2
         return sum3  # 最大子段优先选择：左>中>右
 
-a=[0]+[int(i) for i in input().split(" ")]
-n=len(a)-1
-ans=Maxsum(1,n)
-ansl, ansr=0,0
+a = [0] + [int(i) for i in input().split(" ")]
+ansleft, ansright = 0, 0
+l1, r1, l2, r2, l3, r3 = 1, 1, 1, 1, 1, 1
+n = len(a) - 1
+ans = Maxsum(1, n, ansleft, ansright)
+print(ans, ansleft, ansright, sep="\n")
