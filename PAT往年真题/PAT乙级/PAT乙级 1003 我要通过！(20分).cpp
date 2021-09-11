@@ -31,7 +31,10 @@ int main()
 			if(s[i]=='P')
 				posp=i;
 			if(s[i]=='T')
+			{
 				post=i;
+				break;
+			}
 		}
 		for(int i=0;i<posp;i++)
 			if(s[i]!='A')
