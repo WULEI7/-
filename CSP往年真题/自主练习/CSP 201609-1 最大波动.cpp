@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <cmath>
+#include <algorithm>
 int main()
 {
 	int n,a[1005],ans=0;
