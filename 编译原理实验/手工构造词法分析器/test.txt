@@ -1,0 +1,12 @@
+void main(){
+    int a, b, c;
+    char d;
+    float e;
+    scanf("%d%d%d%c",&a,&b,&c,&d);
+    if(a <= b){
+        a+=b;
+        printf("%d",a);}
+    else printf("%c",d);
+    e = sqrt(abs(b));
+    return e;
+}
