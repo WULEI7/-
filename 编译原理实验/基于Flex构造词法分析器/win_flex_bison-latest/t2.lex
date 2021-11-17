@@ -23,8 +23,8 @@ TYPE void|int|double|char|float
 KEYWORD main|return|if|else|do|while|for|scanf|printf|sqrt|abs
 TYPEIDENTIFY %{IDENTIFY}|&{IDENTIFY}
 COMMENT \/\/(.)*|\/\*(.|\n)*\*\/
-FLOAT ({INTEGER}|{INTEGER}"."("+"|"-")?{DIGIT}*)(e|E){INTEGER}
-ERROR ({INTEGER}|{INTEGER}"."("+"|"-")?{DIGIT}*)(e|E)
+FLOAT ({INTEGER}|{DECIMAL})(e|E){INTEGER}
+ERROR ({INTEGER}|{DECIMAL})(e|E)
 
 %%
 
