@@ -37,7 +37,7 @@ void T1()//T'->*FT'|e
 		T1();
 	}
 }
-void F()//a|(E)
+void F()//F->a|(E)
 {
 	if(s[pos]=='a')
 		pos++;
