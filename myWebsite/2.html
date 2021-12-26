@@ -1,0 +1,428 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+<link rel="shortcut icon" href="images/icon.png">
+    <title>myWebsite-社会实践</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Premium Bootstrap 5 Landing Page Template" />
+    <meta name="keywords" content="bootstrap 5, premium, marketing, multipurpose" />
+    <meta name="author" content="Themesdesign" />
+
+
+<script src="js/jquery.min.js"></script>
+<style>
+body { font-size: 1.2rem; background-color: #000; font-family: PingFangSC-Regular, sans-serif; }
+	@-webkit-keyframes reverseRotataZ {
+  0%{
+    -webkit-transform: rotateZ(0deg);
+  }
+  100%{
+    -webkit-transform: rotateZ(-360deg);
+  }
+}
+@-webkit-keyframes rotataZ{
+  0% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+#musicControl {
+  position:fixed;
+  right:30px;
+  top:30px;
+  margin-top:0;
+  display:inline-block;
+  z-index:99999999
+}
+#musicControl a {
+  display:inline-block;
+  width: 25px;
+  height: 25px;
+  background:url('images/music.png') no-repeat;
+  background-size:100%;
+}
+#musicControl a audio{
+  width:100%;
+  height:56px;
+}
+#musicControl a.stop {
+  background-position:left bottom;
+}
+#musicControl a.on {
+  background-position:0px 1px;
+  -webkit-animation: reverseRotataZ 1.2s linear infinite;
+}
+#music_play_filter{
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:99999998;
+}
+</style>
+<span id="musicControl">
+    <a id="mc_play" class="on">
+        <audio id="musicfx" loop="loop" autoplay="autoplay">
+            <source src="sources/bg.mp3" type="audio/mpeg" id="hhh">
+        </audio>
+    </a>
+</span>
+<script>
+$('#mc_play').click(function () {
+	var music = document.getElementById('musicfx');
+	if (music.paused) {
+		music.play();
+		$('#mc_play').attr('class', 'on');
+	} else {
+		music.pause();
+		$('#mc_play').attr('class', 'stop');
+	}
+})
+var ua = navigator.userAgent.toLowerCase();
+if(ua.match(/MicroMessenger/i)=="micromessenger") {
+	document.addEventListener('DOMContentLoaded', function () {
+		function audioAutoPlay() {
+			var audio_ = document.getElementById('musicfx')
+			document.addEventListener("WeixinJSBridgeReady", function () {
+				audio_.play()
+			}, false)
+		}
+		audioAutoPlay()
+	});
+}
+</script>
+
+
+
+    <!-- App favicon -->
+    
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css" />
+
+    <!-- pe-icon-7 -->
+    <link rel="stylesheet" href="css/pe-icon-7-stroke.css" type="text/css" />
+
+    <!-- custom Css -->
+    <link rel="stylesheet" type="text/css" href="css/style.min.css" />
+</head>
+
+<body data-bs-target=".navbar" data-bs-offset="58">
+    <!-- START NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top sticky" id="navbar">
+        <div class="container">
+            <a class="navbar-brand logo-dark fw-bolder fs-24 text-dark" href="index.html">
+                    <img src="images/logo-dark.png" alt="" height="22">
+                </a>
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="mdi mdi-menu"></span>
+                    </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link sub-menu-item" href="index.html">主页</a></li>
+                    <li class="nav-item"><a class="nav-link sub-menu-item" href="1.html">个人简历</a></li>
+                    <li class="nav-item dropdown parent-menu-item">
+                        <a class="nav-link menu-item dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">社会实践</a>
+                        <ul class="dropdown-menu ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link sub-menu-item" href="2.html#学生工作">学生工作</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link sub-menu-item" href="2.html#逐光鼋梦队">逐光鼋梦队</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link sub-menu-item" href="2.html#其他社会实践">其他社会实践</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link sub-menu-item" href="3.html">班级风采</a></li>
+                    <li class="nav-item"><a class="nav-link sub-menu-item" href="4.html">江大校园</a></li>
+                    <li class="nav-item"><a class="nav-link sub-menu-item" href="5.html">家乡无锡</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END NAVBAR -->
+
+    <!-- START TITLE -->
+    <section>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <div class="card hero-img position-relative" style="background-image: url(images/title-bg.jpg);">
+                        <div class="title-bg-overlay"></div>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <div class="position-relative">
+                                <h1 class="fw-medium">这是我的社会实践</h1>
+                                <h3 class="fw-normal lh-base">
+                                    Social practice
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END TITLE -->
+
+    <!-- 以下为本页主体部分 -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+<center>
+                <p class="text-muted mt-2">
+                    在这里了解我的社会实践~ <br /> Know more about my social practice
+                </p>
+</center>
+            </div>
+        </div>
+</section>
+     <section class="section" id="学生工作">
+        <div class="container">
+            <div class="row">
+
+<hr/>
+<center>
+                    <h3>学生工作</h3>
+<h5>Student affairs</h5>
+</center>
+<p>
+&nbsp; &nbsp; &nbsp; &nbsp; 在完成思想理论学习和课业学习之余，我积极投身“我为师生办实事”的实践，服务人民，奉献社会。在学生工作上，我全心全意服务同学，助力学院工作开展。
+</p><p>
+&nbsp; &nbsp; &nbsp; &nbsp; 我目前担任计科1901班班长，树立榜样，服务同学，带领班级获评院、校两级先进班集体；兼任班级团支部副书记，团支部获评校五四红旗团支部，班级现已发展8名中共预备党员；现任学院学生会主席团成员，负责分管办公室和分团委团务中心，全程参与负责学院迎新、综合测评、学生会改革、学生代表大会等工作；曾任学院学生会办公室核心干事，参与策划迎新晚会、五四班团风采展示等多项学院大型活动，负责撰写多份学院学生会文案；大学两年，累计参加答辩汇报演讲等50余次，并在新老生交流会分享学习经验，参与少数民族同学学业帮扶等活动。可以说，每天不是在工作，就是在校园各地之间来回奔波的路上…...
+</p><p>
+&nbsp; &nbsp; &nbsp; &nbsp; 我认为很多事情都是相辅相成的，学生工作让我收获了更广的人际，也让我锻炼了能力，收获了成长，能够更加自信地投入到生活的各个方面。
+</p>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing branding">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/2/1.jpg" class="img-fluid rounded" alt="work-image" />
+                                    <div class="content bg-white p-3 shadow">
+                                <h5>先进班集体答辩</h5>
+                                 </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing designing">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/2/2.jpg" class="img-fluid rounded" alt="work-image" />
+                                    <div class="content bg-white p-3 shadow">
+                                <h5>学生会储备人才培训</h5>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing photography">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/2/3.jpg" class="img-fluid rounded" alt="work-image" />
+                                    <div class="content bg-white p-3 shadow">
+                                <h5>新老生交流会分享</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing development">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/2/4.jpg" class="img-fluid rounded" alt="work-image" />
+                                      <div class="content bg-white p-3 shadow">
+                                <h5>晚自习巡回宣讲</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+
+            </div>
+            <!--end row-->
+
+</div>
+
+</section>
+
+
+</section>
+     <section class="section" id="逐光鼋梦队">
+        <div class="container">
+            <div class="row">
+
+<hr/>
+<center>
+                    <h3>我的社会实践团队——逐光鼋梦队</h3>
+<h5>Our team</h5>
+</center>
+<p>
+&nbsp; &nbsp; &nbsp; &nbsp; 宝贵财留千代继，精神不朽万秋尊。6月9日，人工智能与计算机学院与无锡市震泽军休所共同开展“老少携手 跟党同行”关爱慰问活动暨“草鼋思政”社会实践启动仪式在无锡市震泽军休所顺利举行。老一辈共产党员对中国做出的贡献是巨大的，为了新中国的发展不辞辛劳，重温他们写下的字字句句，追溯他们的工作事迹，同学们深切感受到共产党的伟大，今天幸福生活来之不易。在新的历史条件下，作为新一代青年，更应该树立为社会主义、共产主义事业奋斗的远大志向，为实现中华民族伟大复兴的中国梦不懈努力。
+</p>
+<center>
+<a href="https://mp.weixin.qq.com/s?__biz=MzA4MjA0OTQzMw==&mid=2652915968&idx=1&sn=1f653dee3b6aac52ae71fa35e4372955&chksm=845f49f6b328c0e0bf901bb70ff081bea7c39c7ea0eae67263f3cfaffbf2d27579f7ee9c3a6b&mpshare=1&scene=23&srcid=0803zdewh31NaXXp37x05dPv&sharer_sharetime=1640456996263&sharer_shareid=f05d9b979fd9c43b34e1d28ece1498f0#rd" target="_blank">
+<img src="images/2/team.jpg" style="max-width: 800px;">
+</a>
+<h4>（点击图片查看实践推送）</h4>
+<br>
+</center>
+</section>
+
+
+
+
+     <section class="section" id="其他社会实践">
+        <div class="container">
+            <div class="row">
+<hr/>
+
+<center>
+<h3>其他社会实践<h3>
+<h5>Other practices</h5>
+</center>
+
+
+                <div class="col-md-4">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/2/5.jpg" class="img-fluid rounded" alt="work-image" />
+                                    <div class="content bg-white p-3 shadow">
+                                <h5>滨湖区人民法院义工</h5>
+                                 </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/2/6.jpg" class="img-fluid rounded" alt="work-image" />
+                                    <div class="content bg-white p-3 shadow">
+                                <h5>江南学子中学行</h5>
+                                 </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/2/7.jpg" class="img-fluid rounded" alt="work-image" />
+                                    <div class="content bg-white p-3 shadow">
+                                <h5>招生宣传宣讲</h5>
+                                 </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+<p>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; 六月的时候，我很荣幸能够和学院的实践团队一同前往震泽军休所参加活动。倾听老一辈共产党员的故事，让我们感受到他们的伟大，更让我们认识到今天美好生活的来之不易。红色基因需要我们发扬传承，我们应当自觉地肩负起这样一份使命。我很荣幸能够在今年发展成为一名预备党员，这对我而言更是一种鞭策，我将奉献出我全部的青春和热血。
+</p><p>
+&nbsp; &nbsp; &nbsp; &nbsp; 如习总书记所说，“奋斗不只是响亮的口号，而是要在做好每一件小事，完成每一项任务，履行每一项职责中见精神。”青春只有在为祖国和人民的真诚奉献中才能更加绚丽多彩，人生只有融入国家和民族的事业才能闪闪发光。今天，我们正在书写觉醒年代的续集，肩负着实现中华民族伟大复兴的历史使命。生逢盛世，肩负重任，征途漫漫，唯有奋斗。为了明天的岁月静好，你我都要负重前行。
+</p><p>
+&nbsp; &nbsp; &nbsp; &nbsp; 把每一份工作做到极致，热爱正是平凡生活的英雄梦想。让我们勇敢地肩负起时代赋予的重任，去书写出更加绚丽的人生华章。作为一名预备党员，一名有家国情怀的至善生，出于热爱，我会为每一个选择全力以赴。
+</p><p>
+&nbsp; &nbsp; &nbsp; &nbsp; 小时候愿望兼济天下，长大后才发现独善其身，都要竭尽全力。可哪怕就是这样，我依然在想着，要为这个世界做些什么，要为身边的人做些什么。正如我在十佳演说家决赛现场的即兴演讲中所说：“此后如竟没有炬火，我便是唯一的光。中国青年皆如此，则国家民族未来可期。”
+</p><p>
+&nbsp; &nbsp; &nbsp; &nbsp; 建党百年，这是我交出的一份答卷。
+</p>
+
+        <button type="button" class="btn btn-info" onclick="window.open('sources/practice.pptx');" style="height: 50px;border-radius:10px;width: 100%;">
+        <p style="margin-top: 10px;color:white;">点击下载我的思政实践演讲《为推动构建人类命运共同体贡献青春力量》PPT</p>
+        </button>
+
+</section>
+<section>
+<hr/>
+<center>
+<p>
+我将不忘初心，永远在实践的路上
+</p>
+</center>
+</section>
+
+
+
+<!-- 以上为本页主体部分 -->
+
+
+    <footer class="footer bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-6 pt-4">
+                    
+
+                    <h4><font color="#000093">欢迎关注</font></h4>
+                    <a href="https://blog.csdn.net/weixin_46283740" target="_blank"><h5>CSDN博客</h5></a>
+                    <a href="https://github.com/WULEI7" target="_blank"><h5>GitHub</h5></a>
+</div><div class="col-lg-2 col-md-6 pt-4">
+                    <h4><font color="#000093">校园链接</font></h4>
+
+                  <a href="https://www.jiangnan.edu.cn/" target="_blank"><h5>江南大学主页</h5></a>
+                  <a href="http://ai.jiangnan.edu.cn/" target="_blank"><h5>人工智能与计算机学院</h5></a>
+
+</div>
+<div class="col-lg-3 col-md-6 pt-4">
+</div>
+                <div class="col-lg-2 offset-lg-3 col-md-3 pt-4">
+                    <h4>WeChat</h4>
+                    <img src="images/wechat.jpg" width="151" height="150">
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    <!-- START FOOTER ALTER -->
+    <div class="footer-alt bg-dark">
+        <div class="container">
+            <div class="row align-items-center py-3">
+                <div class="col-md-6">
+                    <p class="text-white m-0">江南大学人工智能与计算机学院 计科1901 魏宇非 © 2021 Design By <a href="https://blog.csdn.net/weixin_46283740" target="_blank">WULEI7</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END FOOTER ALTER -->
+
+    <!-- Javascript -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/filter.init.js"></script>
+
+    <!-- app js -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>

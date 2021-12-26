@@ -1,0 +1,380 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+<link rel="shortcut icon" href="images/icon.png">
+    <title>myWebsite-班级风采</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Premium Bootstrap 5 Landing Page Template" />
+    <meta name="keywords" content="bootstrap 5, premium, marketing, multipurpose" />
+    <meta name="author" content="Themesdesign" />
+
+
+<script src="js/jquery.min.js"></script>
+<style>
+body { font-size: 1.2rem; background-color: #000; font-family: PingFangSC-Regular, sans-serif; }
+	@-webkit-keyframes reverseRotataZ {
+  0%{
+    -webkit-transform: rotateZ(0deg);
+  }
+  100%{
+    -webkit-transform: rotateZ(-360deg);
+  }
+}
+@-webkit-keyframes rotataZ{
+  0% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+#musicControl {
+  position:fixed;
+  right:30px;
+  top:30px;
+  margin-top:0;
+  display:inline-block;
+  z-index:99999999
+}
+#musicControl a {
+  display:inline-block;
+  width: 25px;
+  height: 25px;
+  background:url('images/music.png') no-repeat;
+  background-size:100%;
+}
+#musicControl a audio{
+  width:100%;
+  height:56px;
+}
+#musicControl a.stop {
+  background-position:left bottom;
+}
+#musicControl a.on {
+  background-position:0px 1px;
+  -webkit-animation: reverseRotataZ 1.2s linear infinite;
+}
+#music_play_filter{
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:99999998;
+}
+</style>
+<span id="musicControl">
+    <a id="mc_play" class="on">
+        <audio id="musicfx" loop="loop" autoplay="autoplay">
+            <source src="sources/bg.mp3" type="audio/mpeg" id="hhh">
+        </audio>
+    </a>
+</span>
+<script>
+$('#mc_play').click(function () {
+	var music = document.getElementById('musicfx');
+	if (music.paused) {
+		music.play();
+		$('#mc_play').attr('class', 'on');
+	} else {
+		music.pause();
+		$('#mc_play').attr('class', 'stop');
+	}
+})
+var ua = navigator.userAgent.toLowerCase();
+if(ua.match(/MicroMessenger/i)=="micromessenger") {
+	document.addEventListener('DOMContentLoaded', function () {
+		function audioAutoPlay() {
+			var audio_ = document.getElementById('musicfx')
+			document.addEventListener("WeixinJSBridgeReady", function () {
+				audio_.play()
+			}, false)
+		}
+		audioAutoPlay()
+	});
+}
+</script>
+
+
+
+    <!-- App favicon -->
+    
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css" />
+
+    <!-- pe-icon-7 -->
+    <link rel="stylesheet" href="css/pe-icon-7-stroke.css" type="text/css" />
+
+    <!-- custom Css -->
+    <link rel="stylesheet" type="text/css" href="css/style.min.css" />
+</head>
+
+<body data-bs-target=".navbar" data-bs-offset="58">
+    <!-- START NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top sticky" id="navbar">
+        <div class="container">
+            <a class="navbar-brand logo-dark fw-bolder fs-24 text-dark" href="index.html">
+                    <img src="images/logo-dark.png" alt="" height="22">
+                </a>
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="mdi mdi-menu"></span>
+                    </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link sub-menu-item" href="index.html">主页</a></li>
+                    <li class="nav-item"><a class="nav-link sub-menu-item" href="1.html">个人简历</a></li>
+                    <li class="nav-item"><a class="nav-link sub-menu-item" href="2.html">社会实践</a></li>
+                    <li class="nav-item dropdown parent-menu-item">
+                        <a class="nav-link menu-item dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">班级风采</a>
+                        <ul class="dropdown-menu ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link sub-menu-item" href="3.html#班级简介">班级简介</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link sub-menu-item" href="3.html#班级团日活动">班级团日活动</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link sub-menu-item" href="3.html#班级风采展示">班级风采展示</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link sub-menu-item" href="4.html">江大校园</a></li>
+                    <li class="nav-item"><a class="nav-link sub-menu-item" href="5.html">家乡无锡</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END NAVBAR -->
+
+    <!-- START TITLE -->
+    <section>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <div class="card hero-img position-relative" style="background-image: url(images/title-bg.jpg);">
+                        <div class="title-bg-overlay"></div>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <div class="position-relative">
+                                <h1 class="fw-medium">我们的班级风采展示</h1>
+                                <h3 class="fw-normal lh-base">
+                                    About our class
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END TITLE -->
+
+
+    <!-- 以下为本页主体部分 -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+<center>
+                <p class="text-muted mt-2">
+                    在这里欣赏我们的班级风采~ <br /> Know more about our class
+                </p>
+</center>
+            </div>
+        </div>
+</section>
+     <section class="section" id="班级简介">
+        <div class="container">
+            <div class="row">
+
+<hr/>
+<center>
+                    <h3>班级简介</h3>
+<h5>Introduction of our class</h5>
+</center>
+<p>
+&nbsp; &nbsp; &nbsp; &nbsp; 计科1901班由全国18个省份的39位同学组成，是一个团结友爱的大家庭，39位成员有理想有目标，聚似一团火，散若满天星。在班主任和辅导员指导下，班委们积极发挥带头作用，班级班风学风端正，思想积极向上。两年多以来，同学们取得优异成绩：获得各项奖学金30人次，其中1人获得国家奖学金；1人获评无锡市三好学生，3人获评校三好学生；15人参与大创项目，其中7人参与国家级大创项目，多人参与各类科研创新项目；学科竞赛获奖15人次，其中B类及以上竞赛获奖5人次。目前1人担任学院学生会执行主席，大二学年4人曾在学院学生会任职，3人曾在各类校级学生组织担任干部。在各类社会实践和文体活动，也随处可见本班同学的身影。在未来的日子里，我们将不忘初心，齐心协力，再创辉煌！
+</p>
+<center>
+<a href="https://weibo.com/u/7308783178" target="_blank">
+<img src="images/3/class.jpg" style="max-width: 800px;">
+</a>
+<h4>（点击图片查看班级微博）</h4>
+<br>
+</center>
+
+<div class="col-md-1"></div>
+<div class="col-md-5">
+<img src="images/3/2021院先进班集体.jpg" height="300">
+</div><div class="col-md-6">
+<img src="images/3/2021校先进班集体.jpg" height="300">
+</div>
+<center>
+<h4>（我们的班级荣誉）</h4>
+</center>
+</section>
+
+     <section class="section" id="班级团日活动">
+        <div class="container">
+            <div class="row">
+
+<hr/>
+<center>
+                    <h3>班级团日活动</h3>
+<h5>Class activities</h5>
+</center>
+<p>
+&nbsp; &nbsp; &nbsp; &nbsp; 12月17日下午，人工智能与计算机学院开展了“请党放心，强国有我”主题团日活动。江南大学党委常委、副校长张影陆、校团委办公室主任夏京璟，人工智能与计算机学院党委书记张华，党委副书记、副院长陈祎，副院长夏鸿斌，计科1901班班主任方伟，分团委书记沈丹，学院各年级辅导员和计科1901班全体成员参加本次活动。
+</p>
+<center>
+<a href="https://news.jiangnan.edu.cn/info/1002/74751.htm" target="_blank">
+<img src="images/3/news.jpg" style="max-width: 800px;">
+</a>
+<h4>（点击图片查看活动新闻）</h4>
+</center>
+
+</section>
+
+
+     <section class="section" id="班级风采展示">
+        <div class="container">
+            <div class="row">
+<hr/>
+
+<center>
+<h3>班级风采展示<h3>
+<h5>Show of our class</h5>
+</center>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing branding">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/3/img1.jpg" class="img-fluid rounded" alt="work-image" />
+                                    <div class="content bg-white p-3 shadow">
+                                <h5>五四合唱比赛三等奖</h5>
+                                 </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing designing">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/3/img2.jpg" class="img-fluid rounded" alt="work-image" />
+                                    <div class="content bg-white p-3 shadow">
+                                <h5>雅室大赛获奖</h5>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing photography">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/3/img3.jpg" class="img-fluid rounded" alt="work-image" />
+                                    <div class="content bg-white p-3 shadow">
+                                <h5>运动会齐心协力</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing development">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/3/img4.jpg" class="img-fluid rounded" alt="work-image" />
+                                      <div class="content bg-white p-3 shadow">
+                                <h5>参观学院科创基地</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+
+            </div>
+            <!--end row-->
+
+</div>
+
+</section>
+<section>
+<hr/>
+<center>
+<p>
+我们的征途是星辰大海~
+</p>
+</center>
+</section>
+
+
+
+<!-- 以上为本页主体部分 -->
+
+    <footer class="footer bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-6 pt-4">
+                    
+
+                    <h4><font color="#000093">欢迎关注</font></h4>
+                    <a href="https://blog.csdn.net/weixin_46283740" target="_blank"><h5>CSDN博客</h5></a>
+                    <a href="https://github.com/WULEI7" target="_blank"><h5>GitHub</h5></a>
+</div><div class="col-lg-2 col-md-6 pt-4">
+                    <h4><font color="#000093">校园链接</font></h4>
+
+                  <a href="https://www.jiangnan.edu.cn/" target="_blank"><h5>江南大学主页</h5></a>
+                  <a href="http://ai.jiangnan.edu.cn/" target="_blank"><h5>人工智能与计算机学院</h5></a>
+
+</div>
+<div class="col-lg-3 col-md-6 pt-4">
+</div>
+                <div class="col-lg-2 offset-lg-3 col-md-3 pt-4">
+                    <h4>WeChat</h4>
+                    <img src="images/wechat.jpg" width="151" height="150">
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    <!-- START FOOTER ALTER -->
+    <div class="footer-alt bg-dark">
+        <div class="container">
+            <div class="row align-items-center py-3">
+                <div class="col-md-6">
+                    <p class="text-white m-0">江南大学人工智能与计算机学院 计科1901 魏宇非 © 2021 Design By <a href="https://blog.csdn.net/weixin_46283740" target="_blank">WULEI7</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END FOOTER ALTER -->
+
+    <!-- Javascript -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/filter.init.js"></script>
+
+    <!-- app js -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>

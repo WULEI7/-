@@ -1,0 +1,668 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+<link rel="shortcut icon" href="images/icon.png">
+    <title>myWebsite-家乡无锡</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Premium Bootstrap 5 Landing Page Template" />
+    <meta name="keywords" content="bootstrap 5, premium, marketing, multipurpose" />
+    <meta name="author" content="Themesdesign" />
+
+
+<script src="js/jquery.min.js"></script>
+<style>
+body { font-size: 1.2rem; background-color: #000; font-family: PingFangSC-Regular, sans-serif; }
+	@-webkit-keyframes reverseRotataZ {
+  0%{
+    -webkit-transform: rotateZ(0deg);
+  }
+  100%{
+    -webkit-transform: rotateZ(-360deg);
+  }
+}
+@-webkit-keyframes rotataZ{
+  0% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+#musicControl {
+  position:fixed;
+  right:30px;
+  top:30px;
+  margin-top:0;
+  display:inline-block;
+  z-index:99999999
+}
+#musicControl a {
+  display:inline-block;
+  width: 25px;
+  height: 25px;
+  background:url('images/music.png') no-repeat;
+  background-size:100%;
+}
+#musicControl a audio{
+  width:100%;
+  height:56px;
+}
+#musicControl a.stop {
+  background-position:left bottom;
+}
+#musicControl a.on {
+  background-position:0px 1px;
+  -webkit-animation: reverseRotataZ 1.2s linear infinite;
+}
+#music_play_filter{
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:99999998;
+}
+</style>
+<span id="musicControl">
+    <a id="mc_play" class="on">
+        <audio id="musicfx" loop="loop" autoplay="autoplay">
+            <source src="sources/bg.mp3" type="audio/mpeg" id="hhh">
+        </audio>
+    </a>
+</span>
+<script>
+$('#mc_play').click(function () {
+	var music = document.getElementById('musicfx');
+	if (music.paused) {
+		music.play();
+		$('#mc_play').attr('class', 'on');
+	} else {
+		music.pause();
+		$('#mc_play').attr('class', 'stop');
+	}
+})
+var ua = navigator.userAgent.toLowerCase();
+if(ua.match(/MicroMessenger/i)=="micromessenger") {
+	document.addEventListener('DOMContentLoaded', function () {
+		function audioAutoPlay() {
+			var audio_ = document.getElementById('musicfx')
+			document.addEventListener("WeixinJSBridgeReady", function () {
+				audio_.play()
+			}, false)
+		}
+		audioAutoPlay()
+	});
+}
+</script>
+
+
+
+    <!-- App favicon -->
+    
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css" />
+
+    <!-- pe-icon-7 -->
+    <link rel="stylesheet" href="css/pe-icon-7-stroke.css" type="text/css" />
+
+    <!-- custom Css -->
+    <link rel="stylesheet" type="text/css" href="css/style.min.css" />
+</head>
+
+<body data-bs-target=".navbar" data-bs-offset="58">
+    <!-- START NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top sticky" id="navbar">
+        <div class="container">
+            <a class="navbar-brand logo-dark fw-bolder fs-24 text-dark" href="index.html">
+                    <img src="images/logo-dark.png" alt="" height="22">
+                </a>
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="mdi mdi-menu"></span>
+                    </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link sub-menu-item" href="index.html">主页</a></li>
+                    <li class="nav-item"><a class="nav-link sub-menu-item" href="1.html">个人简历</a></li>
+                    <li class="nav-item"><a class="nav-link sub-menu-item" href="2.html">社会实践</a></li>
+                    <li class="nav-item"><a class="nav-link sub-menu-item" href="3.html">班级风采</a></li>
+                    <li class="nav-item"><a class="nav-link sub-menu-item" href="4.html">江大校园</a></li>
+                    <li class="nav-item dropdown parent-menu-item">
+                        <a class="nav-link menu-item dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">家乡无锡</a>
+                        <ul class="dropdown-menu ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link sub-menu-item" href="5.html#无锡介绍">无锡介绍</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link sub-menu-item" href="5.html#无锡景点">无锡景点</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link sub-menu-item" href="5.html#无锡特色美食">无锡特色美食</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link sub-menu-item" href="5.html#无锡科技发展">无锡科技发展</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END NAVBAR -->
+
+    <!-- START TITLE -->
+    <section>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <div class="card hero-img position-relative" style="background-image: url(images/title-bg.jpg);">
+                        <div class="title-bg-overlay"></div>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <div class="position-relative">
+                                <h1 class="fw-medium">这是我的家乡无锡介绍</h1>
+                                <h3 class="fw-normal lh-base">
+                                    My hometown Wuxi
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END TITLE -->
+
+
+
+    <!-- 以下为本页主体部分 -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+<center>
+                <p class="text-muted mt-2">
+                    在这里了解我的家乡无锡这座城市~ <br /> Know more about Wuxi
+                </p>
+</center>
+            </div>
+        </div>
+</section>
+     <section class="section" id="无锡介绍">
+        <div class="container">
+            <div class="row">
+
+<hr/>
+<center>
+                    <h3>无锡介绍</h3>
+<h5>Introduction of Wuxi</h5>
+</center>
+
+<div class="col-md-6">
+<p>&nbsp; &nbsp; &nbsp; &nbsp; 无锡，江苏省地级市，简称“锡”，古称新吴、梁溪、金匮，被誉为“太湖明珠”。无锡位于江苏省南部，地处长江三角洲平原。无锡市辖5个区及2个县级市，全市总面积4627.47平方千米。
+</p><p>
+&nbsp; &nbsp; &nbsp; &nbsp; 无锡是国家历史文化名城，自古就是鱼米之乡，素有布码头、钱码头、窑码头、丝都、米市之称。无锡是中国民族工业和乡镇工业的摇篮，是苏南模式的发祥地。无锡文化属吴越文化，无锡人属江浙民系，使用吴语。2017年11月，复查确认继续保留全国文明城市荣誉称号。 
+</p><p>
+&nbsp; &nbsp; &nbsp; &nbsp; 2018年12月，被评为2018中国大陆最佳地级城市第3名，2018中国创新力最强的30个城市之一，2018中国最佳旅游目的地城市第17名。2019年8月，中国海关总署主办的《中国海关》杂志公布了2018年“中国外贸百强城市”排名，无锡排名第11。2021年入选国家服务型制造示范城市。
+</p>
+</div>
+<div class="col-md-2">
+<img src="images/5/无锡拼图.jpg" width="140" height="280">
+</div><div class="col-md-4">
+<img src="images/5/无锡市区.jpg" height="260">
+</div>
+</section>
+
+
+     <section class="section" id="无锡景点">
+        <div class="container">
+            <div class="row">
+<hr/>
+
+<center>
+<h3>无锡景点<h3>
+<h5>Scenic spots in Wuxi</h5>
+</center>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing branding">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/5/scene/锡惠名胜.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>锡惠名胜</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing designing">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/5/scene/南禅寺.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>南禅寺</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing photography">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/5/scene/南长街.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>南长街</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing development">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/5/scene/南长街夜景.jpg" class="img-fluid rounded" alt="work-image" />
+  
+                            <div class="content bg-white p-3 shadow">
+                                <h5>南长街夜景</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+
+            </div>
+            <!--end row-->
+
+</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing branding">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/5/scene/惠山古镇.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>惠山古镇</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing designing">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/5/scene/灵山大佛.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>灵山大佛</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing photography">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/5/scene/拈花湾小镇.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>拈花湾小镇</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing development">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/5/scene/太湖鼋头渚.jpg" class="img-fluid rounded" alt="work-image" />
+  
+                            <div class="content bg-white p-3 shadow">
+                                <h5>太湖鼋头渚</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+
+            </div>
+            <!--end row-->
+
+</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing branding">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/5/scene/蠡湖.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>蠡湖</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing designing">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/5/scene/雪浪山.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>雪浪山</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing photography">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/5/scene/长广溪.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>长广溪</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing development">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/5/scene/无锡影视城.jpg" class="img-fluid rounded" alt="work-image" />
+  
+                            <div class="content bg-white p-3 shadow">
+                                <h5>影视基地</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+
+            </div>
+            <!--end row-->
+
+</div>
+
+</section>
+
+
+
+
+     <section class="section" id="无锡特色美食">
+        <div class="container">
+            <div class="row">
+<hr/>
+
+<center>
+<h3>无锡特色美食<h3>
+<h5> Specialty food in Wuxi</h5>
+</center>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing branding">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/5/product/三凤桥酱排骨.png" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>三凤桥酱排骨</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing designing">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/5/product/小笼包.png" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>无锡小笼包</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing photography">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/5/product/油面筋.png" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>油面筋</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing development">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/5/product/阳山水蜜桃.png" class="img-fluid rounded" alt="work-image" />
+  
+                            <div class="content bg-white p-3 shadow">
+                                <h5>阳山水蜜桃</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+
+            </div>
+            <!--end row-->
+
+</div>
+
+
+</section>
+
+
+     <section class="section" id="无锡科技发展">
+        <div class="container">
+            <div class="row">
+<hr/>
+
+<center>
+<h3>无锡科技发展<h3>
+<h5> Technology in Wuxi</h5>
+</center>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing branding">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/5/tech/国家超级计算无锡中心.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>国家超级计算无锡中心</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing designing">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/5/tech/神威太湖之光.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>神威太湖之光超级计算机</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing photography">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/5/tech/中国物联网研究发展中心.png" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>中国物联网研究发展中心</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing development">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/5/tech/物联网大会.png" class="img-fluid rounded" alt="work-image" />
+  
+                            <div class="content bg-white p-3 shadow">
+                                <h5>世界物联网无锡峰会</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+
+            </div>
+            <!--end row-->
+
+</div>
+</section>
+<section>
+<hr/>
+<center>
+<p>
+希望这座城市会给你们带来更多的惊喜~
+</p>
+</center>
+</section>
+
+
+
+    <!-- 以上为本页主体部分 -->
+
+
+
+
+
+
+
+    <footer class="footer bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-6 pt-4">
+                    
+
+                    <h4><font color="#000093">欢迎关注</font></h4>
+                    <a href="https://blog.csdn.net/weixin_46283740" target="_blank"><h5>CSDN博客</h5></a>
+                    <a href="https://github.com/WULEI7" target="_blank"><h5>GitHub</h5></a>
+</div><div class="col-lg-2 col-md-6 pt-4">
+                    <h4><font color="#000093">校园链接</font></h4>
+
+                  <a href="https://www.jiangnan.edu.cn/" target="_blank"><h5>江南大学主页</h5></a>
+                  <a href="http://ai.jiangnan.edu.cn/" target="_blank"><h5>人工智能与计算机学院</h5></a>
+
+</div>
+<div class="col-lg-3 col-md-6 pt-4">
+</div>
+                <div class="col-lg-2 offset-lg-3 col-md-3 pt-4">
+                    <h4>WeChat</h4>
+                    <img src="images/wechat.jpg" width="151" height="150">
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    <!-- START FOOTER ALTER -->
+    <div class="footer-alt bg-dark">
+        <div class="container">
+            <div class="row align-items-center py-3">
+                <div class="col-md-6">
+                    <p class="text-white m-0">江南大学人工智能与计算机学院 计科1901 魏宇非 © 2021 Design By <a href="https://blog.csdn.net/weixin_46283740" target="_blank">WULEI7</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END FOOTER ALTER -->
+
+    <!-- Javascript -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/filter.init.js"></script>
+
+    <!-- app js -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>

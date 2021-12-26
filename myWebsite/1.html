@@ -1,0 +1,657 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+<link rel="shortcut icon" href="images/icon.png">
+    <title>myWebsite-个人简历</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Premium Bootstrap 5 Landing Page Template" />
+    <meta name="keywords" content="bootstrap 5, premium, marketing, multipurpose" />
+    <meta name="author" content="Themesdesign" />
+
+
+<script src="js/jquery.min.js"></script>
+<style>
+
+ol {
+  padding: 20px;
+}
+ol li {
+  background: #cce5ff;
+  margin: 5px;
+}
+
+body { font-size: 1.2rem; background-color: #000; font-family: PingFangSC-Regular, sans-serif; }
+	@-webkit-keyframes reverseRotataZ {
+  0%{
+    -webkit-transform: rotateZ(0deg);
+  }
+  100%{
+    -webkit-transform: rotateZ(-360deg);
+  }
+}
+@-webkit-keyframes rotataZ{
+  0% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+#musicControl {
+  position:fixed;
+  right:30px;
+  top:30px;
+  margin-top:0;
+  display:inline-block;
+  z-index:99999999
+}
+#musicControl a {
+  display:inline-block;
+  width: 25px;
+  height: 25px;
+  background:url('images/music.png') no-repeat;
+  background-size:100%;
+}
+#musicControl a audio{
+  width:100%;
+  height:56px;
+}
+#musicControl a.stop {
+  background-position:left bottom;
+}
+#musicControl a.on {
+  background-position:0px 1px;
+  -webkit-animation: reverseRotataZ 1.2s linear infinite;
+}
+#music_play_filter{
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:99999998;
+}
+</style>
+<span id="musicControl">
+    <a id="mc_play" class="on">
+        <audio id="musicfx" loop="loop" autoplay="autoplay">
+            <source src="sources/bg.mp3" type="audio/mpeg" id="hhh">
+        </audio>
+    </a>
+</span>
+<script>
+$('#mc_play').click(function () {
+	var music = document.getElementById('musicfx');
+	if (music.paused) {
+		music.play();
+		$('#mc_play').attr('class', 'on');
+	} else {
+		music.pause();
+		$('#mc_play').attr('class', 'stop');
+	}
+})
+var ua = navigator.userAgent.toLowerCase();
+if(ua.match(/MicroMessenger/i)=="micromessenger") {
+	document.addEventListener('DOMContentLoaded', function () {
+		function audioAutoPlay() {
+			var audio_ = document.getElementById('musicfx')
+			document.addEventListener("WeixinJSBridgeReady", function () {
+				audio_.play()
+			}, false)
+		}
+		audioAutoPlay()
+	});
+}
+</script>
+
+
+
+    <!-- App favicon -->
+    
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css" />
+
+    <!-- pe-icon-7 -->
+    <link rel="stylesheet" href="css/pe-icon-7-stroke.css" type="text/css" />
+
+    <!-- custom Css -->
+    <link rel="stylesheet" type="text/css" href="css/style.min.css" />
+</head>
+
+<body data-bs-target=".navbar" data-bs-offset="58">
+    <!-- START NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top sticky" id="navbar">
+        <div class="container">
+            <a class="navbar-brand logo-dark fw-bolder fs-24 text-dark" href="index.html">
+                    <img src="images/logo-dark.png" alt="" height="22">
+                </a>
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="mdi mdi-menu"></span>
+                    </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link sub-menu-item" href="index.html">主页</a></li>
+                    <li class="nav-item dropdown parent-menu-item">
+                        <a class="nav-link menu-item dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">个人简历</a>
+                        <ul class="dropdown-menu ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link sub-menu-item" href="1.html#自我介绍">自我介绍</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link sub-menu-item" href="1.html#竞赛成绩">竞赛成绩</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link sub-menu-item" href="1.html#项目经历">项目经历</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link sub-menu-item" href="1.html#课余活动">课余活动</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link sub-menu-item" href="2.html">社会实践</a></li>
+                    <li class="nav-item"><a class="nav-link sub-menu-item" href="3.html">班级风采</a></li>
+                    <li class="nav-item"><a class="nav-link sub-menu-item" href="4.html">江大校园</a></li>
+                    <li class="nav-item"><a class="nav-link sub-menu-item" href="5.html">家乡无锡</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END NAVBAR -->
+
+    <!-- START TITLE -->
+    <section>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <div class="card hero-img position-relative" style="background-image: url(images/title-bg.jpg);">
+                        <div class="title-bg-overlay"></div>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <div class="position-relative">
+                                <h1 class="fw-medium">这是我的个人简历</h1>
+                                <h3 class="fw-normal lh-base">
+                                    My resume
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END TITLE -->
+
+    <!-- 以下为本页主体部分 -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+<center>
+                <p class="text-muted mt-2">
+                    在这里可以了解关于我的更多哟~ <br /> Know more about me
+                </p>
+</center>
+            </div>
+        </div>
+</section>
+     <section class="section" id="自我介绍">
+        <div class="container">
+            <div class="row">
+
+<hr/>
+<center>
+                    <h3>自我介绍</h3>
+<h5>Self-introduction</h5>
+</center>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; 魏宇非，男，汉族，2001年3月生，江苏无锡人，中共预备党员，来自江南大学人工智能与计算机学院计算机科学与技术1901班，至善生。GPA3.70专业排名5/219，综合测评班级排名1/39；英语四级605分，六级495分，PAT甲级100分。担任班长，带领班级获评院、校两级先进班集体；现任学院学生会执行主席，曾任学生会办公室核心干事；ACM算法俱乐部成员；主持完成国家级创业训练项目；省级重点社会实践团队“逐光鼋梦队”成员；学院足球队成员；江南大学“十佳演说家”；2021年度人工智能与计算机学院“智能之星”。
+</p><p>
+&nbsp; &nbsp; &nbsp; &nbsp; 曾获得国家奖学金、荣康信奖学金、至善学院企业实训社会奖学金、一等综合奖学金、二等学业奖学金，无锡市三好学生、江南大学三好学生（2次）、江南大学优秀学生干部、江南大学优秀共青团员江南大学班团培训班优秀学员，蓝桥杯全国软件和信息技术专业人才大赛江苏赛区二等奖、江南大学“互联网+”大学生创新创业大赛三等奖等17项校级及以上荣誉和奖项。
+</p>
+<center>
+<img src="images/1/honors.png" style="max-width: 600px;">
+<h4>（个人荣誉展示）</h4>
+</center>
+<p>
+<br>&nbsp; &nbsp; &nbsp; &nbsp; 刚入学时，我也曾有过迷茫，不知所措。我认真聆听每一次学长学姐的分享，正是在他们的指引下，我树立了远大的目标，并脚踏实地为之而努力。现在，大学生涯已经进入下半程，而我也离实现自己的梦想越来越近了。
+</p><p>
+&nbsp; &nbsp; &nbsp; &nbsp; 很幸运我能够不忘初心，一路坚持走到现在。路漫漫其修远兮，吾将上下而求索。亦余心之所善兮，虽九死其犹未悔。因为热爱，奔赴山海。梦在前方，路在脚下。我一直相信，暴风雨的尽头会有彩虹。
+</p><p>
+&nbsp; &nbsp; &nbsp; &nbsp; 心怀感激，珍惜每一次学习和成长的机会，也许会有遗憾，但永远不会有的就是后悔。
+</p>
+</section>
+
+
+     <section class="section" id="竞赛成绩">
+        <div class="container">
+            <div class="row">
+<hr/>
+
+<center>
+<h3>竞赛成绩<h3>
+<h5>Competitions</h5>
+</center>
+
+<div class="col-md-6">
+<ol>
+<li>2021年    中国大学生程序设计竞赛优胜奖</li>
+<li>2021年    国际大学生程序设计竞赛亚洲区域赛优胜奖</li>
+<li>2021年    “蓝桥杯”全国软件和信息技术专业人才大赛江苏赛区二等奖</li>
+<li>2021年    江南大学“互联网+”大学生创新创业大赛三等奖</li>
+<li>2021年    “LSCAT”杯江苏省笔译大赛英译汉本科组三等奖</li>
+<li>2020年    “外教社·词达人杯”江苏省大学生英语词汇大赛江南大学三等奖</li>
+</ol>
+</div>
+
+<div class="col-md-6">
+<p>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; 在大学，完成课堂学习只是基本任务，我们还应投身更高水平的学科竞赛。加入ACM算法俱乐部，为的是将来能够出战高水平的比赛，代表学校去赢得更多的荣誉。每周6个晚上都在学院敲代码，有时直到凌晨，就这样见证了无数个敲击键盘的日日夜夜，完成1000+道课外编程题，只为最终能够站上ICPC、CCPC等A、B类学科竞赛的舞台。功夫不负有心人，今年首次参赛，我便获得了“蓝桥杯”全国软件和信息技术专业人才大赛江苏赛区二等奖。但我不会就满足于此，我将永远在参加训练和比赛的路上。
+</p>
+</div>
+
+<div class="col-md-6">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing branding">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/1/competitions/img1.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>ICPC</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing designing">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/1/competitions/img2.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>CCPC</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing photography">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/1/competitions/img3.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>PAT</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing development">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/1/competitions/img4.jpg" class="img-fluid rounded" alt="work-image" />
+  
+                            <div class="content bg-white p-3 shadow">
+                                <h5>互联网+</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+</div>
+</div>
+</div>
+
+ <div class="col-md-6">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing branding">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/1/competitions/img5.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>蓝桥杯</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing designing">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/1/competitions/img6.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>CSP</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing photography">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/1/competitions/img7.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>词达人</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing development">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/1/competitions/img8.jpg" class="img-fluid rounded" alt="work-image" />
+  
+                            <div class="content bg-white p-3 shadow">
+                                <h5>大英赛</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+
+            </div>
+            <!--end row-->
+</div>
+</div>
+</div>
+
+</section>
+
+
+
+     <section class="section" id="项目经历">
+        <div class="container">
+            <div class="row">
+<hr/>
+
+<center>
+<h3>项目经历<h3>
+<h5>Project experiences</h5>
+</center>
+
+<p>
+&nbsp; &nbsp; &nbsp; &nbsp; 在科研创新经历方面，我主持完成国家级创业训练项目《“智反馈”服务程序——从用户评论中挖掘业务价值》，结题成绩良好；团队参赛获得江南大学“互联网+”大学生创新创业大赛三等奖。我还主持完成至善模拟学术论坛，跟随方伟老师参与至善导师项目，今年暑假在《2021年复杂系统与工程大会论文集》以第二作者身份参与投稿两篇专业学术论文《面向极高维问题的并行频繁覆盖随机漂移粒子群优化算法》和《基于“神威·太湖之光”的大规模优化问题并行演化算法》。
+</p>
+<img src="images/1/project/大创.png" height="360">
+<p>
+&nbsp; &nbsp; &nbsp; &nbsp; 此外，我在至善学院暑期走进阿里大学生精英训练营担任组长，带领团队顺利结业。
+</p><p>
+&nbsp; &nbsp; &nbsp; &nbsp; 在阿里，我们了解了一家世界顶级电商企业的历史和文化；上了区块链的课程，并且学习了新零售和新营销；后面参访启博云，学习社交电商、思域电商、区域银行数字化转型等等，二者相互补充，让我们感受到时代发展的趋势和潮流。在“十四五”发展的新要求下，充分把握产业与消费升级战略机遇，借势而为，才能让一家企业更好地发展。
+</p><p>
+&nbsp; &nbsp; &nbsp; &nbsp; 在课程学习之外，我们参访了几家杭州当地的企业，包括万事利，多次给国际会议上各国领导人提供服装和丝绸纪念品，也是一家有社会担当的企业；九阳，充分利用新零售进行发展运营，也是和天猫这样的电商平台深入合作；娃哈哈，了解到企业创始人从最初的一家小店逐步做大，也是从中看到了一家企业的成长之路和责任担当，这些都是一家伟大的企业所不可或缺的品质……
+</p>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing branding">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/1/project/img1.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>参访阿里巴巴</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing designing">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/1/project/img2.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>参访启博云</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing photography">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/1/project/img3.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>参访娃哈哈</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing development">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/1/project/img4.jpg" class="img-fluid rounded" alt="work-image" />
+  
+                            <div class="content bg-white p-3 shadow">
+                                <h5>参访万事利</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0"></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+
+            </div>
+            <!--end row-->
+
+</div>
+
+</section>
+
+
+     <section class="section" id="课余活动">
+        <div class="container">
+            <div class="row">
+<hr/>
+
+<center>
+<h3>课余活动<h3>
+<h5>Activities</h5>
+</center>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing branding">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/1/activities/img1.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>校园运动会</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0">在运动中释放自我</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing designing">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/1/activities/img2.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>春季足球赛</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0">绿茵场上展现激情</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing photography">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/1/activities/img3.jpg" class="img-fluid rounded" alt="work-image" />
+
+                            <div class="content bg-white p-3 shadow">
+                                <h5>至善迎新晚会</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0">我们的班级舞蹈节目</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 filter-box spacing development">
+                    <div class="card border-0 work-container work-grid position-relative d-block overflow-hidden rounded">
+                        <div class="card-body p-0">
+
+                                    <img src="images/1/activities/img4.jpg" class="img-fluid rounded" alt="work-image" />
+  
+                            <div class="content bg-white p-3 shadow">
+                                <h5>十佳演说家</h5>
+                                <h6 class="text-muted font-weight-normal tag mb-0">喊出时代最强音</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+
+            </div>
+            <!--end row-->
+
+<br>
+</div>
+
+<p>
+&nbsp; &nbsp; &nbsp; &nbsp; 在课外，我积极参与各项文体类活动比赛，丰富自己的课余生活。
+</p><p>
+&nbsp; &nbsp; &nbsp; &nbsp; 我们不仅要有文明的精神，也要有野蛮的体魄。作为学院足球队的一员，大一曾随原物联网院队获得校新生杯冠军，在本年度春季足球淘汰赛中为学院首发打满全场60分钟；在2021年江南大学“云动会”获得1分钟俯卧撑男子组三等奖。每天风雨无阻坚持跑步五公里以上，为学习注入源源不断的动力。
+</p><p>
+&nbsp; &nbsp; &nbsp; &nbsp; 在辩论赛、才艺演出等等场合，也随处可见我的身影。今年曾在江南大学第七届“十佳演说家”评选活动中获评“十佳演说家”荣誉称号。
+
+<hr/>
+
+<center>
+        <h4>十佳演说家初赛风采视频</h4>
+       <video width="640" height="360" controls autoplay>
+    <source src= "sources/top10.mp4" type="video/mp4">
+    </video>
+</center>
+<center>
+<br>
+        <h4>十佳演说家决赛风采图片</h4>
+        <a href="http://tuanwei.jiangnan.edu.cn/info/1028/8074.htm" target="_blank">
+<img src="images/1/activities/img5.jpg" width="640" height="360">
+</a>
+        <h5>（点击图片查看决赛推送）</h5>
+</center>
+
+
+</section>
+
+<section>
+<hr/>
+<center>
+<p>
+生逢盛世，肩负重任，征途漫漫，唯有奋斗
+</p>
+</center>
+</section>
+
+    <!-- 以上为本页主体部分 -->
+    <footer class="footer bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-6 pt-4">
+                    
+
+                    <h4><font color="#000093">欢迎关注</font></h4>
+                    <a href="https://blog.csdn.net/weixin_46283740" target="_blank"><h5>CSDN博客</h5></a>
+                    <a href="https://github.com/WULEI7" target="_blank"><h5>GitHub</h5></a>
+</div><div class="col-lg-2 col-md-6 pt-4">
+                    <h4><font color="#000093">校园链接</font></h4>
+
+                  <a href="https://www.jiangnan.edu.cn/" target="_blank"><h5>江南大学主页</h5></a>
+                  <a href="http://ai.jiangnan.edu.cn/" target="_blank"><h5>人工智能与计算机学院</h5></a>
+
+</div>
+<div class="col-lg-3 col-md-6 pt-4">
+</div>
+                <div class="col-lg-2 offset-lg-3 col-md-3 pt-4">
+                    <h4>WeChat</h4>
+                    <img src="images/wechat.jpg" width="151" height="150">
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    <!-- START FOOTER ALTER -->
+    <div class="footer-alt bg-dark">
+        <div class="container">
+            <div class="row align-items-center py-3">
+                <div class="col-md-6">
+                    <p class="text-white m-0">江南大学人工智能与计算机学院 计科1901 魏宇非 © 2021 Design By <a href="https://blog.csdn.net/weixin_46283740" target="_blank">WULEI7</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END FOOTER ALTER -->
+
+    <!-- Javascript -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/filter.init.js"></script>
+
+    <!-- app js -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
