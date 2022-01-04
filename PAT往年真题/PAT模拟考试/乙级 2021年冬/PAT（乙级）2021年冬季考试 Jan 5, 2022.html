@@ -1,0 +1,449 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PAT（乙级）2021年冬季考试</title>
+  <style>.paper {
+  margin: 0;
+  font-family: -apple-system, "PingFang SC", "Lantinghei SC", "Helvetica Neue", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--text-normal);
+}
+.paper *,
+.paper *::before,
+.paper *::after {
+  box-sizing: border-box;
+}
+.paper pre,
+.paper code,
+.paper kbd,
+.paper samp {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 12px;
+}
+.paper pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow: auto;
+  -ms-overflow-style: scrollbar;
+}
+.paper label {
+  display: inline-block;
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+.paper hr {
+  height: 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 0;
+}
+.paper .result table {
+  width: 100%;
+}
+.paper .result th,
+.paper .result td {
+  border: 1px solid var(--border-all);
+  text-align: center;
+}
+.paper .result .box {
+  border: 1px solid var(--border-all);
+  padding: 8px;
+  color: var(--text-normal);
+}
+/* stylelint-disable */
+.ques-view, .rendered-markdown {
+  line-height: 1.5;
+}
+.ques-view p, .rendered-markdown p {
+  margin: 0.5em 0;
+}
+.ques-view h1, .rendered-markdown h1, .ques-view h2, .rendered-markdown h2, .ques-view h3, .rendered-markdown h3, .ques-view h4, .rendered-markdown h4, .ques-view h5, .rendered-markdown h5, .ques-view h6, .rendered-markdown h6 {
+  margin: 0.8em 0;
+}
+.ques-view img, .rendered-markdown img {
+  max-width: 100%;
+}
+.ques-view .ques-list, .rendered-markdown .ques-list {
+  padding-left: 50px;
+}
+.ques-view .ques-list li, .rendered-markdown .ques-list li {
+  position: relative;
+  list-style-type: upper-alpha;
+}
+.ques-view .ques-list input, .rendered-markdown .ques-list input {
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  margin-top: -7px;
+}
+.ques-view textarea, .rendered-markdown textarea {
+  border-radius: 2px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  min-height: 100px;
+}
+.ques-view code, .rendered-markdown code {
+  font-size: 12px;
+  background: var(--bg-light);
+  border-radius: 3px;
+  border: 1px solid var(--border-all);
+  padding: 0 3px;
+  color: #e74c3c;
+  margin: 0 2px;
+}
+.ques-view pre, .rendered-markdown pre {
+  padding: 6px 12px;
+  background: var(--bg-light);
+  border: 1px solid var(--border-all);
+  border-radius: 3px;
+  word-break: break-all;
+}
+.ques-view pre code, .rendered-markdown pre code {
+  background: none;
+  border: none;
+  color: var(--text-normal);
+  padding: 0;
+  margin: 0;
+}
+.ques-view hr, .rendered-markdown hr {
+  border: none;
+  border-top: 1px solid var(--border-all);
+}
+.ques-view blockquote, .rendered-markdown blockquote {
+  margin: 0.5em 0;
+  padding: 2px 14px;
+  font-size: 12px;
+  background: var(--bg-light);
+  border-left: 4px solid var(--border-all);
+}
+.ques-view table, .rendered-markdown table {
+  margin: 0 auto;
+}
+.ques-view table th, .rendered-markdown table th, .ques-view table td, .rendered-markdown table td {
+  border: 1px solid var(--border-all);
+  padding: 2px 4px;
+  font-size: 12px;
+}
+.ques-view .ques-score, .rendered-markdown .ques-score {
+  color: var(--text-light);
+  user-select: none;
+}
+.rendered-markdown blockquote {
+  margin: 0.5em 0;
+  padding: 2px 14px;
+  font-size: 12px;
+  background: var(--bg-light);
+  border-left: 4px solid var(--border-all);
+}
+.rendered-markdown blockquote p {
+  margin-bottom: 0;
+}
+.rendered-markdown table td, .rendered-markdown table th {
+  border: 1px solid var(--border-all);
+  padding: 5px;
+}
+.rendered-markdown p:first-child {
+  margin: 0;
+}
+.katex-mathml {
+  display: none;
+}
+.code {
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Monaco, Courier, "Courier New", monospace;
+}
+</style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+
+<div><div class="paper" style="max-width:940px;margin:auto" data-reactroot=""><div style="padding:16px;text-align:center;font-size:24px;font-weight:bold">PAT（乙级）2021年冬季考试</div><div style="width:calc(100% / 3);display:inline-flex;padding:4px"><span style="font-weight:bold;min-width:56px">开始时间</span><span style="margin-left:8px;overflow:hidden;text-overflow:ellipsis" title="2016/01/01 08:00:00">2016/01/01 08:00:00</span></div><div style="width:calc(100% / 3);display:inline-flex;padding:4px"><span style="font-weight:bold;min-width:56px">结束时间</span><span style="margin-left:8px;overflow:hidden;text-overflow:ellipsis" title="2038/01/18 08:00:00">2038/01/18 08:00:00</span></div><div style="width:calc(100% / 3);display:inline-flex;padding:4px"><span style="font-weight:bold;min-width:56px">答题时长</span><span style="margin-left:8px;overflow:hidden;text-overflow:ellipsis" title="180分钟">180分钟</span></div><div style="width:calc(100% / 3);display:inline-flex;padding:4px"><span style="font-weight:bold;min-width:56px">考生</span><span style="margin-left:8px;overflow:hidden;text-overflow:ellipsis" title="undefined"></span></div><div style="width:calc(100% / 3);display:inline-flex;padding:4px"><span style="font-weight:bold;min-width:56px">得分</span><span style="margin-left:8px;overflow:hidden;text-overflow:ellipsis" title="100">100</span></div><div style="width:calc(100% / 3);display:inline-flex;padding:4px"><span style="font-weight:bold;min-width:56px">总分</span><span style="margin-left:8px;overflow:hidden;text-overflow:ellipsis" title="100">100</span></div><hr/><div style="display:flex;font-size:16px;margin-top:16px"><span style="flex-grow:1;font-weight:bold">编程题</span><span>得分：100</span><span style="margin-left:20px">总分：100</span></div><div style="padding-bottom:8px;margin-top:12px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">7-1</div><div style="overflow:auto;flex-grow:1"><div style="margin-bottom:8px;display:flex"><div style="font-weight:bold">自动打包机</div><div style="margin-left:8px;color:gray">(15分)</div></div><div><div class="rendered-markdown"><p><img src="https://images.ptausercontent.com/40eac190-9c4d-4545-922e-85f5daa1373a.JPG" alt="hmg.JPG"></p>
+<p>一条哈密瓜自动打包流水线的工作程序是这样的：首先系统设定每箱哈密瓜应该有的总重量 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi></mrow><annotation encoding="application/x-tex">W</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span></span></span></span>；然后传送带将一只只哈密瓜输送到一个自动称重设备上，根据称重结果进行以下操作：</p>
+<ul>
+<li>如果称上的总重量正好达到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi></mrow><annotation encoding="application/x-tex">W</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span></span></span></span>，则将称上的所有哈密瓜装箱送走；</li>
+<li>如果称上的总重量还不到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi></mrow><annotation encoding="application/x-tex">W</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span></span></span></span>，则将这只哈密瓜留在称上；</li>
+<li>如果称上的总重量超过了 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi></mrow><annotation encoding="application/x-tex">W</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span></span></span></span>，则将这只哈密瓜放到一边暂不处理。</li>
+</ul>
+<p>本题就请你写个程序统计一下，究竟有多少只哈密瓜被装了多少箱？</p>
+<h3 id="输入格式：">输入格式：</h3>
+<p>输入第一行给出两个正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><mn>1000</mn></mrow><annotation encoding="application/x-tex">\le 1000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1000</span></span></span></span>）和 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi></mrow><annotation encoding="application/x-tex">W</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span></span></span></span>（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">\le 10^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span>），分别为传送带上哈密瓜的数量和每箱的规定重量（克）。随后一行给出 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 个正整数，是传送带上每只哈密瓜的重量，单果重量不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2000</mn></mrow><annotation encoding="application/x-tex">2000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2000</span></span></span></span> 克。假设传送带按照输入的顺序传送哈密瓜到称重设备。</p>
+<h3 id="输出格式：">输出格式：</h3>
+<p>在一行中输出成功装箱的箱子数量和被装箱的哈密瓜的数量。数字间以 1 个空格分隔，行首尾不得有多余空格。</p>
+<h3 id="输入样例：">输入样例：</h3>
+<pre><code class="language-in">12 5000
+2000 1500 1800 1000 1800 500 1900 1500 2000 1600 2000 2000
+</code></pre>
+<h3 id="输出样例：">输出样例：</h3>
+<pre><code class="language-out">2 7
+</code></pre>
+<h3 id="样例说明：">样例说明：</h3>
+<p>第 1、2、4、6 只瓜正好一箱；第 7、8、10 只瓜正好一箱。</p>
+</div></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器</div><div style="flex-grow:1;overflow:auto">GXX</div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">代码</div><div style="flex-grow:1;overflow:auto"><pre class="box">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+using namespace std;
+int main()
+{
+	ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+	int n,w,t,ans=0,cnt=0,tweight=0,tcnt=0;
+	cin&gt;&gt;n&gt;&gt;w;
+	while(n--)
+	{
+		cin&gt;&gt;t;
+		tweight+=t;
+		tcnt++;
+		if(tweight==w)
+		{
+			ans++;
+			cnt+=tcnt;
+			tweight=0;
+			tcnt=0;
+		}
+		if(tweight&gt;w)
+		{
+			tweight-=t;
+			tcnt--;
+		}
+	}
+	cout&lt;&lt;ans&lt;&lt;&quot; &quot;&lt;&lt;cnt&lt;&lt;endl;
+	return 0;
+}</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（15 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>测试点</th><th>结果</th><th>得分</th><th>耗时</th><th>内存</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>8</td><td>3.00 ms</td><td>308 KB</td></tr><tr><td>1</td><td>答案正确</td><td>2</td><td>3.00 ms</td><td>312 KB</td></tr><tr><td>2</td><td>答案正确</td><td>2</td><td>3.00 ms</td><td>308 KB</td></tr><tr><td>3</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>456 KB</td></tr><tr><td>4</td><td>答案正确</td><td>2</td><td>3.00 ms</td><td>320 KB</td></tr></tbody></table></div></div></div><hr/><div style="padding-bottom:8px;margin-top:12px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">7-2</div><div style="overflow:auto;flex-grow:1"><div style="margin-bottom:8px;display:flex"><div style="font-weight:bold">用药统计</div><div style="margin-left:8px;color:gray">(20分)</div></div><div><div class="rendered-markdown"><p><img src="https://images.ptausercontent.com/764be305-7de4-43fa-adde-3a80f76253c4.png" alt="zh.png"></p>
+<p>上图是知乎上的一个问题：“在计算机中，有没有那种把很多病历导入，然后用计算机统计哪种药用的多的语言。？”虽然这个问题有错别字和标点符号错误，但好心的你还是帮他做一个吧 —— 给定 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 位病人病历中的用药纪录，请你统计被用的最多的那种药，并且列出其治疗过的疾病。</p>
+<h3 id="输入格式：">输入格式：</h3>
+<p>输入第一行给出正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">\le 10^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span>），为病历个数。随后 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 行，每行给出一条病历信息，格式如下：</p>
+<pre><code>疾病编号 K 药物编号1 药物编号2 …… 药物编号K</code></pre>
+<p>其中疾病编号是一个 4 位数字，题目保证每条病历中的疾病编号都是不同的；<code>K</code> 是不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">10</span></span></span></span> 的正整数，为该疾病用药的种类数；药物编号是一个以 <code>MD</code> 开头、后面跟 5 位数字的字符串。题目保证在一条病历中没有重复的药物编号。</p>
+<h3 id="输出格式：">输出格式：</h3>
+<p>首先在第一行输出被用的最多的那种药的编号，及其被用的次数，其间以一个空格分隔。如果有并列，则只输出编号最小（即 <code>MD</code> 后那串数字最小）的那个。随后按照输入的顺序输出该药物治疗过的疾病的编号，每行一个。</p>
+<h3 id="输入样例：">输入样例：</h3>
+<pre><code class="language-in">5
+0012 3 MD10031 MD99132 MD42107
+1024 2 MD99132 MD34821
+2048 2 MD27845 MD10031
+0149 2 MD34821 MD55802
+0035 3 MD55802 MD99132 MD10031
+</code></pre>
+<h3 id="输出样例：">输出样例：</h3>
+<pre><code class="language-out">MD10031 3
+0012
+2048
+0035
+</code></pre>
+</div></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器</div><div style="flex-grow:1;overflow:auto">GXX</div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">代码</div><div style="flex-grow:1;overflow:auto"><pre class="box">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;map&gt;
+using namespace std;
+int main()
+{
+	ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+	map&lt;string,int&gt; cnt;//统计各药品数量 
+	map&lt;string,vector&lt;string&gt; &gt; ans;//记录各药品治疗过的疾病编号 
+	int t,n;
+	string id,md;
+	cin&gt;&gt;t;
+	while(t--)
+	{
+		cin&gt;&gt;id&gt;&gt;n;
+		for(int i=0;i&lt;n;i++)
+		{
+			cin&gt;&gt;md;
+			cnt[md]++;
+			ans[md].emplace_back(id);
+		}
+	}
+	map&lt;string,int&gt;::iterator it;//迭代器 
+	int maxcnt=0;
+	string maxmd;
+	for(it=cnt.begin();it!=cnt.end();it++)
+	{
+		if(it-&gt;second&gt;maxcnt)
+		{
+			maxmd=it-&gt;first;
+			maxcnt=it-&gt;second;
+		}
+	}
+	cout&lt;&lt;maxmd&lt;&lt;&quot; &quot;&lt;&lt;cnt[maxmd]&lt;&lt;endl;
+	int size=ans[maxmd].size();
+	for(int i=0;i&lt;size;i++)
+		cout&lt;&lt;ans[maxmd][i]&lt;&lt;endl;
+	return 0;
+}</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（20 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>测试点</th><th>结果</th><th>得分</th><th>耗时</th><th>内存</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>10</td><td>3.00 ms</td><td>440 KB</td></tr><tr><td>1</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>436 KB</td></tr><tr><td>2</td><td>答案正确</td><td>1</td><td>2.00 ms</td><td>316 KB</td></tr><tr><td>3</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>436 KB</td></tr><tr><td>4</td><td>答案正确</td><td>2</td><td>117.00 ms</td><td>20436 KB</td></tr><tr><td>5</td><td>答案正确</td><td>5</td><td>110.00 ms</td><td>15792 KB</td></tr></tbody></table></div></div></div><hr/><div style="padding-bottom:8px;margin-top:12px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">7-3</div><div style="overflow:auto;flex-grow:1"><div style="margin-bottom:8px;display:flex"><div style="font-weight:bold">五彩斑斓的黑</div><div style="margin-left:8px;color:gray">(20分)</div></div><div><div class="rendered-markdown"><p><img src="https://images.ptausercontent.com/cbb1c35e-4dbb-44ba-bead-07a6f0552380.JPG" alt="hei.JPG"></p>
+<p>上面这张图是一条五彩斑斓的黑蛇。我们从头到尾扫描了蛇的身体，将获得的颜色 RGB 值顺序列出。下面就请你统计一下，这条五彩斑斓的黑蛇身上共有多少种不同的颜色，并且将每种不同的颜色按照它们第一次被扫描到的顺序输出。</p>
+<h3 id="输入格式：">输入格式：</h3>
+<p>输入首先在第一行中给出一个正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">\le 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span>），随后一行给出 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 个颜色的 RGB 值，每个颜色的格式为 <code>RRR.GGG.BBB</code>，其中 <code>RRR</code>、<code>GGG</code>、<code>BBB</code> 的值在区间 [0,255] 内。相邻颜色间以 1 个空格分隔。</p>
+<h3 id="输出格式：">输出格式：</h3>
+<p>在第一行中输出不同颜色的数量。第二行按照输入相同的格式、每种颜色第一次被扫描到的顺序输出各种不同颜色的值。相邻颜色间以 1 个空格分隔，行首尾不得有多余空格。</p>
+<h3 id="输入样例：">输入样例：</h3>
+<pre><code class="language-in">7
+000.000.000 255.255.255 000.000.000 000.123.072 000.000.000 000.000.000 000.123.072
+</code></pre>
+<h3 id="输出样例：">输出样例：</h3>
+<pre><code class="language-out">3
+000.000.000 255.255.255 000.123.072
+</code></pre>
+</div></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器</div><div style="flex-grow:1;overflow:auto">GXX</div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">代码</div><div style="flex-grow:1;overflow:auto"><pre class="box">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;set&gt;
+using namespace std;
+int main()
+{
+	ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+	int n;
+	string s;
+	set&lt;string&gt; st;//用于判断重复的集合 
+	vector&lt;string&gt; ans;
+	cin&gt;&gt;n;
+	for(int i=0;i&lt;n;i++)
+	{
+		cin&gt;&gt;s;
+		if(!st.count(s))
+		{
+			st.insert(s);
+			ans.push_back(s);
+		}
+	}
+	int size=ans.size();
+	cout&lt;&lt;size&lt;&lt;endl;
+	cout&lt;&lt;ans[0];
+	for(int i=1;i&lt;size;i++)
+		cout&lt;&lt;&quot; &quot;&lt;&lt;ans[i];//注意严格按照格式输出 
+	return 0;
+}</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（20 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>测试点</th><th>结果</th><th>得分</th><th>耗时</th><th>内存</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>10</td><td>3.00 ms</td><td>312 KB</td></tr><tr><td>1</td><td>答案正确</td><td>2</td><td>2.00 ms</td><td>328 KB</td></tr><tr><td>2</td><td>答案正确</td><td>2</td><td>9.00 ms</td><td>436 KB</td></tr><tr><td>3</td><td>答案正确</td><td>3</td><td>73.00 ms</td><td>12580 KB</td></tr><tr><td>4</td><td>答案正确</td><td>3</td><td>89.00 ms</td><td>12452 KB</td></tr></tbody></table></div></div></div><hr/><div style="padding-bottom:8px;margin-top:12px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">7-4</div><div style="overflow:auto;flex-grow:1"><div style="margin-bottom:8px;display:flex"><div style="font-weight:bold">假新闻</div><div style="margin-left:8px;color:gray">(20分)</div></div><div><div class="rendered-markdown"><p>所有的新闻网站都是有自己立场的，只是有些能比较好地平衡事实与己见。“假新闻”是指为了误导大众对真实事件的理解而做的故意歪曲事实的报导。</p>
+<p>为了甄别新闻媒体是否属于假新闻媒体，我们可以注意观察若干不同的新闻网站对同一个重要事件的报导。甄别算法如下：</p>
+<ul>
+<li>首先选择 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 家新闻网站。</li>
+<li>对每一个重要的事件，扫描每家网站，用不同的整数表示报导的不同观点。</li>
+<li>定义网站 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> 报导假新闻的<strong>可能性</strong>为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>i</mi></msub><mo>=</mo><msub><mi>n</mi><mi>i</mi></msub><mi mathvariant="normal">/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">F_i = n_i/N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>，其中 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">n_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 是与网站 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> 持不同观点的其它新闻网站数量。</li>
+<li>找出报导假新闻可能性最大的一家或几家网站。</li>
+<li>对每家网站，统计其成为最可能的假新闻网站的次数，最后找出次数最多的那家，就是在最多情况下最可能报导假新闻的网站。</li>
+</ul>
+<h3 id="输入格式：">输入格式：</h3>
+<p>输入第一行给出两个正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">\le 10^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span>)，为关注的新闻网站的数量；以及 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">\le 100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">100</span></span></span></span>），为关注的重要事件的数量。随后 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> 行，每行按以下格式给出各个新闻网站报导的观点：</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">R_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">R_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ... <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">R_N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">R_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 是区间 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mo>−</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup><mo separator="true">,</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[-10^4, 10^4]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">−</span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span> 内的整数，表示网站 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> 的观点。</p>
+<h3 id="输出格式：">输出格式：</h3>
+<p>在一行中输出在最多情况下最可能报导假新闻的网站的编号。题目保证解是唯一的。</p>
+<h3 id="输入样例：">输入样例：</h3>
+<pre><code class="language-in">4 6
+4 2 7 7
+1 1 1 3
+2 9 9 5
+-1 -1 -1 -1
+-2 2 -2 2
+1 1 3 4
+</code></pre>
+<h3 id="输出样例：">输出样例：</h3>
+<pre><code class="language-out">4
+</code></pre>
+<h3 id="样例说明：">样例说明：</h3>
+<p>每次中大事件对应的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">F_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 的值如下：</p>
+<pre><code>事件 1: 3/4 3/4 2/4 2/4 --&gt; 1 和 2 疑似
+事件 2: 1/4 1/4 1/4 3/4 --&gt; 4 疑似
+事件 3: 3/4 2/4 2/4 3/4 --&gt; 1 和 4 疑似
+事件 4: 0 0 0 0 --&gt; 全都疑似
+事件 5: 2/4 2/4 2/4 2/4 --&gt; 全都疑似
+事件 6: 2/4 2/4 3/4 3/4 --&gt; 3 和 4 疑似</code></pre>
+<p>所以只有 4 号网站有 5 次都被列为最大疑似，其它都只有 3 或 4 次。</p>
+</div></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器</div><div style="flex-grow:1;overflow:auto">GXX</div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">代码</div><div style="flex-grow:1;overflow:auto"><pre class="box">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#include &lt;vector&gt;
+using namespace std;
+const int mod = 1e4 + 1000;
+int cnt[2 * mod];
+int main() {
+    int n, m;
+    cin &gt;&gt; n &gt;&gt; m;
+    vector&lt;int&gt; num(n);
+    vector&lt;int&gt; s(n);
+    while (m--) {
+        memset(cnt, 0, sizeof(cnt));
+        for(int i = 0; i &lt; n; i++ ) {
+            scanf(&quot;%d&quot;, &amp;s[i]);
+            cnt[s[i] + mod]++;
+        }
+        int mi = 1e9;
+        for(int i = 0; i &lt; n; i++ ) {
+            mi = min(mi, cnt[s[i] + mod]);
+        }
+        for(int i = 0; i &lt; n; i++ ) {
+            if(cnt[s[i] + mod] == mi) {
+               num[i]++;
+            }
+        }
+    }
+    int res = 0, res_id = -1;
+    for(int i = 0; i &lt; n; i++ ) {
+        if(num[i] &gt; res) {
+           res_id = i;
+           res = num[i];
+        }
+    }
+    cout &lt;&lt; res_id + 1 &lt;&lt; endl;
+    return 0;
+}
+</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（20 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器输出</div><div style="flex-grow:1;overflow:auto"><pre class="box">a.cpp: In function ‘int main()’:
+a.cpp:15:18: warning: ignoring return value of ‘int scanf(const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+             scanf(&quot;%d&quot;, &amp;s[i]);
+             ~~~~~^~~~~~~~~~~~~</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>测试点</th><th>结果</th><th>得分</th><th>耗时</th><th>内存</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>11</td><td>3.00 ms</td><td>444 KB</td></tr><tr><td>1</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>440 KB</td></tr><tr><td>2</td><td>答案正确</td><td>5</td><td>85.00 ms</td><td>448 KB</td></tr><tr><td>3</td><td>答案正确</td><td>3</td><td>75.00 ms</td><td>564 KB</td></tr></tbody></table></div></div></div><hr/><div style="padding-bottom:8px;margin-top:12px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">7-5</div><div style="overflow:auto;flex-grow:1"><div style="margin-bottom:8px;display:flex"><div style="font-weight:bold">静态链表的秩</div><div style="margin-left:8px;color:gray">(25分)</div></div><div><div class="rendered-markdown"><p><strong>静态链表</strong>是指将一个有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> 个结点的链表存放在一个有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> 个单元的数组里，每个数组单元包含一个整型的 <code>data</code> 域和一个 <code>next</code> 指针，指针里存的是链表下一个结点在数组里对应的单元下标。题目保证给出的链表是一个<strong>线性表</strong>，即除了第一个结点外，每个结点有其唯一的前驱结点；除了最后一个结点外，每个结点有其唯一的后继结点。</p>
+<p>你的任务是将这个链表上的结点顺序编号，即从第一个结点开始，从 1 到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> 给每个结点顺次编号 —— 这个编号就叫结点的“秩”。</p>
+<h3 id="输入格式：">输入格式：</h3>
+<p>输入第一行给出一个正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">\le 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span>)，为链表中的结点个数。第二行给出 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> 个数字，第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span>  (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mo>⋯</mo><mtext> </mtext><mo separator="true">,</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i=0, \cdots , n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>) 个数字对应数组第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> 个单元存储的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>e</mi><mi>x</mi><mi>t</mi><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">next(i)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">e</span><span class="mord mathnormal">x</span><span class="mord mathnormal">t</span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mclose">)</span></span></span></span> 的值，空指针用 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span> 表示。数字间以空格分隔。</p>
+<h3 id="输出格式：">输出格式：</h3>
+<p>在一行中输出 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> 个数字，第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span>  (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mo>⋯</mo><mtext> </mtext><mo separator="true">,</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i=0, \cdots , n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>) 个数字对应第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> 个单元存储的结点在链表中的秩。数字间以 1 个空格分开，行首尾不得有多余空格。</p>
+<h3 id="输入样例：">输入样例：</h3>
+<pre><code class="language-in">5
+3 -1 4 1 0
+</code></pre>
+<h3 id="输出样例：">输出样例：</h3>
+<pre><code class="language-out">3 5 1 4 2
+</code></pre>
+<h3 id="样例说明：">样例说明：</h3>
+<p>输入的链表为 2-&gt;4-&gt;0-&gt;3-&gt;1-&gt;空。于是第 0 个单元所存的结点的秩是 3，因为它是链表中的第 3 个结点；第 1 个单元所存的结点的秩是 5，因为它是链表中的第 5 个结点；以此类推。</p>
+</div></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器</div><div style="flex-grow:1;overflow:auto">GXX</div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">代码</div><div style="flex-grow:1;overflow:auto"><pre class="box">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+int main()
+{
+	ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+	int n,a,front[100005],tail,pos[100005];
+	memset(front,0,sizeof(front));
+	cin&gt;&gt;n;
+	for(int i=1;i&lt;=n;i++)
+	{
+		cin&gt;&gt;a;
+		if(a==-1)
+			tail=i;//链表尾结点 
+		else
+			front[a+1]=i;//前一个结点 
+	}
+	vector&lt;int&gt; list;//链表 
+	while(tail!=0)
+	{
+		list.push_back(tail);
+		tail=front[tail];
+	}
+	reverse(list.begin(),list.end());//逆序变为正序 
+	int size=list.size();
+	for(int i=0;i&lt;size;i++)
+		pos[list[i]]=i+1;//记录各数值在链表中的位置 
+	cout&lt;&lt;pos[1]; 
+	for(int i=2;i&lt;=size;i++)
+		cout&lt;&lt;&quot; &quot;&lt;&lt;pos[i];
+	return 0;
+}</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（25 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>测试点</th><th>结果</th><th>得分</th><th>耗时</th><th>内存</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>14</td><td>3.00 ms</td><td>708 KB</td></tr><tr><td>1</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>704 KB</td></tr><tr><td>2</td><td>答案正确</td><td>2</td><td>20.00 ms</td><td>2368 KB</td></tr><tr><td>3</td><td>答案正确</td><td>2</td><td>19.00 ms</td><td>2228 KB</td></tr><tr><td>4</td><td>答案正确</td><td>3</td><td>19.00 ms</td><td>2228 KB</td></tr><tr><td>5</td><td>答案正确</td><td>3</td><td>19.00 ms</td><td>2228 KB</td></tr></tbody></table></div></div></div><hr/></div></div>
+
+</body>
+</html>

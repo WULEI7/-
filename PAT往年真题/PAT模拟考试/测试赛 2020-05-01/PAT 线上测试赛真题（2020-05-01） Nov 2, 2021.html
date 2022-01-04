@@ -1,0 +1,343 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PAT 线上测试赛真题（2020-05-01）</title>
+  <style>:root {
+  --color-primary: hsl(212, 89%, 53%);
+  --color-secondary: hsl(208, 7%, 46%);
+  --color-pass: hsl(100, 60%, 47%);
+  --color-danger: hsl(3, 68%, 53%);
+  --color-warning: hsl(35, 90%, 50%);
+  --color-ac: hsl(3, 89%, 53%);
+  --color-wa: hsl(100, 89%, 53%);
+  --color-pta: hsl(212, 87%, 30%);
+  --color-pds: hsl(23, 100%, 57%);
+  --color-pat: hsl(199, 88%, 57%);
+  --color-oms: hsl(175, 74%, 37%);
+  --color-zoj: hsl(227, 59%, 40%);
+  --color-es: hsl(45, 100%, 50%);
+  --text-black: hsl(0, 0%, 0%);
+  --text-dark: hsl(0, 0%, 10%);
+  --text-normal: hsl(0, 0%, 25%);
+  --text-light: hsl(0, 0%, 45%);
+  --text-lightest: hsl(0, 0%, 60%);
+  --text-white: hsl(0, 0%, 100%);
+  --text-black-r: hsl(0, 0%, 100%);
+  --border-all: hsla(0, 0%, 0%, 0.06);
+  --bg-base: hsl(0, 0%, 100%);
+  --bg-light: hsl(0, 0%, 97%);
+  --bg-normal: hsl(0, 0%, 94%);
+  --bg-site: hsl(204, 24%, 96%);
+  --bg-base-r: hsl(0, 0%, 25%);
+  --active-brightness-diff: 0.85;
+}
+.paper {
+  margin: 0;
+  font-family: -apple-system, "PingFang SC", "Lantinghei SC", "Helvetica Neue", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+}
+.paper *,
+.paper *::before,
+.paper *::after {
+  box-sizing: border-box;
+}
+.paper pre,
+.paper code,
+.paper kbd,
+.paper samp {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 12px;
+}
+.paper pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow: auto;
+  -ms-overflow-style: scrollbar;
+}
+.paper label {
+  display: inline-block;
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+.paper hr {
+  height: 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 0;
+}
+.paper .result table {
+  width: 100%;
+}
+.paper .result th,
+.paper .result td {
+  border: 1px solid #ddd;
+  text-align: center;
+}
+.paper .result .box {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+/* stylelint-disable */
+.ques-view, .rendered-markdown {
+  line-height: 1.5;
+}
+.ques-view p, .rendered-markdown p {
+  margin: 0.5em 0;
+}
+.ques-view h1, .rendered-markdown h1, .ques-view h2, .rendered-markdown h2, .ques-view h3, .rendered-markdown h3, .ques-view h4, .rendered-markdown h4, .ques-view h5, .rendered-markdown h5, .ques-view h6, .rendered-markdown h6 {
+  margin: 0.8em 0;
+}
+.ques-view img, .rendered-markdown img {
+  max-width: 100%;
+}
+.ques-view .ques-list, .rendered-markdown .ques-list {
+  padding-left: 50px;
+}
+.ques-view .ques-list li, .rendered-markdown .ques-list li {
+  position: relative;
+  list-style-type: upper-alpha;
+}
+.ques-view .ques-list input, .rendered-markdown .ques-list input {
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  margin-top: -7px;
+}
+.ques-view textarea, .rendered-markdown textarea {
+  border-radius: 2px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  min-height: 100px;
+}
+.ques-view code, .rendered-markdown code {
+  font-size: 12px;
+  background: var(--bg-light);
+  border-radius: 3px;
+  border: 1px solid var(--border-all);
+  padding: 0 3px;
+  color: #e74c3c;
+  margin: 0 2px;
+}
+.ques-view pre, .rendered-markdown pre {
+  padding: 6px 12px;
+  background: var(--bg-light);
+  border: 1px solid var(--border-all);
+  border-radius: 3px;
+  word-break: break-all;
+}
+.ques-view pre code, .rendered-markdown pre code {
+  background: none;
+  border: none;
+  color: var(--text-normal);
+  padding: 0;
+  margin: 0;
+}
+.ques-view hr, .rendered-markdown hr {
+  border: none;
+  border-top: 1px solid var(--border-all);
+}
+.ques-view blockquote, .rendered-markdown blockquote {
+  margin: 0.5em 0;
+  padding: 2px 14px;
+  font-size: 12px;
+  background: var(--bg-light);
+  border-left: 4px solid var(--border-all);
+}
+.ques-view table, .rendered-markdown table {
+  margin: 0 auto;
+}
+.ques-view table th, .rendered-markdown table th, .ques-view table td, .rendered-markdown table td {
+  border: 1px solid var(--border-all);
+  padding: 2px 4px;
+  font-size: 12px;
+}
+.ques-view .ques-score, .rendered-markdown .ques-score {
+  color: var(--text-light);
+  user-select: none;
+}
+.rendered-markdown blockquote {
+  margin: 0.5em 0;
+  padding: 2px 14px;
+  font-size: 12px;
+  background: var(--bg-light);
+  border-left: 4px solid var(--border-all);
+}
+.rendered-markdown blockquote p {
+  margin-bottom: 0;
+}
+.rendered-markdown table td, .rendered-markdown table th {
+  border: 1px solid var(--border-all);
+  padding: 5px;
+}
+.rendered-markdown p:first-child {
+  margin: 0;
+}
+.katex-mathml {
+  display: none;
+}
+.code {
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Monaco, Courier, "Courier New", monospace;
+}
+</style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+
+<div><div class="paper" style="max-width:940px;margin:auto" data-reactroot=""><div style="padding:16px;text-align:center;font-size:24px;font-weight:bold">PAT 线上测试赛真题（2020-05-01）</div><div style="width:calc(100% / 3);display:inline-flex;padding:4px"><span style="font-weight:bold;min-width:56px">开始时间</span><span style="margin-left:8px;overflow:hidden;text-overflow:ellipsis" title="2016/01/01 08:00:00">2016/01/01 08:00:00</span></div><div style="width:calc(100% / 3);display:inline-flex;padding:4px"><span style="font-weight:bold;min-width:56px">结束时间</span><span style="margin-left:8px;overflow:hidden;text-overflow:ellipsis" title="2038/01/18 08:00:00">2038/01/18 08:00:00</span></div><div style="width:calc(100% / 3);display:inline-flex;padding:4px"><span style="font-weight:bold;min-width:56px">答题时长</span><span style="margin-left:8px;overflow:hidden;text-overflow:ellipsis" title="90分钟">90分钟</span></div><div style="width:calc(100% / 3);display:inline-flex;padding:4px"><span style="font-weight:bold;min-width:56px">考生</span><span style="margin-left:8px;overflow:hidden;text-overflow:ellipsis" title="球王武磊">球王武磊</span></div><div style="width:calc(100% / 3);display:inline-flex;padding:4px"><span style="font-weight:bold;min-width:56px">得分</span><span style="margin-left:8px;overflow:hidden;text-overflow:ellipsis" title="60">60</span></div><div style="width:calc(100% / 3);display:inline-flex;padding:4px"><span style="font-weight:bold;min-width:56px">总分</span><span style="margin-left:8px;overflow:hidden;text-overflow:ellipsis" title="60">60</span></div><hr/><div style="display:flex;font-size:16px;margin-top:16px"><span style="flex-grow:1;font-weight:bold">编程题</span><span>得分：60</span><span style="margin-left:20px">总分：60</span></div><div style="padding-bottom:8px;margin-top:12px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">7-1</div><div style="overflow:auto;flex-grow:1"><div style="margin-bottom:8px;display:flex"><div style="font-weight:bold">Knuth洗牌法</div><div style="margin-left:8px;color:gray">(20分)</div></div><div><div class="rendered-markdown"><p>Knuth 洗牌法是生成 { 1, 2, ..., n } 的一个随机重排列的算法。与每次反复随机生成一个数字，直到获得一个不重复的新数字的算法不同，Knuth 洗牌法从原始序列 { 1, 2, ..., n }  开始，逐次洗牌。洗牌的方法是从左到右，每轮从没确定的数字中随机抽取一个数，把它放到确定的位置上。</p>
+<p>例如令 n 等于 4。我们从 { 1, 2, 3, 4 } 开始。记 i 到 N 之间的随机抽牌数为 **random(i,N)**。假设我们生成的随机数序列 random(i,4) (i=1, 2, 3, 4) 为 { 2, 4, 3, 4 }。则 Knuth 洗牌法是这样执行的：</p>
+<ul>
+<li>random(1,4) = 2; 将位置 1 与位置 2 的数字交换，得到 { 2, 1, 3, 4 }</li>
+<li>random(2,4) = 4; 将位置 2 与位置 4 的数字交换，得到 { 2, 4, 3, 1 }</li>
+<li>random(3,4) = 3; 将位置 3 与位置 3 的数字交换，得到 { 2, 4, 3, 1 }</li>
+<li>random(4,4) = 4; 将位置 4 与位置 4 的数字交换，得到 { 2, 4, 3, 1 }</li>
+</ul>
+<p>现给定随机抽牌数字序列，请你输出 Knuth 洗牌法的结果序列。</p>
+<h3 id="输入格式：">输入格式：</h3>
+<p>输入在第一行中给出一个正整数 N（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo></mrow><annotation encoding="application/x-tex">\le</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span></span></span></span> 1000）。随后一行给出 N 个随机抽牌数字，数字间以空格分隔。题目保证第 i 个数在 i 到 N 之间。</p>
+<h3 id="输出格式：">输出格式：</h3>
+<p>在第一行中输出 Knuth 洗牌法的结果序列。数字间必须以 1 个空格分隔，行首尾不得有多余空格。</p>
+<h3 id="输入样例：">输入样例：</h3>
+<pre><code class="language-in">10
+7 4 4 5 10 6 9 9 10 10</code></pre>
+<h3 id="输出样例：">输出样例：</h3>
+<pre><code class="language-out">7 4 2 5 10 6 9 1 3 8</code></pre>
+</div></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器</div><div style="flex-grow:1;overflow:auto">GXX</div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">代码</div><div style="flex-grow:1;overflow:auto"><pre class="box">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+int n,t,a[1005];
+int main()
+{
+	ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+	cin&gt;&gt;n;
+	for(int i=1;i&lt;=n;i++)
+		a[i]=i;
+	for(int i=1;i&lt;=n;i++)
+	{
+		cin&gt;&gt;t;
+		swap(a[t],a[i]);
+	}
+	cout&lt;&lt;a[1];
+	for(int i=2;i&lt;=n;i++)
+		cout&lt;&lt;&quot; &quot;&lt;&lt;a[i];
+	return 0;
+}</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（20 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>测试点</th><th>结果</th><th>得分</th><th>耗时</th><th>内存</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>12</td><td>4.00 ms</td><td>464 KB</td></tr><tr><td>1</td><td>答案正确</td><td>3</td><td>3.00 ms</td><td>324 KB</td></tr><tr><td>2</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>312 KB</td></tr><tr><td>3</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>320 KB</td></tr><tr><td>4</td><td>答案正确</td><td>3</td><td>4.00 ms</td><td>588 KB</td></tr></tbody></table></div></div></div><hr/><div style="padding-bottom:8px;margin-top:12px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">7-2</div><div style="overflow:auto;flex-grow:1"><div style="margin-bottom:8px;display:flex"><div style="font-weight:bold">三阶幸福数</div><div style="margin-left:8px;color:gray">(20分)</div></div><div><div class="rendered-markdown"><p>对一个十进制数的各位数字做一次立方和，称作一次迭代。如果一个十进制数能通过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">h</span></span></span></span> 次迭代得到 1，就称该数为<strong>三阶幸福数</strong>，迭代的次数  <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">h</span></span></span></span> 称为幸福度。例如 1579 经过 1 次迭代得到 1198，2 次迭代后得到 1243，3 次迭代后得到 100，最后得到 1。则 1579 是幸福数，其幸福度为 4。</p>
+<p>另一方面，如果一个大于1的数字经过数次迭代后进入了死循环，那这个数就不幸福。例如 97 迭代得到 1072、352、160、217、352、…… 可见 352 到 217 形成了死循环，所以 97 就不幸福，而 352 就是它最早遇到的循环点。</p>
+<p>本题就要求你编写程序，判断一个给定的数字是否有三阶幸福。</p>
+<h3 id="输入格式：">输入格式：</h3>
+<p>输入在第一行给出一个不超过 100 的正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>，随后 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 行，每行给出一个不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">10^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span> 的正整数。</p>
+<h3 id="输出格式：">输出格式：</h3>
+<p>对于每一个输入的数字，如果其是三阶幸福数，则在一行中输出它的幸福度；否则输出最早遇到的循环点。</p>
+<h3 id="输入样例：">输入样例：</h3>
+<pre><code class="language-in">3
+1579
+97
+1</code></pre>
+<h3 id="输出样例：">输出样例：</h3>
+<pre><code class="language-out">4
+352
+0</code></pre>
+</div></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器</div><div style="flex-grow:1;overflow:auto">GXX</div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">代码</div><div style="flex-grow:1;overflow:auto"><pre class="box">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+using namespace std;
+int vis[10005];
+int main()
+{
+	ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+	int n,t;
+	cin&gt;&gt;n;
+	while(n--)
+	{
+		memset(vis,0,sizeof(vis));
+		cin&gt;&gt;t;
+		vis[t]=1;
+		int temp=0,time=0,flag=1;
+		while(t!=1)
+		{
+			while(t&gt;0)
+			{
+				int x=t%10;
+				temp+=x*x*x;
+				t/=10;
+			}
+			if(vis[temp])
+			{
+				cout&lt;&lt;temp&lt;&lt;endl;
+				flag=0;
+				break;
+			}
+			time++;
+			vis[temp]=1;
+			t=temp;
+			temp=0;
+		}
+		if(flag==1)
+			cout&lt;&lt;time&lt;&lt;endl;
+	}
+	return 0;
+}</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（20 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>测试点</th><th>结果</th><th>得分</th><th>耗时</th><th>内存</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>408 KB</td></tr><tr><td>1</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>452 KB</td></tr><tr><td>2</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>448 KB</td></tr><tr><td>3</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>464 KB</td></tr><tr><td>4</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>444 KB</td></tr><tr><td>5</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>448 KB</td></tr><tr><td>6</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>448 KB</td></tr><tr><td>7</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>452 KB</td></tr><tr><td>8</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>576 KB</td></tr><tr><td>9</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>564 KB</td></tr><tr><td>10</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>436 KB</td></tr><tr><td>11</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>448 KB</td></tr><tr><td>12</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>600 KB</td></tr><tr><td>13</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>448 KB</td></tr><tr><td>14</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>576 KB</td></tr><tr><td>15</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>448 KB</td></tr><tr><td>16</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>452 KB</td></tr><tr><td>17</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>608 KB</td></tr><tr><td>18</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>388 KB</td></tr><tr><td>19</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>472 KB</td></tr></tbody></table></div></div></div><hr/><div style="padding-bottom:8px;margin-top:12px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">7-3</div><div style="overflow:auto;flex-grow:1"><div style="margin-bottom:8px;display:flex"><div style="font-weight:bold">垃圾分类</div><div style="margin-left:8px;color:gray">(20分)</div></div><div><div class="rendered-markdown"><p><img src="https://images.ptausercontent.com/f24eb864-ed93-49e5-a3ed-12ca91627e46.jpg" alt="ljfl.jpg"></p>
+<p>据香港《南华早报》2019年7月15日文章，上海严格的垃圾分类新规令不少居民抓狂。这催生出大量帮助找出正确分类答案的App和小程序。目前仅微信上就至少有280种与垃圾处理有关的App，在苹果应用商店也达130种。支付宝表示，已有60多家独立App开发商申请为该平台提供类似服务。</p>
+<p>本题就请你现场实现一个简单的垃圾分类小助手。</p>
+<h3 id="输入格式：">输入格式：</h3>
+<p>输入首先给出官方分类指南中每种物品的归属。在一行中给出一个正整数 N（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">\le 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span>），即物品数量；随后 N 行，每行给出一个物品名称（长度不超过 10 的、由小写英文字母和下划线组成的字符串）和该物品所属的分类（1 代表干垃圾、2 代表湿垃圾、3 代表可回收物、4 代表有害垃圾）。题目保证所有物品名称无重复。</p>
+<p>随后每行给出一个查询物品的名称（格式与指南物品名称相同）。最后一行给出结束符 <code>#</code>，表示查询终止，这一行不需要查询。</p>
+<h3 id="输出格式：">输出格式：</h3>
+<p>对每个查询的物品，在一行中给出其所属分类：<code>Gan laji</code> 代表干垃圾；<code>Shi laji</code> 代表湿垃圾；<code>Ke Hui Shou</code> 代表可回收物；<code>You Hai laji</code> 代表有害垃圾。如果查询的物品不在指南中，则输出 <code>?</code> 表示不知道。</p>
+<h3 id="输入样例：">输入样例：</h3>
+<pre><code class="language-in">4
+bao_zhi 3
+dian_chi 4
+dan_ke 2
+bei_ke 1
+dan_ke
+dian_chi
+ren_zha
+bao_zhi
+bei_ke
+#</code></pre>
+<h3 id="输出样例：">输出样例：</h3>
+<pre><code class="language-out">Shi laji
+You Hai laji
+?
+Ke Hui Shou
+Gan laji</code></pre>
+</div></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器</div><div style="flex-grow:1;overflow:auto">GXX</div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">代码</div><div style="flex-grow:1;overflow:auto"><pre class="box">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;map&gt;
+using namespace std;
+int n,t;
+string s,ans[5]={&quot;&quot;,&quot;Gan laji&quot;,&quot;Shi laji&quot;,&quot;Ke Hui Shou&quot;,&quot;You Hai laji&quot;};
+map&lt;string,int&gt; mp;
+int main()
+{
+	ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+	cin&gt;&gt;n;
+	while(n--)
+	{
+		cin&gt;&gt;s&gt;&gt;t;
+		mp[s]=t;
+	}
+	while(1)
+	{
+		cin&gt;&gt;s;
+		if(s==&quot;#&quot;) break;
+		if(mp.count(s)==0)
+			cout&lt;&lt;&quot;?&quot;&lt;&lt;endl;
+		else
+			cout&lt;&lt;ans[mp[s]]&lt;&lt;endl;
+	}
+	return 0;
+}</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（20 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>测试点</th><th>结果</th><th>得分</th><th>耗时</th><th>内存</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>592 KB</td></tr><tr><td>1</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>488 KB</td></tr><tr><td>2</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>508 KB</td></tr><tr><td>3</td><td>答案正确</td><td>1</td><td>368.00 ms</td><td>8784 KB</td></tr><tr><td>4</td><td>答案正确</td><td>1</td><td>353.00 ms</td><td>8896 KB</td></tr><tr><td>5</td><td>答案正确</td><td>1</td><td>367.00 ms</td><td>8920 KB</td></tr><tr><td>6</td><td>答案正确</td><td>1</td><td>365.00 ms</td><td>8880 KB</td></tr><tr><td>7</td><td>答案正确</td><td>1</td><td>344.00 ms</td><td>8804 KB</td></tr><tr><td>8</td><td>答案正确</td><td>1</td><td>328.00 ms</td><td>8880 KB</td></tr><tr><td>9</td><td>答案正确</td><td>1</td><td>326.00 ms</td><td>8784 KB</td></tr><tr><td>10</td><td>答案正确</td><td>1</td><td>337.00 ms</td><td>8892 KB</td></tr><tr><td>11</td><td>答案正确</td><td>1</td><td>339.00 ms</td><td>9100 KB</td></tr><tr><td>12</td><td>答案正确</td><td>1</td><td>340.00 ms</td><td>8788 KB</td></tr><tr><td>13</td><td>答案正确</td><td>1</td><td>332.00 ms</td><td>8864 KB</td></tr><tr><td>14</td><td>答案正确</td><td>1</td><td>332.00 ms</td><td>8828 KB</td></tr><tr><td>15</td><td>答案正确</td><td>1</td><td>334.00 ms</td><td>8784 KB</td></tr><tr><td>16</td><td>答案正确</td><td>1</td><td>354.00 ms</td><td>8920 KB</td></tr><tr><td>17</td><td>答案正确</td><td>1</td><td>337.00 ms</td><td>8888 KB</td></tr><tr><td>18</td><td>答案正确</td><td>1</td><td>339.00 ms</td><td>8984 KB</td></tr><tr><td>19</td><td>答案正确</td><td>1</td><td>337.00 ms</td><td>8828 KB</td></tr></tbody></table></div></div></div><hr/></div></div>
+
+</body>
+</html>
