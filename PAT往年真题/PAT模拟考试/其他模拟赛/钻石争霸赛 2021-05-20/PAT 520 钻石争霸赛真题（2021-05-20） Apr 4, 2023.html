@@ -1,0 +1,626 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PAT 520 钻石争霸赛真题（2021-05-20）</title>
+  <style>.paper {
+  margin: 0;
+  font-family: var(--font-sans, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--text-normal, hsl(0, 0%, 25%));
+}
+.paper *,
+.paper *::before,
+.paper *::after {
+  box-sizing: border-box;
+}
+.paper pre,
+.paper code,
+.paper kbd,
+.paper samp {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+  font-size: 12px;
+}
+.paper pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow: auto;
+  -ms-overflow-style: scrollbar;
+}
+.paper label {
+  display: inline-block;
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+.paper hr {
+  height: 0;
+  border: 0;
+  border-top: 1px solid var(--scroll-thumb, hsl(0, 0%, 85%));
+  margin: 0;
+}
+.paper .result table {
+  width: 100%;
+}
+.paper .result th,
+.paper .result td {
+  border: 1px solid var(--border-all, hsla(0, 0%, 0%, 0.06));
+  text-align: center;
+}
+.paper .result .box {
+  border: 1px solid var(--border-all, hsla(0, 0%, 0%, 0.06));
+  padding: 8px;
+  color: var(--text-normal, hsl(0, 0%, 25%));
+}
+/* stylelint-disable */
+.ques-view, .rendered-markdown {
+  line-height: 1.5;
+}
+.ques-view p, .rendered-markdown p {
+  margin: 0.5em 0;
+}
+.ques-view h1, .rendered-markdown h1, .ques-view h2, .rendered-markdown h2, .ques-view h3, .rendered-markdown h3, .ques-view h4, .rendered-markdown h4, .ques-view h5, .rendered-markdown h5, .ques-view h6, .rendered-markdown h6 {
+  margin: 0.8em 0;
+}
+.ques-view img, .rendered-markdown img {
+  max-width: 100%;
+}
+.ques-view .ques-list, .rendered-markdown .ques-list {
+  padding-left: 3.125rem;
+}
+.ques-view .ques-list li, .rendered-markdown .ques-list li {
+  position: relative;
+  list-style-type: upper-alpha;
+}
+.ques-view .ques-list input, .rendered-markdown .ques-list input {
+  position: absolute;
+  left: -2.5rem;
+  top: 50%;
+  margin-top: -0.4375rem;
+}
+.ques-view textarea, .rendered-markdown textarea {
+  border-radius: 0.125rem;
+  width: 100%;
+  padding: 0.625rem;
+  box-sizing: border-box;
+  min-height: 6.25rem;
+}
+.ques-view code, .rendered-markdown code {
+  font-size: 0.75rem;
+  background: var(--bg-light);
+  border-radius: 0.1875rem;
+  border: 1px solid var(--border-all);
+  color: #e74c3c;
+  margin: 0 0.125rem;
+}
+.ques-view pre, .rendered-markdown pre {
+  padding: 0.375rem 0.75rem;
+  background: var(--bg-light);
+  border: 1px solid var(--border-all);
+  border-radius: 0.1875rem;
+  word-break: break-all;
+}
+.ques-view pre code, .rendered-markdown pre code {
+  background: none;
+  border: none;
+  color: var(--text-normal);
+  margin: 0;
+}
+.ques-view hr, .rendered-markdown hr {
+  border: none;
+  border-top: 1px solid var(--border-all);
+}
+.ques-view blockquote, .rendered-markdown blockquote {
+  margin: 0.5em 0;
+  padding: 0.125rem 0.875rem;
+  font-size: 0.75rem;
+  background: var(--bg-light);
+  border-left: 4px solid var(--border-all);
+}
+.ques-view table, .rendered-markdown table {
+  margin: 0 auto;
+}
+.ques-view table th, .rendered-markdown table th, .ques-view table td, .rendered-markdown table td {
+  border: 1px solid var(--border-all);
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+}
+.ques-view .ques-score, .rendered-markdown .ques-score {
+  color: var(--text-light);
+  user-select: none;
+}
+.rendered-markdown blockquote {
+  margin: 0.5em 0;
+  padding: 0.125rem 0.875rem;
+  font-size: 0.75rem;
+  background: var(--bg-light);
+  border-left: 4px solid var(--border-all);
+}
+.rendered-markdown blockquote p {
+  margin-bottom: 0;
+}
+.rendered-markdown table td, .rendered-markdown table th {
+  border: 1px solid var(--border-all);
+  padding: 0.3125rem;
+}
+.rendered-markdown p:first-child {
+  margin: 0;
+}
+.katex-mathml {
+  display: none;
+}
+.code {
+  font-family: var(--font-mono);
+}
+</style>
+  <link rel="stylesheet" href="https://static.pintia.cn/assets/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+
+<div><div class="paper" style="max-width:940px;margin:auto" data-reactroot=""><div style="padding:16px;text-align:center;font-size:24px;font-weight:bold">PAT 520 钻石争霸赛真题（2021-05-20）</div><div style="width:calc(100% / 3);display:inline-flex;padding:4px"><span style="font-weight:bold;min-width:56px">开始时间</span><span style="margin-left:8px;overflow:hidden;text-overflow:ellipsis" title="2016/01/01 08:00:00">2016/01/01 08:00:00</span></div><div style="width:calc(100% / 3);display:inline-flex;padding:4px"><span style="font-weight:bold;min-width:56px">结束时间</span><span style="margin-left:8px;overflow:hidden;text-overflow:ellipsis" title="2038/01/18 08:00:00">2038/01/18 08:00:00</span></div><div style="width:calc(100% / 3);display:inline-flex;padding:4px"><span style="font-weight:bold;min-width:56px">答题时长</span><span style="margin-left:8px;overflow:hidden;text-overflow:ellipsis" title="60分钟">60分钟</span></div><div style="width:calc(100% / 3);display:inline-flex;padding:4px"><span style="font-weight:bold;min-width:56px">考生</span><span style="margin-left:8px;overflow:hidden;text-overflow:ellipsis" title="undefined"></span></div><div style="width:calc(100% / 3);display:inline-flex;padding:4px"><span style="font-weight:bold;min-width:56px">得分</span><span style="margin-left:8px;overflow:hidden;text-overflow:ellipsis" title="120">120</span></div><div style="width:calc(100% / 3);display:inline-flex;padding:4px"><span style="font-weight:bold;min-width:56px">总分</span><span style="margin-left:8px;overflow:hidden;text-overflow:ellipsis" title="120">120</span></div><hr/><div style="display:flex;font-size:16px;margin-top:16px"><span style="flex-grow:1;font-weight:bold">编程题</span><span>得分：120</span><span style="margin-left:20px">总分：120</span></div><div style="padding-bottom:8px;margin-top:12px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">7-1</div><div style="overflow:auto;flex-grow:1"><div style="margin-bottom:8px;display:flex"><div style="font-weight:bold">自动编程</div><div style="margin-left:8px;color:gray">(5分)</div></div><div><div class="rendered-markdown"><p>输出语句是每个程序员首先要掌握的语句。Python 的输出语句很简单，只要写一个 <code>print(X)</code> 即可，其中 <code>X</code> 是需要输出的内容。</p>
+<p>本题就请你写一个自动编程机，对任何一个要输出的整数 N，给出输出这个整数的 Python 语句。</p>
+<h3 id="输入格式：">输入格式：</h3>
+<p>输入给出一个不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span> 的正整数。</p>
+<h3 id="输出格式：">输出格式：</h3>
+<p>在一行中打印输出这个整数的 Python 语句，其中不包含任何空格。</p>
+<h3 id="输入样例：">输入样例：</h3>
+<pre><code class="language-in">520
+</code></pre>
+<h3 id="输出样例：">输出样例：</h3>
+<pre><code class="language-out">print(520)
+</code></pre>
+</div></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器</div><div style="flex-grow:1;overflow:auto">GXX</div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">代码</div><div style="flex-grow:1;overflow:auto"><pre class="box">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+using namespace std;
+int main()
+{
+	int n;
+	scanf(&quot;%d&quot;,&amp;n);
+	printf(&quot;print(%d)&quot;,n);
+	return 0;
+}</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（5 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器输出</div><div style="flex-grow:1;overflow:auto"><pre class="box">a.cpp: In function ‘int main()’:
+a.cpp:7:7: warning: ignoring return value of ‘int scanf(const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+  scanf(&quot;%d&quot;,&amp;n);
+  ~~~~~^~~~~~~~~</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>测试点</th><th>结果</th><th>得分</th><th>耗时</th><th>内存</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>3</td><td>5.00 ms</td><td>324 KB</td></tr><tr><td>1</td><td>答案正确</td><td>1</td><td>5.00 ms</td><td>324 KB</td></tr><tr><td>2</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>324 KB</td></tr></tbody></table></div></div></div><hr/><div style="padding-bottom:8px;margin-top:12px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">7-2</div><div style="overflow:auto;flex-grow:1"><div style="margin-bottom:8px;display:flex"><div style="font-weight:bold">加油冲鸭</div><div style="margin-left:8px;color:gray">(10分)</div></div><div><div class="rendered-markdown"><p>宝宝参加运动会的 N 米跑比赛。宝宝每秒钟跑 M 米，跑了 S 秒后，还剩多少米？如果剩下的距离比 N 的一半还远，你就对宝宝喊：“加油鸭！”如果剩下的距离不超过 N 的一半了，就喊：“冲鸭！”</p>
+<p><img src="https://images.ptausercontent.com/f22ae76e-441d-4251-aebc-8662d4f8e273.png" alt="微信图片_20210512172633.png"></p>
+<h3 id="输入格式：">输入格式：</h3>
+<p>输入在一行中给出 3 个正整数，分别是 N（不超过 1000），是比赛的总长度；M（不超过 10），是宝宝每秒跑的距离；S（不超过 100），是宝宝跑的秒数。</p>
+<p>题目保证宝宝跑完的距离小于 N。</p>
+<h3 id="输出格式：">输出格式：</h3>
+<p>在一行中输出“还剩X米！加油鸭！”或者是“还剩X米！冲鸭！”，其中 X 是宝宝剩下的距离。当然输出的是汉语拼音，即：<code>hai sheng X mi! jia you ya!</code> 或者 <code>hai sheng X mi! chong ya!</code>。</p>
+<h3 id="输入样例-1：">输入样例 1：</h3>
+<pre><code class="language-in">100 5 9
+</code></pre>
+<h3 id="输出样例-1：">输出样例 1：</h3>
+<pre><code class="language-out">hai sheng 55 mi! jia you ya!
+</code></pre>
+<h3 id="输入样例-2：">输入样例 2：</h3>
+<pre><code class="language-in">200 6 20
+</code></pre>
+<h3 id="输出样例-2：">输出样例 2：</h3>
+<pre><code class="language-out">hai sheng 80 mi! chong ya!
+</code></pre>
+</div></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器</div><div style="flex-grow:1;overflow:auto">GXX</div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">代码</div><div style="flex-grow:1;overflow:auto"><pre class="box">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+using namespace std;
+int main()
+{
+	int n,m,s;
+	scanf(&quot;%d %d %d&quot;,&amp;n,&amp;m,&amp;s);
+	if(2*m*s&lt;n)
+		printf(&quot;hai sheng %d mi! jia you ya!&quot;,n-m*s);
+	else
+		printf(&quot;hai sheng %d mi! chong ya!&quot;,n-m*s);
+	return 0;
+}</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（10 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器输出</div><div style="flex-grow:1;overflow:auto"><pre class="box">a.cpp: In function ‘int main()’:
+a.cpp:7:7: warning: ignoring return value of ‘int scanf(const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+  scanf(&quot;%d %d %d&quot;,&amp;n,&amp;m,&amp;s);
+  ~~~~~^~~~~~~~~~~~~~~~~~~~~</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>测试点</th><th>结果</th><th>得分</th><th>耗时</th><th>内存</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>4</td><td>4.00 ms</td><td>332 KB</td></tr><tr><td>1</td><td>答案正确</td><td>3</td><td>4.00 ms</td><td>456 KB</td></tr><tr><td>2</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>312 KB</td></tr><tr><td>3</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>312 KB</td></tr><tr><td>4</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>444 KB</td></tr></tbody></table></div></div></div><hr/><div style="padding-bottom:8px;margin-top:12px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">7-3</div><div style="overflow:auto;flex-grow:1"><div style="margin-bottom:8px;display:flex"><div style="font-weight:bold">520的表白</div><div style="margin-left:8px;color:gray">(10分)</div></div><div><div class="rendered-markdown"><p><img src="https://images.ptausercontent.com/1bda86d2-24fb-412c-8918-db558a2557e0.JPG" alt="520.JPG"></p>
+<p>“520”是信息时代的爱情节日，谐音“吾爱您”。既然是网络情人节，表白用的定情物也就是通过网络传输的，比如 520 朵玫瑰、520 颗巧克力、520 句“我爱拼题A”……</p>
+<p>本题就请你做一个定制化的 520 表白程序，将客户想要表白的句子输出 520 遍。</p>
+<h3 id="输入格式：">输入格式：</h3>
+<p>输入在一行中给出客户想要定制的表白句，是由不超过 9 个数字组成的火星文。</p>
+<h3 id="输出格式：">输出格式：</h3>
+<p>将客户的表白输出 520 遍，每遍占一行。</p>
+<h3 id="输入样例：">输入样例：</h3>
+<pre><code class="language-in">5201314
+</code></pre>
+<h3 id="输出样例（-表示省略中间-517-遍）：">输出样例（<code>......</code> 表示省略中间 517 遍）：</h3>
+<pre><code class="language-out">5201314
+5201314
+......
+5201314
+</code></pre>
+</div></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器</div><div style="flex-grow:1;overflow:auto">GXX</div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">代码</div><div style="flex-grow:1;overflow:auto"><pre class="box">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+using namespace std;
+int main()
+{
+	ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+	int n;
+	cin&gt;&gt;n;
+	for(int i=0;i&lt;520;i++)
+		cout&lt;&lt;n&lt;&lt;endl; 
+	return 0;
+}</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（10 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>测试点</th><th>结果</th><th>得分</th><th>耗时</th><th>内存</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>6</td><td>5.00 ms</td><td>320 KB</td></tr><tr><td>1</td><td>答案正确</td><td>2</td><td>5.00 ms</td><td>320 KB</td></tr><tr><td>2</td><td>答案正确</td><td>2</td><td>6.00 ms</td><td>448 KB</td></tr></tbody></table></div></div></div><hr/><div style="padding-bottom:8px;margin-top:12px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">7-4</div><div style="overflow:auto;flex-grow:1"><div style="margin-bottom:8px;display:flex"><div style="font-weight:bold">奇葩楼层</div><div style="margin-left:8px;color:gray">(15分)</div></div><div><div class="rendered-markdown"><p>几乎每个国家都有自己忌讳的数字，有的大楼在给楼层编号的时候，会刻意跳过含有不吉利数字的编号。比如中国人比较忌讳 4，有的大楼就没有第 4 层、第 14 层 等等，这样楼层的编号就会是 1、2、3、5、…… 即编号为 5 的楼层实际是第 4 层。那么在去掉了忌讳数字之后最高楼层编号为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> 的大楼，实际上有多少层呢？</p>
+<h3 id="输入格式：">输入格式：</h3>
+<p>输入在一行中给出 2 个整数，依次为大楼最高层的编号 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span>（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>&lt;</mo><mi>n</mi><mo>≤</mo><mn>1000</mn></mrow><annotation encoding="application/x-tex">1&lt;n\le 1000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68354em;vertical-align:-0.0391em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1000</span></span></span></span>），和某国人民忌讳的数字 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">d</span></span></span></span>（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>d</mi><mo>≤</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">0\le d \le 9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83041em;vertical-align:-0.13597em;"></span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">9</span></span></span></span>）。题目保证 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> 中不包含 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">d</span></span></span></span>。注意楼层编号从 1 开始。</p>
+<h3 id="输出格式：">输出格式：</h3>
+<p>在一行中输出该大楼的实际楼层数。</p>
+<h3 id="输入样例：">输入样例：</h3>
+<pre><code class="language-in">50 4
+</code></pre>
+<h3 id="输出样例：">输出样例：</h3>
+<pre><code class="language-out">36
+</code></pre>
+</div></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器</div><div style="flex-grow:1;overflow:auto">GXX</div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">代码</div><div style="flex-grow:1;overflow:auto"><pre class="box">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+using namespace std;
+int main()
+{
+	ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+	int n,d,ans=0;
+	cin&gt;&gt;n&gt;&gt;d;
+	for(int i=1;i&lt;=n;i++)
+	{
+		int temp=i,flag=1;
+		while(temp)
+		{
+			if(temp%10==d)
+			{
+				flag=0;
+				break;
+			}
+			temp/=10;
+		}
+		if(flag) ans++;
+	}
+	cout&lt;&lt;ans&lt;&lt;endl;
+	return 0;
+}</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（15 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>测试点</th><th>结果</th><th>得分</th><th>耗时</th><th>内存</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>9</td><td>4.00 ms</td><td>452 KB</td></tr><tr><td>1</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>444 KB</td></tr><tr><td>2</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>448 KB</td></tr><tr><td>3</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>328 KB</td></tr><tr><td>4</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>452 KB</td></tr><tr><td>5</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>452 KB</td></tr><tr><td>6</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>464 KB</td></tr></tbody></table></div></div></div><hr/><div style="padding-bottom:8px;margin-top:12px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">7-5</div><div style="overflow:auto;flex-grow:1"><div style="margin-bottom:8px;display:flex"><div style="font-weight:bold">大勾股定理</div><div style="margin-left:8px;color:gray">(15分)</div></div><div><div class="rendered-markdown"><p><strong>大勾股定理</strong>是勾股定理的推广：对任何正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> 存在 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2n+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 个连续正整数，满足前 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 个数的平方和等于后 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> 个数的平方和。例如对于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>3</mn><mn>2</mn></msup><mo>+</mo><msup><mn>4</mn><mn>2</mn></msup><mo>=</mo><msup><mn>5</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">3^2 + 4^2 = 5^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">3</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">4</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">5</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>；<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n=2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>2</mn></msup><mo>+</mo><mn>1</mn><msup><mn>1</mn><mn>2</mn></msup><mo>+</mo><mn>1</mn><msup><mn>2</mn><mn>2</mn></msup><mo>=</mo><mn>1</mn><msup><mn>3</mn><mn>2</mn></msup><mo>+</mo><mn>1</mn><msup><mn>4</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">10^2 + 11^2 +12^2 = 13^2 + 14^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord"><span class="mord">1</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord"><span class="mord">3</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">4</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> 等。给定 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span>，本题就请你找出对应的解。</p>
+<h3 id="输入格式：">输入格式：</h3>
+<p>输入在一行中给出正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span>（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">\le 10^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span>）。</p>
+<h3 id="输出格式：">输出格式：</h3>
+<p>分两行输出满足大勾股定理的解，格式如下：</p>
+<pre><code>a[0]^2 + a[1]^2 + ... + a[n]^2 =
+a[n+1]^2 + ... + a[2n]^2
+</code></pre>
+<p>其中解的数列 <code>a[0] ... a[2n]</code> 按递增序输出。注意行首尾不得有多余空格。</p>
+<h3 id="输入样例：">输入样例：</h3>
+<pre><code class="language-in">3
+</code></pre>
+<h3 id="输出样例：">输出样例：</h3>
+<pre><code class="language-out">21^2 + 22^2 + 23^2 + 24^2 =
+25^2 + 26^2 + 27^2
+</code></pre>
+</div></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器</div><div style="flex-grow:1;overflow:auto">GXX</div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">代码</div><div style="flex-grow:1;overflow:auto"><pre class="box">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+using namespace std;
+int main()
+{
+	int n;
+	scanf(&quot;%d&quot;,&amp;n);
+	/*
+	for(int i=1;;i++)
+	{
+		int a=0,b=0;
+		for(int j=i;j&lt;=i+n;j++)
+			a+=j*j;
+		for(int j=i+n+1;j&lt;=i+2*n;j++)
+			b+=j*j;
+		if(a==b)
+		{
+			printf(&quot;%d^2&quot;,i);
+			for(int j=i+1;j&lt;=i+n;j++)
+				printf(&quot; + %d^2&quot;,j);
+			printf(&quot; =\n&quot;);
+			printf(&quot;%d^2&quot;,i+n+1);
+			for(int j=i+n+2;j&lt;=i+2*n;j++)
+				printf(&quot; + %d^2&quot;,j);
+			printf(&quot;\n&quot;);
+			break;
+		}
+	}
+	*/
+	//找规律，第一项总为n*(2*n+1) 
+	int i=n*(2*n+1);
+	printf(&quot;%d^2&quot;,i);
+	for(int j=i+1;j&lt;=i+n;j++)
+		printf(&quot; + %d^2&quot;,j);
+	printf(&quot; =\n&quot;);
+	printf(&quot;%d^2&quot;,i+n+1);
+	for(int j=i+n+2;j&lt;=i+2*n;j++)
+		printf(&quot; + %d^2&quot;,j);
+	printf(&quot;\n&quot;);
+	return 0;
+}</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（15 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器输出</div><div style="flex-grow:1;overflow:auto"><pre class="box">a.cpp: In function ‘int main()’:
+a.cpp:7:7: warning: ignoring return value of ‘int scanf(const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+  scanf(&quot;%d&quot;,&amp;n);
+  ~~~~~^~~~~~~~~</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>测试点</th><th>结果</th><th>得分</th><th>耗时</th><th>内存</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>10</td><td>5.00 ms</td><td>624 KB</td></tr><tr><td>1</td><td>答案正确</td><td>2</td><td>5.00 ms</td><td>600 KB</td></tr><tr><td>2</td><td>答案正确</td><td>2</td><td>6.00 ms</td><td>472 KB</td></tr><tr><td>3</td><td>答案正确</td><td>1</td><td>6.00 ms</td><td>856 KB</td></tr></tbody></table></div></div></div><hr/><div style="padding-bottom:8px;margin-top:12px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">7-6</div><div style="overflow:auto;flex-grow:1"><div style="margin-bottom:8px;display:flex"><div style="font-weight:bold">矩阵列平移</div><div style="margin-left:8px;color:gray">(20分)</div></div><div><div class="rendered-markdown"><p>给定一个 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>×</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">n\times n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> 的整数矩阵。对任一给定的正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>&lt;</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">k&lt;n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span>，我们将矩阵的偶数列的元素整体向下依次平移 1、……、<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>、1、……、<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>、…… 个位置，平移空出的位置用整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span></span></span></span> 补。你需要计算出结果矩阵的每一行元素的和。</p>
+<h3 id="输入格式：">输入格式：</h3>
+<p>输入第一行给出 3 个正整数：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span>（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">&lt;100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">100</span></span></span></span>）、<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">&lt;n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span>）、<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span></span></span></span>（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">&lt;100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">100</span></span></span></span>），分别如题面所述。</p>
+<p>接下来 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> 行，每行给出 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> 个不超过 100 的正整数，为矩阵元素的值。数字间以空格分隔。</p>
+<h3 id="输出格式：">输出格式：</h3>
+<p>在一行中输出平移后第 1 到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> 行元素的和。数字间以 1 个空格分隔，行首尾不得有多余空格。</p>
+<h3 id="输入样例：">输入样例：</h3>
+<pre><code class="language-in">7 2 99
+11 87 23 67 20 75 89
+37 94 27 91 63 50 11
+44 38 50 26 40 26 24
+73 85 63 28 62 18 68
+15 83 27 97 88 25 43
+23 78 98 20 30 81 99
+77 36 48 59 25 34 22
+</code></pre>
+<h3 id="输出样例：">输出样例：</h3>
+<pre><code class="language-out">440 399 369 421 302 386 428
+</code></pre>
+<p><strong>样例解读</strong></p>
+<p>需要平移的是第 2、4、6 列。给定 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">k=2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>，应该将这三列顺次整体向下平移 1、2、1 位（如果有更多列，就应该按照 1、2、1、2 …… 这个规律顺次向下平移），顶端的空位用 99 来填充。平移后的矩阵变成：</p>
+<pre><code>11 99 23 99 20 99 89
+37 87 27 99 63 75 11
+44 94 50 67 40 50 24
+73 38 63 91 62 26 68
+15 85 27 26 88 18 43
+23 83 98 28 30 25 99
+77 78 48 97 25 81 22
+</code></pre>
+</div></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器</div><div style="flex-grow:1;overflow:auto">GXX</div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">代码</div><div style="flex-grow:1;overflow:auto"><pre class="box">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+using namespace std;
+int a[105][105],n,k,x;
+int main()
+{
+	scanf(&quot;%d %d %d&quot;,&amp;n,&amp;k,&amp;x);
+	for(int i=1;i&lt;=n;i++)
+	for(int j=1;j&lt;=n;j++)
+		scanf(&quot;%d&quot;,&amp;a[i][j]);
+	int r=0;
+	for(int j=2;j&lt;=n;j+=2)
+	{
+		r=r%k+1;
+		for(int i=n;i&gt;r;i--)
+			a[i][j]=a[i-r][j];
+		for(int i=1;i&lt;=r;i++)
+			a[i][j]=x;
+	}
+	/*
+	for(int i=1;i&lt;=n;i++)
+	{
+		for(int j=1;j&lt;=n;j++)
+			printf(&quot;%d &quot;,a[i][j]);
+		printf(&quot;\n&quot;);
+	}
+	*/
+	for(int i=1;i&lt;=n;i++)
+	{
+		int sum=0;
+		for(int j=1;j&lt;=n;j++)
+			sum+=a[i][j];
+		printf(&quot;%d&quot;,sum);
+		if(i&lt;n) printf(&quot; &quot;);
+	}
+	return 0;
+}</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（20 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器输出</div><div style="flex-grow:1;overflow:auto"><pre class="box">a.cpp: In function ‘int main()’:
+a.cpp:7:7: warning: ignoring return value of ‘int scanf(const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+  scanf(&quot;%d %d %d&quot;,&amp;n,&amp;k,&amp;x);
+  ~~~~~^~~~~~~~~~~~~~~~~~~~~
+a.cpp:10:8: warning: ignoring return value of ‘int scanf(const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+   scanf(&quot;%d&quot;,&amp;a[i][j]);
+   ~~~~~^~~~~~~~~~~~~~~</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>测试点</th><th>结果</th><th>得分</th><th>耗时</th><th>内存</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>10</td><td>4.00 ms</td><td>436 KB</td></tr><tr><td>1</td><td>答案正确</td><td>2</td><td>4.00 ms</td><td>320 KB</td></tr><tr><td>2</td><td>答案正确</td><td>2</td><td>5.00 ms</td><td>316 KB</td></tr><tr><td>3</td><td>答案正确</td><td>2</td><td>4.00 ms</td><td>320 KB</td></tr><tr><td>4</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>312 KB</td></tr><tr><td>5</td><td>答案正确</td><td>1</td><td>5.00 ms</td><td>444 KB</td></tr><tr><td>6</td><td>答案正确</td><td>2</td><td>5.00 ms</td><td>324 KB</td></tr></tbody></table></div></div></div><hr/><div style="padding-bottom:8px;margin-top:12px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">7-7</div><div style="overflow:auto;flex-grow:1"><div style="margin-bottom:8px;display:flex"><div style="font-weight:bold">约会大作战</div><div style="margin-left:8px;color:gray">(20分)</div></div><div><div class="rendered-markdown"><p>某社团开展了一个“快闪”相亲活动，活动规则如下：</p>
+<ol>
+<li>社团负责人将所有人分为两组，并收集了每个人对另外一组的所有人的好感度；</li>
+<li>然后社团负责人会随机地在两组各抽取一个人，询问他们是否愿意一起去约会；</li>
+<li>所有人对一开始的两次询问一定会拒绝；</li>
+<li>从第三次询问开始，如果询问的人的好感度大于这个人之前的两个没能牵手的人，则接受，否则拒绝；</li>
+<li>只有两个人同时接受，约会才成立。</li>
+<li>约会成立后，后面的询问一律拒绝。</li>
+</ol>
+<p>现在给出好感度和每次询问的两个人，请你帮忙计算一下最终有哪些人可以去约会了。</p>
+<h3 id="输入格式">输入格式:</h3>
+<p>输入第一行是三个数字 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo separator="true">,</mo><mi>M</mi><mo separator="true">,</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">N, M, Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">Q</span></span></span></span> (1 &le; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo separator="true">,</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">N, M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> &le; 100, 1 &le; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">Q</span></span></span></span> &le; 500), 表示分成的两组里，第一组有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 个人，第二组有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> 个人，共有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">Q</span></span></span></span> 次询问。</p>
+<p>接下来 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 行，每行 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> 个数，第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> 行的第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span> 个数表示第一组的第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> 个人对第二组的第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span> 个人的好感度数值。数字的绝对值不超过 100。</p>
+<p>再接下来的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> 行，每行 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 个数，第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> 行的第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span> 个数表示第二组的第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> 个人对第一组的第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span> 个人的好感度数值。数字的绝对值同样不超过 100。</p>
+<p>最后有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">Q</span></span></span></span> 行，每行两个数字 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x, y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span>，表示主持人询问第一组的第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span></span></span></span> 个人和第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span> 个人去不去约会。</p>
+<p>每一组内人的编号从 1 开始。</p>
+<p><strong>注意：</strong> 如果同一对人被询问两次，会被当成两对人处理。</p>
+<h3 id="输出格式">输出格式:</h3>
+<p>输出若干行，每行两个数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a, b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">b</span></span></span></span>，表示第一组的第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">a</span></span></span></span> 个人和第二组的第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">b</span></span></span></span> 个人约会成功。顺序按照询问顺序的先后。如果没有一对能约会成功，则输出一行 <code>PTA is my only love</code>。</p>
+<h3 id="输入样例">输入样例:</h3>
+<pre><code class="language-in">3 4 12
+8 9 1 2
+3 4 8 5
+1 8 2 9
+8 6 2
+8 4 1
+5 8 7
+7 2 8
+3 1
+2 3
+3 3
+1 3
+2 1
+1 4
+1 1
+2 4
+3 2
+2 2
+1 2
+3 4
+</code></pre>
+<h3 id="输出样例">输出样例:</h3>
+<pre><code class="language-out">1 1
+3 4
+</code></pre>
+</div></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器</div><div style="flex-grow:1;overflow:auto">GXX</div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">代码</div><div style="flex-grow:1;overflow:auto"><pre class="box">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int n,m,q,flag;
+struct peo1
+{
+	int cnt=0;	//拒绝过几人 
+	int favor[110];	//对另外一组每个人好感度 
+	int down[501];	//对已经拒绝的人的好感度 
+	int partner;	//现任伴侣  
+}p1[101]; 
+struct peo2
+{
+	int cnt=0;
+	int favor[110];
+	int down[501];
+	int partner;
+}p2[101];
+void read()
+{
+	scanf(&quot;%d %d %d&quot;,&amp;n,&amp;m,&amp;q);
+	for(int i=1;i&lt;=n;i++)
+		for(int j=1;j&lt;=m;j++)
+			scanf(&quot;%d&quot;,&amp;p1[i].favor[j]);
+	for(int i=1;i&lt;=m;i++)
+		for(int j=1;j&lt;=n;j++)
+			scanf(&quot;%d&quot;,&amp;p2[i].favor[j]);
+}
+int main()
+{
+	read();	//读入杂信息 
+	for(int i=1;i&lt;=q;i++)
+	{
+		int x,y;
+		scanf(&quot;%d %d&quot;,&amp;x,&amp;y);
+		if((p1[x].cnt&gt;=2&amp;&amp;p2[y].cnt&gt;=2)&amp;&amp;(!p1[x].partner&amp;&amp;!p2[y].partner)&amp;&amp;
+		(p1[x].favor[y]&gt;p1[x].down[p1[x].cnt]&amp;&amp;p1[x].favor[y]&gt;p1[x].down[p1[x].cnt-1])&amp;&amp;
+		(p2[y].favor[x]&gt;p2[y].down[p2[y].cnt]&amp;&amp;p2[y].favor[x]&gt;p2[y].down[p2[y].cnt-1]))
+		{
+		//如果两人都拒绝过两次及以上，并且都没有伴侣，
+		//并且x对y的好感度比对前两个拒绝的人的好感高，并且y对x的好感度比对前两个拒绝的人的好感高 
+			p1[x].partner=y;
+			p2[y].partner=x;//更新两者伴侣 
+			flag=1;	//标记 
+			printf(&quot;%d %d\n&quot;,x,y);
+		}
+		else
+		{//不满足条件，两人拒绝次数+1,存入对对方好感度 
+			p1[x].down[++p1[x].cnt]=p1[x].favor[y];
+			p2[y].down[++p2[y].cnt]=p2[y].favor[x];
+		}
+	}
+	if(!flag)
+		printf(&quot;PTA is my only love&quot;);
+}
+</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（20 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器输出</div><div style="flex-grow:1;overflow:auto"><pre class="box">a.cpp: In function ‘void read()’:
+a.cpp:20:7: warning: ignoring return value of ‘int scanf(const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+  scanf(&quot;%d %d %d&quot;,&amp;n,&amp;m,&amp;q);
+  ~~~~~^~~~~~~~~~~~~~~~~~~~~
+a.cpp:23:9: warning: ignoring return value of ‘int scanf(const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+    scanf(&quot;%d&quot;,&amp;p1[i].favor[j]);
+    ~~~~~^~~~~~~~~~~~~~~~~~~~~~
+a.cpp:26:9: warning: ignoring return value of ‘int scanf(const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+    scanf(&quot;%d&quot;,&amp;p2[i].favor[j]);
+    ~~~~~^~~~~~~~~~~~~~~~~~~~~~
+a.cpp: In function ‘int main()’:
+a.cpp:34:8: warning: ignoring return value of ‘int scanf(const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+   scanf(&quot;%d %d&quot;,&amp;x,&amp;y);
+   ~~~~~^~~~~~~~~~~~~~~</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>测试点</th><th>结果</th><th>得分</th><th>耗时</th><th>内存</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>10</td><td>4.00 ms</td><td>1124 KB</td></tr><tr><td>1</td><td>答案正确</td><td>2</td><td>4.00 ms</td><td>840 KB</td></tr><tr><td>2</td><td>答案正确</td><td>2</td><td>4.00 ms</td><td>840 KB</td></tr><tr><td>3</td><td>答案正确</td><td>1</td><td>4.00 ms</td><td>956 KB</td></tr><tr><td>4</td><td>答案正确</td><td>5</td><td>8.00 ms</td><td>1080 KB</td></tr></tbody></table></div></div></div><hr/><div style="padding-bottom:8px;margin-top:12px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">7-8</div><div style="overflow:auto;flex-grow:1"><div style="margin-bottom:8px;display:flex"><div style="font-weight:bold">浪漫侧影</div><div style="margin-left:8px;color:gray">(25分)</div></div><div><div class="rendered-markdown"><p><img src="https://images.ptausercontent.com/c3e9aacd-09f6-464b-9638-2f6981d4f3c2.JPG" alt="v.JPG"></p>
+<p>“侧影”就是从左侧或者右侧去观察物体所看到的内容。例如上图中男生的侧影是从他右侧看过去的样子，叫“右视图”；女生的侧影是从她左侧看过去的样子，叫“左视图”。</p>
+<p>520 这个日子还在打比赛的你，也就抱着一棵二叉树左看看右看看了……</p>
+<p>我们将二叉树的“侧影”定义为从一侧能看到的所有结点从上到下形成的序列。例如下图这棵二叉树，其右视图就是 { 1, 2, 3, 4, 5 }，左视图就是 { 1, 6, 7, 8, 5 }。</p>
+<p><img src="https://images.ptausercontent.com/6c932eac-05f4-4d3f-8490-4c5f2b1c457e.JPG" alt="fig.JPG"></p>
+<p>于是让我们首先通过一棵二叉树的中序遍历序列和后序遍历序列构建出一棵树，然后你要输出这棵树的左视图和右视图。</p>
+<h3 id="输入格式：">输入格式：</h3>
+<p>输入第一行给出一个正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">\le 20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">20</span></span></span></span>)，为树中的结点个数。随后在两行中先后给出树的中序遍历和后序遍历序列。树中所有键值都不相同，其数值大小无关紧要，都不超过 <strong>int</strong> 的范围。</p>
+<h3 id="输出格式：">输出格式：</h3>
+<p>第一行输出右视图，第二行输出左视图，格式如样例所示。</p>
+<h3 id="输入样例：">输入样例：</h3>
+<pre><code class="language-in">8
+6 8 7 4 5 1 3 2
+8 5 4 7 6 3 2 1
+</code></pre>
+<h3 id="输出样例：">输出样例：</h3>
+<pre><code class="language-out">R: 1 2 3 4 5
+L: 1 6 7 8 5
+</code></pre>
+<p><strong>感谢用户DSA修正数据！</strong></p>
+</div></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器</div><div style="flex-grow:1;overflow:auto">GXX</div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">代码</div><div style="flex-grow:1;overflow:auto"><pre class="box">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+using namespace std;
+int n,in[25],post[25];//二叉树的中序和后序遍历 
+int level=0;//二叉树层数 
+vector&lt;int&gt; tree[25];//二叉树的层序遍历 
+struct node//二叉树结点 
+{
+	int num;
+	node *lchild,*rchild;
+};
+node* build(int postL,int postR,int inL,int inR)//递归建树 
+{
+	if(postL&gt;postR)
+		return NULL;
+	node *root=new node;
+	root-&gt;num=post[postR];
+	int k=0;
+	for(k=inL;k&lt;=inR;k++)
+		if(in[k]==post[postR])
+			break;
+	int num=k-inL;
+	root-&gt;lchild=build(postL,postL+num-1,inL,k-1);
+	root-&gt;rchild=build(postL+num,postR-1,k+1,inR);
+	return root;
+}
+void BFS(node* root)//层序遍历 
+{
+	queue&lt;node*&gt; q;
+	q.push(root);
+	while(!q.empty())
+	{
+		level++;//当前层数 
+		//cout&lt;&lt;level&lt;&lt;endl;
+		int size=q.size();
+		while(size--)
+		{
+			node *t=q.front();
+			q.pop();
+			tree[level].emplace_back(t-&gt;num);
+			if(t-&gt;lchild) q.push(t-&gt;lchild);
+			if(t-&gt;rchild) q.push(t-&gt;rchild);
+		}
+	}
+	return;
+}
+int main()
+{
+	ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+	cin&gt;&gt;n;
+	for(int i=1;i&lt;=n;i++)
+		cin&gt;&gt;in[i];
+	for(int i=1;i&lt;=n;i++)
+		cin&gt;&gt;post[i];
+	node *root=build(1,n,1,n);
+	BFS(root);
+	/*
+	for(int i=1;i&lt;=level;i++)
+	{
+		int size=tree[i].size();
+		for(int j=0;j&lt;size;j++)
+			cout&lt;&lt;tree[i][j]&lt;&lt;&quot; &quot;;
+		cout&lt;&lt;endl;
+	}
+	*/
+	cout&lt;&lt;&quot;R:&quot;;
+	for(int i=1;i&lt;=level;i++)
+		cout&lt;&lt;&quot; &quot;&lt;&lt;tree[i][tree[i].size()-1];
+	cout&lt;&lt;endl;
+	cout&lt;&lt;&quot;L:&quot;;
+	for(int i=1;i&lt;=level;i++)
+		cout&lt;&lt;&quot; &quot;&lt;&lt;tree[i][0];
+	cout&lt;&lt;endl;
+	return 0;
+}</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（25 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>测试点</th><th>结果</th><th>得分</th><th>耗时</th><th>内存</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>12</td><td>5.00 ms</td><td>316 KB</td></tr><tr><td>1</td><td>答案正确</td><td>2</td><td>5.00 ms</td><td>444 KB</td></tr><tr><td>2</td><td>答案正确</td><td>2</td><td>4.00 ms</td><td>348 KB</td></tr><tr><td>3</td><td>答案正确</td><td>2</td><td>6.00 ms</td><td>456 KB</td></tr><tr><td>4</td><td>答案正确</td><td>1</td><td>5.00 ms</td><td>452 KB</td></tr><tr><td>5</td><td>答案正确</td><td>2</td><td>5.00 ms</td><td>384 KB</td></tr><tr><td>6</td><td>答案正确</td><td>2</td><td>6.00 ms</td><td>388 KB</td></tr><tr><td>7</td><td>答案正确</td><td>2</td><td>5.00 ms</td><td>316 KB</td></tr></tbody></table></div></div></div><hr/></div></div>
+
+</body>
+</html>
